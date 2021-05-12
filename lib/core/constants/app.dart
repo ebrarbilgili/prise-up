@@ -14,4 +14,7 @@ class AppConstants {
 
   static const LOGO =
       'https://www.qbrobotics.com/wp-content/uploads/2018/03/sample-logo-490x200.png';
+
+  static const APPBAR_LOGO =
+      'https://www.qbrobotics.com/wp-content/uploads/2018/03/sample-logo-170x150.png';
 }

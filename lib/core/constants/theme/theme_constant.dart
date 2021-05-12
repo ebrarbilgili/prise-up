@@ -15,7 +15,15 @@ class ThemeConstant {
         elevatedButtonTheme: elevatedButtonThemeData,
         appBarTheme: appBarTheme,
         indicatorColor: colorScheme.primary,
+        textButtonTheme: textButtonThemeData,
       );
+
+  TextButtonThemeData get textButtonThemeData {
+    return TextButtonThemeData(
+        style: ButtonStyle(
+      overlayColor: MaterialStateProperty.all(colorScheme.onSurface),
+    ));
+  }
 
   AppBarTheme get appBarTheme {
     return AppBarTheme(
@@ -29,21 +37,22 @@ class ThemeConstant {
     return ElevatedButtonThemeData(
       style: ButtonStyle(
         shape: MaterialStateProperty.all(StadiumBorder()),
+        // overlayColor: MaterialStateProperty.all(colorScheme.onSurface),
       ),
     );
   }
 
   ColorScheme get colorScheme => ColorScheme(
-        primary: Color(0xff880c8a),
-        primaryVariant: Color(0xff580b59),
-        secondary: Color(0xffc04cc2),
-        secondaryVariant: Color(0xff8d408f),
-        surface: Colors.transparent,
-        background: Colors.white,
-        error: Colors.red,
-        onPrimary: Colors.black,
-        onSecondary: Colors.grey,
-        onSurface: Colors.amber,
+        primary: Color(0xff880c8a), //xxx
+        primaryVariant: Color(0xff580b59), //xxx
+        secondary: Color(0xffc04cc2), //xxx
+        secondaryVariant: Color(0xff8d408f), //xxx
+        surface: Colors.transparent, //xxx
+        background: Colors.white, //xxx
+        error: Colors.red, //xxx
+        onPrimary: Colors.black, //xxx
+        onSecondary: Colors.grey.shade100, //xxx
+        onSurface: Color(0x1FE568E7),
         onBackground: Colors.black,
         onError: Colors.red,
         brightness: Brightness.light,

@@ -28,5 +28,11 @@ abstract class  LocaleKeys {
   static const sign_up_exists_user_login = 'sign_up.exists_user_login';
   static const sign_up_please_wait = 'sign_up.please_wait';
   static const sign_up = 'sign_up';
+  static const home_home_home = 'home.home.home';
+  static const home_home = 'home.home';
+  static const home_profile_profile = 'home.profile.profile';
+  static const home_profile_logout = 'home.profile.logout';
+  static const home_profile = 'home.profile';
+  static const home = 'home';
 
 }

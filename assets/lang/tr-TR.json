@@ -28,5 +28,14 @@
         "exists_user": "Kullanıcı zaten kayıtlı.",
         "exists_user_login": "Lütfen Giriş Yapın.",
         "please_wait": "Lütfen Bekleyin..."
+    },
+    "home": {
+        "home": {
+            "home": "Ana Sayfa"
+        },
+        "profile": {
+            "profile": "Profil",
+            "logout": "Çıkış Yap"
+        }
     }
 }

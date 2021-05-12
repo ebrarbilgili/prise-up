@@ -27,23 +27,23 @@ class SharedPreferencesConstant {
     await _prefs!.setString(key, value);
   }
 
-  String? getStringValue(String key) => _prefs!.getString(key);
+  String? getStringValue(String key) => _prefs?.getString(key);
 
   Future<void> setIntegerValue(String key, int value) async {
     await _prefs!.setInt(key, value);
   }
 
-  int? getIntValue(String key) => _prefs!.getInt(key);
+  int? getIntValue(String key) => _prefs?.getInt(key);
 
   Future<void> setDoubleValue(String key, double value) async {
     await _prefs!.setDouble(key, value);
   }
 
-  double? getDoubleValue(String key) => _prefs!.getDouble(key);
+  double? getDoubleValue(String key) => _prefs?.getDouble(key);
 
   Future<void> setBoolValue(String key, bool value) async {
     await _prefs!.setBool(key, value);
   }
 
-  bool? getBoolValue(String key) => _prefs!.getBool(key);
+  bool? getBoolValue(String key) => _prefs?.getBool(key);
 }

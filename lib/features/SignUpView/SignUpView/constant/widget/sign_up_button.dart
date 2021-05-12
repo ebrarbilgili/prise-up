@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:kartal/kartal.dart';
+import 'package:teammate/core/constants/widget/ProgressIndicator/circular_progress_indicator.dart';
 
 import '../../../../../core/constants/shared/shared_prefs_constant.dart';
 import '../../../../../core/extensions/locale_extensions.dart';
@@ -30,7 +31,7 @@ class _SignUpButtonWidgetState extends State<SignUpButtonWidget> {
     return ElevatedButton(
       onPressed: () async {
         buildShowDialog(context, LocaleKeys.sign_up_please_wait.locale, '',
-            [CircularProgressIndicator()]);
+            [CircularProgressIndicatorWidget()]);
         await onPressed(context);
       },
       child: buildButtonText(context),

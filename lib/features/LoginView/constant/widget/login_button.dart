@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:kartal/kartal.dart';
+import 'package:teammate/core/constants/widget/ProgressIndicator/circular_progress_indicator.dart';
 
 import '../../../../core/constants/shared/shared_prefs_constant.dart';
 import '../../../../core/extensions/locale_extensions.dart';
@@ -29,19 +30,22 @@ class _LoginButtonState extends State<LoginButton> {
     return ElevatedButton(
       onPressed: () async {
         buildShowLoaderDialog(context, LocaleKeys.sign_up_please_wait.locale,
-            '', [CircularProgressIndicator()]);
+            '', [CircularProgressIndicatorWidget()]);
         if (widget.viewModel.formKey.currentState!.validate()) {
           await widget.viewModel.onPressedLogin().then(
                 (value) => value == false
                     ? buildShowDialog(value, context)
                     : saveLoginInfo(value).whenComplete(
-                        () => context.navigation.push(
+                        () => context.navigation.pushAndRemoveUntil(
                           MaterialPageRoute(
                             builder: (context) => HomeView(),
                           ),
+                          (route) => false,
                         ),
                       ),
               );
+
+          print(prefs.getStringValue('token'));
         }
       },
       child: LocaleText(
@@ -58,6 +62,7 @@ class _LoginButtonState extends State<LoginButton> {
       prefs.setStringValue('username', value['username']);
       prefs.setStringValue('token', value['token']);
     });
+    print(prefs.getStringValue('token'));
   }
 
   void buildShowDialog(dynamic value, BuildContext context) {
