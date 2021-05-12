@@ -1,0 +1,32 @@
+{
+    "login": {
+        "email": "E-mail",
+        "password": "Password",
+        "register_btn": "Don't have an account? Register now!"
+    },
+    "login_button": {
+        "login": "Login",
+        "ok": "Ok",
+        "try_again": "Please Try Again.",
+        "wrong_email_pass": "Wrong E-mail or Password",
+        "valid_pass": "Please enter a valid password.",
+        "valid_email": "Please enter a valid email."
+    },
+    "sign_up": {
+        "sign_up": "Sign Up",
+        "username": "Username",
+        "first_name": "First Name",
+        "last_name": "Last Name",
+        "university": "University",
+        "faculty": "Faculty",
+        "email": "E-mail",
+        "password": "Password",
+        "password2": "Confirm Password",
+        "valid_username": "Please enter a valid username.",
+        "valid_email": "Please enter a valid email.",
+        "valid_password": "Please enter a valid password.",
+        "exists_user": "User already exists.",
+        "exists_user_login": "Please Login.",
+        "please_wait": "Please Wait..."
+    }
+}

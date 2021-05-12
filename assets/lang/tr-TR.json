@@ -1,0 +1,32 @@
+{
+    "login": {
+        "email": "E-mail",
+        "password": "Şifre",
+        "register_btn": "Hesabın yok mu? Hemen Kayıt Ol!"
+    },
+    "login_button": {
+        "login": "Giriş Yap",
+        "ok": "Tamam",
+        "try_again": "Lütfen Tekrar Deneyin.",
+        "wrong_email_pass": "Yanlış E-mail ya da Şifre",
+        "valid_pass": "Lütfen geçerli bir şifre girin.",
+        "valid_email": "Lütfen geçerli bir mail adresi girin."
+    },
+    "sign_up": {
+        "sign_up": "Kayıt Ol",
+        "username": "Kullanıcı Adı",
+        "first_name": "Adı",
+        "last_name": "Soyadı",
+        "university": "Üniversite",
+        "faculty": "Bölüm",
+        "email": "E-mail",
+        "password": "Şifre",
+        "password2": "Şifreyi Doğrula",
+        "valid_username": "Lütfen geçerli bir kullanıcı adı girin.",
+        "valid_email": "Lütfen geçerli bir mail adresi girin.",
+        "valid_password": "Lütfen geçerli bir şifre girin.",
+        "exists_user": "Kullanıcı zaten kayıtlı.",
+        "exists_user_login": "Lütfen Giriş Yapın.",
+        "please_wait": "Lütfen Bekleyin..."
+    }
+}
