@@ -31,7 +31,6 @@ class RegisterUserView extends StatelessWidget {
           key: viewModel.formKey,
           child: ListView(
             children: [
-              buildUsernameField(context),
               buildEmailField(context),
               buildPasswordField(context),
               buildConfirmPasswordField(context),
@@ -97,23 +96,6 @@ class RegisterUserView extends StatelessWidget {
         validator: (value) {
           if (value == null || value.isEmpty) {
             return LocaleKeys.sign_up_valid_email.locale;
-          }
-          return null;
-        },
-      ),
-    );
-  }
-
-  Padding buildUsernameField(BuildContext context) {
-    return Padding(
-      padding: context.verticalPaddingLow,
-      child: TextFormField(
-        controller: viewModel.usernameController,
-        decoration: buildTextFieldDecoration(context,
-            LocaleKeys.sign_up_username.locale, FontAwesomeIcons.solidUser),
-        validator: (value) {
-          if (value == null || value.isEmpty) {
-            return LocaleKeys.sign_up_valid_username.locale;
           }
           return null;
         },

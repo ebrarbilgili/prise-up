@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:mobx/mobx.dart';
-import 'package:teammate/features/HomeView/HomePageView/view/home_page_view.dart';
-import 'package:teammate/features/HomeView/ProfilePageView/view/profile_page_view.dart';
+
+import '../HomePageView/view/home_page_view.dart';
+import '../ProfilePageView/view/profile_page_view.dart';
+
 part 'home_viewmodel.g.dart';
 
 class HomeViewModel = _HomeViewModelBase with _$HomeViewModel;

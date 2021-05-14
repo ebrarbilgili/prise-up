@@ -19,10 +19,11 @@
         "last_name": "Last Name",
         "university": "University",
         "faculty": "Faculty",
+        "city": "City",
         "email": "E-mail",
         "password": "Password",
         "password2": "Confirm Password",
-        "valid_username": "Please enter a valid username.",
+        "validation": "Please enter a valid value.",
         "valid_email": "Please enter a valid email.",
         "valid_password": "Please enter a valid password.",
         "exists_user": "User already exists.",
@@ -31,10 +32,33 @@
     },
     "home": {
         "home": {
-            "home": "Home"
+            "home": "Home",
+            "project_list_empty": "Unfortunately There is no active project posting yet...",
+            "detail": "Details",
+            "detail_page": {
+                "project_detail": "Project Details",
+                "apply": "Apply",
+                "cancel": "Cancel",
+                "sure_to_apply": "Are you sure you want to apply?",
+                "applying": "Applying...",
+                "applied": "Applied!"
+            }
         },
         "profile": {
             "profile": "Profile",
+            "project": {
+                "create_project": "Create Project",
+                "created": "Project Created",
+                "title": "Title",
+                "subtitle": "Subtitle",
+                "desc": "Description ",
+                "university": "University",
+                "city": "City"
+            },
+            "my_applications": {
+                "applications": "Applications",
+                "appliance_list_empty": "Unfortunately, You do not have any application yet..."
+            },
             "logout": "Logout"
         }
     }

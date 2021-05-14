@@ -4,14 +4,24 @@ part 'register_user_model.g.dart';
 
 @JsonSerializable()
 class PostRegisterUserModel {
-  String? username;
   String? email;
+  String? first_name;
+  String? last_name;
+  String? university;
+  String? faculty;
+  String? city;
   String? password;
+  String? password2;
 
   PostRegisterUserModel({
-    this.username,
     this.email,
+    this.first_name,
+    this.last_name,
+    this.university,
+    this.faculty,
+    this.city,
     this.password,
+    this.password2,
   });
 
   factory PostRegisterUserModel.fromJson(Map<String, dynamic> json) {

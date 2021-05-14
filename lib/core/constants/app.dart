@@ -17,4 +17,6 @@ class AppConstants {
 
   static const APPBAR_LOGO =
       'https://www.qbrobotics.com/wp-content/uploads/2018/03/sample-logo-170x150.png';
+
+  static const LOTTIE_CONFRIM = 'assets/lottie/confirm.json';
 }

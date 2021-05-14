@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:kartal/kartal.dart';
 import 'package:provider/provider.dart';
-import 'package:teammate/core/constants/provider/cache_provider.dart';
-import 'package:teammate/core/extensions/locale_extensions.dart';
-import 'package:teammate/core/lang/locale_key.g.dart';
-import 'package:teammate/features/LoginView/view/login_view.dart';
+import 'package:teammate/core/widgets/LocaleText/locale_text.dart';
+import 'package:teammate/features/HomeView/ProfilePageView/ApplicationsView/view/applications_view.dart';
+import 'package:teammate/features/HomeView/ProfilePageView/CreateProjectView/view/create_project_view.dart';
+
+import '../../../../core/constants/provider/cache_provider.dart';
+import '../../../../core/lang/locale_key.g.dart';
+import '../../../LoginView/view/login_view.dart';
 
 class ProfilePageView extends StatelessWidget {
   const ProfilePageView({Key? key}) : super(key: key);
@@ -14,26 +17,87 @@ class ProfilePageView extends StatelessWidget {
     return ListView(
       physics: NeverScrollableScrollPhysics(),
       children: [
-        TextButton(
-          onPressed: () async {
-            await context.read<CacheProvider>().clearCache();
-            await context.navigation.pushAndRemoveUntil(
-              MaterialPageRoute(
-                builder: (context) => LoginView(),
-              ),
-              (route) => false,
-            );
-          },
-          child: Align(
-            alignment: Alignment.centerLeft,
-            child: Text(
-              LocaleKeys.home_profile_logout.locale,
-              style: context.textTheme.headline6!
-                  .copyWith(color: context.colorScheme.error),
+        buildCreateProjectButton(context),
+        buildApplicationsButton(context),
+        buildLogoutButton(context),
+      ],
+    );
+  }
+
+  Container buildApplicationsButton(BuildContext context) {
+    return Container(
+      decoration: buildButtonBorderDecoration(context),
+      child: TextButton(
+        onPressed: () {
+          context.navigation.push(
+            MaterialPageRoute(
+              builder: (context) => ApplicationsView(),
             ),
+          );
+        },
+        child: Align(
+          alignment: Alignment.centerLeft,
+          child: LocaleText(
+            text: LocaleKeys.home_profile_my_applications_applications,
+            style: context.textTheme.headline6,
           ),
         ),
-      ],
+      ),
+    );
+  }
+
+  Container buildCreateProjectButton(BuildContext context) {
+    return Container(
+      decoration: buildButtonBorderDecoration(context),
+      child: TextButton(
+        onPressed: () {
+          context.navigation.push(
+            MaterialPageRoute(
+              builder: (context) => CreateProjectView(),
+            ),
+          );
+        },
+        child: Align(
+          alignment: Alignment.centerLeft,
+          child: LocaleText(
+            text: LocaleKeys.home_profile_project_create_project,
+            style: context.textTheme.headline6,
+          ),
+        ),
+      ),
+    );
+  }
+
+  Container buildLogoutButton(BuildContext context) {
+    return Container(
+      decoration: buildButtonBorderDecoration(context),
+      child: TextButton(
+        onPressed: () async {
+          await context.read<CacheProvider>().clearCache();
+          await context.navigation.pushAndRemoveUntil(
+            MaterialPageRoute(
+              builder: (context) => LoginView(),
+            ),
+            (route) => false,
+          );
+        },
+        child: Align(
+          alignment: Alignment.centerLeft,
+          child: LocaleText(
+            text: LocaleKeys.home_profile_logout,
+            style: context.textTheme.headline6!
+                .copyWith(color: context.colorScheme.error),
+          ),
+        ),
+      ),
+    );
+  }
+
+  BoxDecoration buildButtonBorderDecoration(BuildContext context) {
+    return BoxDecoration(
+      border: Border(
+        bottom: BorderSide(color: context.colorScheme.onSecondary, width: 2),
+      ),
     );
   }
 }

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:kartal/kartal.dart';
-import 'package:teammate/core/constants/widget/ProgressIndicator/circular_progress_indicator.dart';
 
 import '../../../../core/constants/shared/shared_prefs_constant.dart';
+import '../../../../core/constants/widget/ProgressIndicator/circular_progress_indicator.dart';
 import '../../../../core/extensions/locale_extensions.dart';
 import '../../../../core/lang/locale_key.g.dart';
 import '../../../../core/widgets/AlertDialog/alert_dialog_widget.dart';
@@ -59,9 +59,10 @@ class _LoginButtonState extends State<LoginButton> {
   Future<void> saveLoginInfo(dynamic value) async {
     setState(() {
       prefs.setStringValue('id', value['id'].toString());
-      prefs.setStringValue('username', value['username']);
+      prefs.setStringValue('email', value['email']);
       prefs.setStringValue('token', value['token']);
     });
+    print(prefs.getStringValue('email'));
     print(prefs.getStringValue('token'));
   }
 
@@ -75,6 +76,7 @@ class _LoginButtonState extends State<LoginButton> {
           actions: [
             ElevatedButton(
               onPressed: () {
+                context.navigation.pop();
                 context.navigation.pop();
               },
               child: Text(

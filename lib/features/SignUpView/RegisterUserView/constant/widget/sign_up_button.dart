@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:kartal/kartal.dart';
-import 'package:teammate/core/constants/widget/ProgressIndicator/circular_progress_indicator.dart';
 
 import '../../../../../core/constants/shared/shared_prefs_constant.dart';
+import '../../../../../core/constants/widget/ProgressIndicator/circular_progress_indicator.dart';
 import '../../../../../core/extensions/locale_extensions.dart';
 import '../../../../../core/lang/locale_key.g.dart';
 import '../../../../../core/widgets/AlertDialog/alert_dialog_widget.dart';
@@ -70,33 +70,15 @@ class _RegisterUserButtonState extends State<RegisterUserButton> {
     if (widget.viewModel.passwordController.text ==
         widget.viewModel.password2Controller.text) {
       if (widget.viewModel.formKey.currentState!.validate()) {
-        await widget.viewModel.onPressedRegisterUser().then(
-              (value) => value == false
-                  ? buildShowDialog(
-                      context,
-                      LocaleKeys.sign_up_exists_user.locale,
-                      LocaleKeys.sign_up_exists_user_login.locale,
-                      [
-                        TextButton(
-                          onPressed: () {
-                            context.navigation.pop();
-                            context.navigation.pop();
-                          },
-                          child: Text(LocaleKeys.login_button_ok.locale),
-                        )
-                      ],
-                    )
-                  : saveUserInfo(value).whenComplete(
-                      () => context.navigation.push(
-                        MaterialPageRoute(
-                          builder: (context) => SignUpView(
-                            userId: value['id'] ??
-                                int.parse(prefs.getStringValue('id')!),
-                          ),
-                        ),
-                      ),
-                    ),
-            );
+        await context.navigation.push(
+          MaterialPageRoute(
+            builder: (context) => SignUpView(
+              email: widget.viewModel.emailController.text,
+              password: widget.viewModel.passwordController.text,
+              password2: widget.viewModel.passwordController.text,
+            ),
+          ),
+        );
       }
     } else {
       return buildShowDialog(context, LocaleKeys.sign_up_password2.locale,

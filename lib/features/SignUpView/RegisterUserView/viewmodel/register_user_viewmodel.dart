@@ -16,7 +16,11 @@ abstract class _RegisterUserViewModelBase with Store {
 
   final formKey = GlobalKey<FormState>();
 
-  final usernameController = TextEditingController();
+  final firstNameController = TextEditingController();
+  final lastNameController = TextEditingController();
+  final universityController = TextEditingController();
+  final facultyController = TextEditingController();
+  final cityController = TextEditingController();
   final emailController = TextEditingController();
   final passwordController = TextEditingController();
   final password2Controller = TextEditingController();
@@ -24,8 +28,12 @@ abstract class _RegisterUserViewModelBase with Store {
   @action
   Future onPressedRegisterUser() async {
     return await registerUserService.postRegisterUser(PostRegisterUserModel(
-      username: usernameController.text,
       email: emailController.text,
+      first_name: firstNameController.text,
+      last_name: lastNameController.text,
+      university: universityController.text,
+      faculty: facultyController.text,
+      city: cityController.text,
       password: passwordController.text,
     ));
   }

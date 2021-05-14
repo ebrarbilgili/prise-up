@@ -19,10 +19,11 @@
         "last_name": "Soyadı",
         "university": "Üniversite",
         "faculty": "Bölüm",
+        "city": "Şehir",
         "email": "E-mail",
         "password": "Şifre",
         "password2": "Şifreyi Doğrula",
-        "valid_username": "Lütfen geçerli bir kullanıcı adı girin.",
+        "validation": "Lütfen geçerli bir değer girin.",
         "valid_email": "Lütfen geçerli bir mail adresi girin.",
         "valid_password": "Lütfen geçerli bir şifre girin.",
         "exists_user": "Kullanıcı zaten kayıtlı.",
@@ -31,10 +32,33 @@
     },
     "home": {
         "home": {
-            "home": "Ana Sayfa"
+            "home": "Ana Sayfa",
+            "project_list_empty": "Maalesef henüz aktif proje ilanı yok...",
+            "detail": "Detaylar",
+            "detail_page": {
+                "project_detail": "Proje Detayları",
+                "apply": "Başvur",
+                "cancel": "Vazgeç",
+                "sure_to_apply": "Başvurmak istediğinize emin misiniz?",
+                "applying": "Başvuruluyor...",
+                "applied": "Başvuru Oluşturuldu!"
+            }
         },
         "profile": {
             "profile": "Profil",
+            "project": {
+                "create_project": "Proje Oluştur",
+                "created": "Proje Oluşturuldu",
+                "title": "Başlık",
+                "subtitle": "Alt Başlık",
+                "desc": "Açıklama",
+                "university": "Üniversite",
+                "city": "Şehir"
+            },
+            "my_applications": {
+                "applications": "Başvurular",
+                "appliance_list_empty": "Maalesef henüz bir başvurunuz yok..."
+            },
             "logout": "Çıkış Yap"
         }
     }

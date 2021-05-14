@@ -7,20 +7,24 @@ import '../../../../core/constants/app.dart';
 import '../../../../core/extensions/locale_extensions.dart';
 import '../../../../core/lang/locale_key.g.dart';
 import '../../../../core/widgets/LocaleText/locale_text.dart';
+import '../../RegisterUserView/service/register_user_service.dart';
 import '../constant/widget/sign_up_button.dart';
-import '../service/sign_up_service.dart';
 import '../viewmodel/sign_up_viewmodel.dart';
 
 class SignUpView extends StatelessWidget {
   SignUpView({
     Key? key,
-    required this.userId,
+    required this.email,
+    required this.password,
+    required this.password2,
   }) : super(key: key);
 
-  final int userId;
+  final String email;
+  final String password;
+  final String password2;
 
   final viewModel = SignUpViewModel(
-    signUpService: SignUpService(
+    registerUserService: RegisterUserService(
       service: Dio(BaseOptions(baseUrl: AppConstants.BASE_URL)),
     ),
   );
@@ -39,10 +43,36 @@ class SignUpView extends StatelessWidget {
               buildLastNameField(context),
               buildUniversityField(context),
               buildFacultyField(context),
-              SignUpButtonWidget(viewModel: viewModel, userId: userId)
+              buildCityField(context),
+              SignUpButtonWidget(
+                viewModel: viewModel,
+                email: email,
+                password: password,
+                password2: password2,
+              )
             ],
           ),
         ),
+      ),
+    );
+  }
+
+  Padding buildCityField(BuildContext context) {
+    return Padding(
+      padding: context.verticalPaddingLow,
+      child: TextFormField(
+        controller: viewModel.cityController,
+        decoration: buildTextFieldDecoration(
+          context,
+          LocaleKeys.sign_up_city.locale,
+          FontAwesomeIcons.chalkboard,
+        ),
+        validator: (value) {
+          if (value == null || value.isEmpty) {
+            return LocaleKeys.sign_up_validation.locale;
+          }
+          return null;
+        },
       ),
     );
   }
@@ -59,7 +89,7 @@ class SignUpView extends StatelessWidget {
         ),
         validator: (value) {
           if (value == null || value.isEmpty) {
-            return LocaleKeys.sign_up_valid_username.locale;
+            return LocaleKeys.sign_up_validation.locale;
           }
           return null;
         },
@@ -79,7 +109,7 @@ class SignUpView extends StatelessWidget {
         ),
         validator: (value) {
           if (value == null || value.isEmpty) {
-            return LocaleKeys.sign_up_valid_username.locale;
+            return LocaleKeys.sign_up_validation.locale;
           }
           return null;
         },
@@ -91,7 +121,7 @@ class SignUpView extends StatelessWidget {
     return Padding(
       padding: context.verticalPaddingLow,
       child: TextFormField(
-        controller: viewModel.lastnameController,
+        controller: viewModel.lastNameController,
         decoration: buildTextFieldDecoration(
           context,
           LocaleKeys.sign_up_last_name.locale,
@@ -99,7 +129,7 @@ class SignUpView extends StatelessWidget {
         ),
         validator: (value) {
           if (value == null || value.isEmpty) {
-            return LocaleKeys.sign_up_valid_username.locale;
+            return LocaleKeys.sign_up_validation.locale;
           }
           return null;
         },
@@ -111,7 +141,7 @@ class SignUpView extends StatelessWidget {
     return Padding(
       padding: context.verticalPaddingLow,
       child: TextFormField(
-        controller: viewModel.firstnameController,
+        controller: viewModel.firstNameController,
         decoration: buildTextFieldDecoration(
           context,
           LocaleKeys.sign_up_first_name.locale,
@@ -119,7 +149,7 @@ class SignUpView extends StatelessWidget {
         ),
         validator: (value) {
           if (value == null || value.isEmpty) {
-            return LocaleKeys.sign_up_valid_username.locale;
+            return LocaleKeys.sign_up_validation.locale;
           }
           return null;
         },

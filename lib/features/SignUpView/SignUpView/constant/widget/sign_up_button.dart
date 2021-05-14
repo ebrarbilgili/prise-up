@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:kartal/kartal.dart';
-import 'package:teammate/core/constants/widget/ProgressIndicator/circular_progress_indicator.dart';
 
 import '../../../../../core/constants/shared/shared_prefs_constant.dart';
+import '../../../../../core/constants/widget/ProgressIndicator/circular_progress_indicator.dart';
 import '../../../../../core/extensions/locale_extensions.dart';
 import '../../../../../core/lang/locale_key.g.dart';
 import '../../../../../core/widgets/AlertDialog/alert_dialog_widget.dart';
@@ -14,10 +14,14 @@ class SignUpButtonWidget extends StatefulWidget {
   SignUpButtonWidget({
     Key? key,
     required this.viewModel,
-    required this.userId,
+    required this.email,
+    required this.password,
+    required this.password2,
   }) : super(key: key);
   final SignUpViewModel viewModel;
-  final int userId;
+  final String email;
+  final String password;
+  final String password2;
 
   @override
   _SignUpButtonWidgetState createState() => _SignUpButtonWidgetState();
@@ -40,7 +44,10 @@ class _SignUpButtonWidgetState extends State<SignUpButtonWidget> {
 
   Future<void> onPressed(BuildContext context) async {
     if (widget.viewModel.formKey.currentState!.validate()) {
-      await widget.viewModel.onPressedSignUp(widget.userId).then(
+      await widget.viewModel
+          .onPressedRegisterUser(
+              widget.email, widget.password, widget.password2)
+          .then(
             (value) => value == false
                 ? buildShowDialog(
                     context,
@@ -67,6 +74,7 @@ class _SignUpButtonWidgetState extends State<SignUpButtonWidget> {
       prefs.setStringValue('last_name', value['last_name']);
       prefs.setStringValue('university', value['university']);
       prefs.setStringValue('faculty', value['faculty']);
+      prefs.setStringValue('city', value['city']);
     });
 
     await context.navigation.push(

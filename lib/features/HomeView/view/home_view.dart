@@ -2,11 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:kartal/kartal.dart';
-import 'package:teammate/core/constants/app.dart';
-import 'package:teammate/core/extensions/locale_extensions.dart';
-import 'package:teammate/core/lang/locale_key.g.dart';
-import 'package:teammate/core/widgets/LocaleText/locale_text.dart';
-import 'package:teammate/features/HomeView/viewmodel/home_viewmodel.dart';
+
+import '../../../core/constants/app.dart';
+import '../../../core/extensions/locale_extensions.dart';
+import '../../../core/lang/locale_key.g.dart';
+import '../../../core/widgets/LocaleText/locale_text.dart';
+import '../viewmodel/home_viewmodel.dart';
 
 class HomeView extends StatelessWidget {
   HomeView({Key? key}) : super(key: key);

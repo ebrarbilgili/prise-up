@@ -13,9 +13,14 @@ class RegisterUserService {
     final headers = {'Content-type': 'application/json'};
 
     final data = {
-      'username': model.username,
       'email': model.email,
+      'first_name': model.first_name,
+      'last_name': model.last_name,
+      'university': model.university,
+      'faculty': model.faculty,
+      'city': model.city,
       'password': model.password,
+      'password2': model.password2,
     };
 
     bool Function(int?)? validateStatus = (status) {

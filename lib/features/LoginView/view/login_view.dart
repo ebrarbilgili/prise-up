@@ -2,6 +2,7 @@ import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:kartal/kartal.dart';
+import 'package:teammate/core/constants/widget/TextField/text_field_decoration.dart';
 
 import '../../../core/constants/app.dart';
 import '../../../core/extensions/locale_extensions.dart';
@@ -77,24 +78,11 @@ class LoginView extends StatelessWidget {
     );
   }
 
-  Padding buildEmailField(BuildContext context) {
-    return Padding(
-      padding: context.paddingLow,
-      child: TextFormField(
-        controller: viewModel.emailController,
-        keyboardType: TextInputType.emailAddress,
-        decoration: buildTextFieldDecoration(
-          context,
-          LocaleKeys.login_email.locale,
-          FontAwesomeIcons.solidEnvelope,
-        ),
-        validator: (value) {
-          if (value == null || value.isEmpty) {
-            return LocaleKeys.login_button_valid_email.locale;
-          }
-          return null;
-        },
-      ),
+  TextFieldWidget buildEmailField(BuildContext context) {
+    return TextFieldWidget(
+      controller: viewModel.emailController,
+      hintText: LocaleKeys.login_email.locale,
+      iconData: FontAwesomeIcons.solidEnvelope,
     );
   }
 

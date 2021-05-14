@@ -1,33 +1,38 @@
 import 'package:flutter/material.dart';
 import 'package:mobx/mobx.dart';
 
-import '../model/sign_up_model.dart';
-import '../service/sign_up_service.dart';
+import '../../RegisterUserView/model/register_user_model.dart';
+import '../../RegisterUserView/service/register_user_service.dart';
 
 part 'sign_up_viewmodel.g.dart';
 
 class SignUpViewModel = _SignUpViewModelBase with _$SignUpViewModel;
 
 abstract class _SignUpViewModelBase with Store {
-  SignUpService signUpService;
+  RegisterUserService registerUserService;
 
-  _SignUpViewModelBase({required this.signUpService});
+  _SignUpViewModelBase({required this.registerUserService});
 
   final formKey = GlobalKey<FormState>();
 
-  final firstnameController = TextEditingController();
-  final lastnameController = TextEditingController();
+  final firstNameController = TextEditingController();
+  final lastNameController = TextEditingController();
   final universityController = TextEditingController();
   final facultyController = TextEditingController();
+  final cityController = TextEditingController();
 
   @action
-  Future onPressedSignUp(int userId) async {
-    return await signUpService.postSignUp(SignUpModel(
-      first_name: firstnameController.text,
-      last_name: lastnameController.text,
+  Future onPressedRegisterUser(
+      String email, String password, String password2) async {
+    return await registerUserService.postRegisterUser(PostRegisterUserModel(
+      email: email,
+      first_name: firstNameController.text,
+      last_name: lastNameController.text,
       university: universityController.text,
       faculty: facultyController.text,
-      user: userId,
+      city: cityController.text,
+      password: password,
+      password2: password2,
     ));
   }
 }
