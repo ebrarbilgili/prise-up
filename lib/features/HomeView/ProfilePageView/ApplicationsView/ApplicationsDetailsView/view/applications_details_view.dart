@@ -12,7 +12,7 @@ class ApplicationsDetailsView extends StatelessWidget {
     required this.model,
   }) : super(key: key);
 
-  final ApplicationsModel model;
+  final AppliedModel model;
 
   @override
   Widget build(BuildContext context) {
@@ -55,7 +55,7 @@ class ApplicationsDetailsView extends StatelessWidget {
         padding: context.paddingLow,
         child: ListTile(
           title: AutoSizeText(
-              '${model.project!.userProfile!.firstName} ${model.project!.userProfile!.lastName}'),
+              '${model.project!.userProfile!.first_name} ${model.project!.userProfile!.last_name}'),
           subtitle: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [

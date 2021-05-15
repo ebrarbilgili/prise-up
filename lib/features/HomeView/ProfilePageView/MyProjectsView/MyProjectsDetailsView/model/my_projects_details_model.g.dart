@@ -1,13 +1,14 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'applications_model.dart';
+part of 'my_projects_details_model.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 
-AppliedModel _$AppliedModelFromJson(Map<String, dynamic> json) {
-  return AppliedModel(
+MyProjectsDetailsModel _$MyProjectsDetailsModelFromJson(
+    Map<String, dynamic> json) {
+  return MyProjectsDetailsModel(
     id: json['id'] as int?,
     applyUserProfile: json['applyUserProfile'] == null
         ? null
@@ -19,7 +20,8 @@ AppliedModel _$AppliedModelFromJson(Map<String, dynamic> json) {
   );
 }
 
-Map<String, dynamic> _$AppliedModelToJson(AppliedModel instance) =>
+Map<String, dynamic> _$MyProjectsDetailsModelToJson(
+        MyProjectsDetailsModel instance) =>
     <String, dynamic>{
       'id': instance.id,
       'applyUserProfile': instance.applyUserProfile,
@@ -54,7 +56,8 @@ Project _$ProjectFromJson(Map<String, dynamic> json) {
     id: json['id'] as int?,
     userProfile: json['userProfile'] == null
         ? null
-        : UserProfile.fromJson(json['userProfile'] as Map<String, dynamic>),
+        : ApplyUserProfile.fromJson(
+            json['userProfile'] as Map<String, dynamic>),
     title: json['title'] as String?,
     subtitle: json['subtitle'] as String?,
     desc: json['desc'] as String?,

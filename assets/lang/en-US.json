@@ -60,6 +60,10 @@
                 "appliance_list_empty": "Unfortunately, You do not have any application yet..."
             },
             "logout": "Logout"
+        },
+        "my_projects": {
+            "my_projects": "My Projects",
+            "project_list_empty": "Unfortunately, There is no applicant yet..."
         }
     }
 }

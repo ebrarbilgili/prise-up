@@ -17,10 +17,10 @@ abstract class _ApplicationsViewModelBase with Store {
   final refreshIndicatorKey = GlobalKey<RefreshIndicatorState>();
 
   @observable
-  List<ApplicationsModel> applicationsList = [];
+  List<AppliedModel> applicationsList = [];
 
   @action
-  Future<List<ApplicationsModel>> fetchMyApplications() async {
+  Future<List<AppliedModel>> fetchMyApplications() async {
     return applicationsList = await service.getMyApplications();
   }
 

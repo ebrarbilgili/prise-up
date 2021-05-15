@@ -12,7 +12,7 @@ class PostApplyService {
     final headers = {'Content-type': 'application/json'};
 
     final data = {
-      'userProfile': model.userProfile,
+      'applyUserProfile': model.userProfile,
       'project': model.project,
     };
 
@@ -27,7 +27,7 @@ class PostApplyService {
     );
 
     final response = await service.post(
-      '/api/applied/',
+      '/api/apply/',
       options: options,
       data: data,
     );

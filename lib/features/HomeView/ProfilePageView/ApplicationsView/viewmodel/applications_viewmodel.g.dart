@@ -13,13 +13,13 @@ mixin _$ApplicationsViewModel on _ApplicationsViewModelBase, Store {
       Atom(name: '_ApplicationsViewModelBase.applicationsList');
 
   @override
-  List<ApplicationsModel> get applicationsList {
+  List<AppliedModel> get applicationsList {
     _$applicationsListAtom.reportRead();
     return super.applicationsList;
   }
 
   @override
-  set applicationsList(List<ApplicationsModel> value) {
+  set applicationsList(List<AppliedModel> value) {
     _$applicationsListAtom.reportWrite(value, super.applicationsList, () {
       super.applicationsList = value;
     });
@@ -29,7 +29,7 @@ mixin _$ApplicationsViewModel on _ApplicationsViewModelBase, Store {
       AsyncAction('_ApplicationsViewModelBase.fetchMyApplications');
 
   @override
-  Future<List<ApplicationsModel>> fetchMyApplications() {
+  Future<List<AppliedModel>> fetchMyApplications() {
     return _$fetchMyApplicationsAsyncAction
         .run(() => super.fetchMyApplications());
   }

@@ -1,21 +1,25 @@
 import 'package:json_annotation/json_annotation.dart';
 
-part 'applications_model.g.dart';
+part 'my_projects_details_model.g.dart';
 
 @JsonSerializable()
-class AppliedModel {
+class MyProjectsDetailsModel {
   int? id;
   ApplyUserProfile? applyUserProfile;
   Project? project;
 
-  AppliedModel({this.id, this.applyUserProfile, this.project});
+  MyProjectsDetailsModel({
+    this.id,
+    this.applyUserProfile,
+    this.project,
+  });
 
-  factory AppliedModel.fromJson(Map<String, dynamic> json) {
-    return _$AppliedModelFromJson(json);
+  factory MyProjectsDetailsModel.fromJson(Map<String, dynamic> json) {
+    return _$MyProjectsDetailsModelFromJson(json);
   }
 
   Map<String, dynamic> toJson() {
-    return _$AppliedModelToJson(this);
+    return _$MyProjectsDetailsModelToJson(this);
   }
 }
 
@@ -29,14 +33,15 @@ class ApplyUserProfile {
   String? faculty;
   String? city;
 
-  ApplyUserProfile(
-      {this.id,
-      this.email,
-      this.first_name,
-      this.last_name,
-      this.university,
-      this.faculty,
-      this.city});
+  ApplyUserProfile({
+    this.id,
+    this.email,
+    this.first_name,
+    this.last_name,
+    this.university,
+    this.faculty,
+    this.city,
+  });
 
   factory ApplyUserProfile.fromJson(Map<String, dynamic> json) {
     return _$ApplyUserProfileFromJson(json);
@@ -50,7 +55,7 @@ class ApplyUserProfile {
 @JsonSerializable()
 class Project {
   int? id;
-  UserProfile? userProfile;
+  ApplyUserProfile? userProfile;
   String? title;
   String? subtitle;
   String? desc;
@@ -86,14 +91,15 @@ class UserProfile {
   String? faculty;
   String? city;
 
-  UserProfile(
-      {this.id,
-      this.email,
-      this.first_name,
-      this.last_name,
-      this.university,
-      this.faculty,
-      this.city});
+  UserProfile({
+    this.id,
+    this.email,
+    this.first_name,
+    this.last_name,
+    this.university,
+    this.faculty,
+    this.city,
+  });
 
   factory UserProfile.fromJson(Map<String, dynamic> json) {
     return _$UserProfileFromJson(json);

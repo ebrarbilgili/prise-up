@@ -53,7 +53,7 @@ class ApplicationsView extends StatelessWidget {
     );
   }
 
-  Card buildCard(ApplicationsModel data, BuildContext context) {
+  Card buildCard(AppliedModel data, BuildContext context) {
     return Card(
       child: ListTile(
         title: buildProjectTitle(data, context),
@@ -63,9 +63,10 @@ class ApplicationsView extends StatelessWidget {
     );
   }
 
-  TextButton buildDetailsButton(ApplicationsModel data, BuildContext context) {
+  TextButton buildDetailsButton(AppliedModel data, BuildContext context) {
     return TextButton(
       onPressed: () {
+        // print(SharedPreferencesConstant.instance.getStringValue('id'));
         context.navigation.push(MaterialPageRoute(
           builder: (context) => ApplicationsDetailsView(model: data),
         ));
@@ -74,7 +75,7 @@ class ApplicationsView extends StatelessWidget {
     );
   }
 
-  Column buildCardSubColumn(ApplicationsModel data, BuildContext context) {
+  Column buildCardSubColumn(AppliedModel data, BuildContext context) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -86,28 +87,28 @@ class ApplicationsView extends StatelessWidget {
     );
   }
 
-  AutoSizeText buildFullname(ApplicationsModel data, BuildContext context) {
+  AutoSizeText buildFullname(AppliedModel data, BuildContext context) {
     return AutoSizeText(
-      '${data.project!.userProfile!.firstName} ${data.project!.userProfile!.lastName}',
+      '${data.project!.userProfile!.first_name} ${data.project!.userProfile!.last_name}',
       style: context.textTheme.bodyText1!.copyWith(fontWeight: FontWeight.w500),
     );
   }
 
-  AutoSizeText buildUniversity(ApplicationsModel data, BuildContext context) {
+  AutoSizeText buildUniversity(AppliedModel data, BuildContext context) {
     return AutoSizeText(
       '${data.project!.university}',
       style: context.textTheme.bodyText1!.copyWith(fontWeight: FontWeight.w500),
     );
   }
 
-  AutoSizeText buildSubtitle(ApplicationsModel data, BuildContext context) {
+  AutoSizeText buildSubtitle(AppliedModel data, BuildContext context) {
     return AutoSizeText(
       '${data.project!.subtitle}',
       style: context.textTheme.bodyText1!.copyWith(fontWeight: FontWeight.w500),
     );
   }
 
-  AutoSizeText buildProjectTitle(ApplicationsModel data, BuildContext context) {
+  AutoSizeText buildProjectTitle(AppliedModel data, BuildContext context) {
     return AutoSizeText(
       '${data.project!.title}',
       style: context.textTheme.headline6!.copyWith(fontWeight: FontWeight.w600),

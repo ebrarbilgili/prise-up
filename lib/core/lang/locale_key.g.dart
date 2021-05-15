@@ -54,6 +54,9 @@ abstract class  LocaleKeys {
   static const home_profile_my_applications = 'home.profile.my_applications';
   static const home_profile_logout = 'home.profile.logout';
   static const home_profile = 'home.profile';
+  static const home_my_projects_my_projects = 'home.my_projects.my_projects';
+  static const home_my_projects_project_list_empty = 'home.my_projects.project_list_empty';
+  static const home_my_projects = 'home.my_projects';
   static const home = 'home';
 
 }

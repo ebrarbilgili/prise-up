@@ -60,6 +60,10 @@
                 "appliance_list_empty": "Maalesef henüz bir başvurunuz yok..."
             },
             "logout": "Çıkış Yap"
+        },
+        "my_projects": {
+            "my_projects": "Projelerim",
+            "project_list_empty": "Maalesef henüz başvuran kimse yok..."
         }
     }
 }
