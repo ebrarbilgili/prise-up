@@ -1,9 +1,9 @@
-import 'dart:convert';
 import 'dart:io';
 
 import 'package:dio/dio.dart';
-import 'package:teammate/core/constants/shared/shared_prefs_constant.dart';
-import 'package:teammate/features/UserProfileView/model/user_profile_model.dart';
+
+import '../../../core/constants/shared/shared_prefs_constant.dart';
+import '../model/user_profile_model.dart';
 
 class UserProfileService {
   final Dio service;

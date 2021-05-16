@@ -2,15 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:kartal/kartal.dart';
 import 'package:lottie/lottie.dart';
 import 'package:provider/provider.dart';
-import 'package:teammate/core/constants/app.dart';
-import 'package:teammate/core/constants/provider/cache_provider.dart';
-import 'package:teammate/core/constants/widget/ProgressIndicator/circular_progress_indicator.dart';
-import 'package:teammate/core/extensions/locale_extensions.dart';
-import 'package:teammate/core/lang/locale_key.g.dart';
-import 'package:teammate/core/widgets/AlertDialog/alert_dialog_widget.dart';
-import 'package:teammate/core/widgets/LocaleText/locale_text.dart';
 
-import 'package:teammate/features/HomeView/ProfilePageView/CreateProjectView/viewmodel/create_project_viewmodel.dart';
+import '../../../../../../core/constants/app.dart';
+import '../../../../../../core/constants/provider/cache_provider.dart';
+import '../../../../../../core/constants/widget/ProgressIndicator/circular_progress_indicator.dart';
+import '../../../../../../core/extensions/locale_extensions.dart';
+import '../../../../../../core/lang/locale_key.g.dart';
+import '../../../../../../core/widgets/AlertDialog/alert_dialog_widget.dart';
+import '../../../../../../core/widgets/LocaleText/locale_text.dart';
+import '../../viewmodel/create_project_viewmodel.dart';
 
 class CreateProjectButton extends StatefulWidget {
   CreateProjectButton({

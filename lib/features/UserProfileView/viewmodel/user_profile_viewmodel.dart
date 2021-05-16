@@ -1,8 +1,8 @@
-import 'package:flutter/material.dart';
 import 'package:mobx/mobx.dart';
-import 'package:teammate/core/base/viewmodel/base_viewmodel.dart';
-import 'package:teammate/features/UserProfileView/model/user_profile_model.dart';
-import 'package:teammate/features/UserProfileView/service/user_profile_service.dart';
+
+import '../model/user_profile_model.dart';
+import '../service/user_profile_service.dart';
+
 part 'user_profile_viewmodel.g.dart';
 
 class UserProfileViewModel = _UserProfileViewModelBase

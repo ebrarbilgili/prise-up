@@ -2,15 +2,15 @@ import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:kartal/kartal.dart';
 
-import 'package:teammate/core/constants/app.dart';
-import 'package:teammate/core/constants/widget/TextField/text_field_decoration.dart';
-import 'package:teammate/core/extensions/locale_extensions.dart';
-import 'package:teammate/core/lang/locale_key.g.dart';
-import 'package:teammate/core/widgets/LocaleText/locale_text.dart';
-import 'package:teammate/features/HomeView/ProfilePageView/MyProjectsView/MyProjectsDetailsView/EditProjectView/constants/widget/edit_button.dart';
-import 'package:teammate/features/HomeView/ProfilePageView/MyProjectsView/MyProjectsDetailsView/EditProjectView/viewmodel/edit_project_viewmodel.dart';
-import 'package:teammate/features/HomeView/ProfilePageView/MyProjectsView/MyProjectsDetailsView/service/my_projects_details_service.dart';
-import 'package:teammate/features/HomeView/ProfilePageView/MyProjectsView/model/my_projects_model.dart';
+import '../../../../../../../core/constants/app.dart';
+import '../../../../../../../core/constants/widget/TextField/text_field_decoration.dart';
+import '../../../../../../../core/extensions/locale_extensions.dart';
+import '../../../../../../../core/lang/locale_key.g.dart';
+import '../../../../../../../core/widgets/LocaleText/locale_text.dart';
+import '../constants/widget/edit_button.dart';
+import '../viewmodel/edit_project_viewmodel.dart';
+import '../../service/my_projects_details_service.dart';
+import '../../../model/my_projects_model.dart';
 
 class EditProjectView extends StatelessWidget {
   EditProjectView({

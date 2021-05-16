@@ -1,10 +1,10 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:kartal/kartal.dart';
-import 'package:teammate/core/extensions/locale_extensions.dart';
-import 'package:teammate/core/lang/locale_key.g.dart';
 
-import 'package:teammate/features/HomeView/ProfilePageView/ApplicationsView/model/applications_model.dart';
+import '../../../../../../core/extensions/locale_extensions.dart';
+import '../../../../../../core/lang/locale_key.g.dart';
+import '../../model/applications_model.dart';
 
 class ApplicationsDetailsView extends StatelessWidget {
   const ApplicationsDetailsView({

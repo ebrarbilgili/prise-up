@@ -3,15 +3,15 @@ import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:kartal/kartal.dart';
-import 'package:teammate/core/constants/app.dart';
-import 'package:teammate/core/lang/locale_key.g.dart';
-import 'package:teammate/core/widgets/LocaleText/locale_text.dart';
-import 'package:teammate/features/HomeView/ProfilePageView/MyProjectsView/MyProjectsDetailsView/model/my_projects_details_model.dart';
-import 'package:teammate/features/HomeView/ProfilePageView/MyProjectsView/MyProjectsDetailsView/service/my_projects_details_service.dart';
-import 'package:teammate/features/HomeView/ProfilePageView/MyProjectsView/MyProjectsDetailsView/viewmodel/my_projects_details_viewmodel.dart';
 
-import 'package:teammate/features/HomeView/ProfilePageView/MyProjectsView/model/my_projects_model.dart';
-import 'package:teammate/features/UserProfileView/view/user_profile_view.dart';
+import '../../../../../../../core/constants/app.dart';
+import '../../../../../../../core/lang/locale_key.g.dart';
+import '../../../../../../../core/widgets/LocaleText/locale_text.dart';
+import '../../../../../../UserProfileView/view/user_profile_view.dart';
+import '../../../model/my_projects_model.dart';
+import '../../model/my_projects_details_model.dart';
+import '../../service/my_projects_details_service.dart';
+import '../../viewmodel/my_projects_details_viewmodel.dart';
 
 class AppliancesList extends StatefulWidget {
   AppliancesList({

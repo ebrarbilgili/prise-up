@@ -1,9 +1,9 @@
-import 'dart:convert';
 import 'dart:io';
 
 import 'package:dio/dio.dart';
-import 'package:teammate/core/constants/shared/shared_prefs_constant.dart';
-import 'package:teammate/features/HomeView/ProfilePageView/ApplicationsView/model/applications_model.dart';
+
+import '../../../../../core/constants/shared/shared_prefs_constant.dart';
+import '../model/applications_model.dart';
 
 class ApplicationsService {
   final Dio service;

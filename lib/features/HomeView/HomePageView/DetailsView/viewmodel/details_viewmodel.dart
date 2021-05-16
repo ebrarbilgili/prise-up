@@ -1,6 +1,7 @@
 import 'package:mobx/mobx.dart';
-import 'package:teammate/features/HomeView/HomePageView/DetailsView/model/details_model.dart';
-import 'package:teammate/features/HomeView/HomePageView/DetailsView/service/details_service.dart';
+
+import '../model/details_model.dart';
+import '../service/details_service.dart';
 
 part 'details_viewmodel.g.dart';
 

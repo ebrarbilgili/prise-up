@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:kartal/kartal.dart';
 import 'package:provider/provider.dart';
-import 'package:teammate/core/widgets/LocaleText/locale_text.dart';
-import 'package:teammate/features/HomeView/ProfilePageView/ApplicationsView/view/applications_view.dart';
-import 'package:teammate/features/HomeView/ProfilePageView/CreateProjectView/view/create_project_view.dart';
-import 'package:teammate/features/HomeView/ProfilePageView/MyProjectsView/view/my_projects_view.dart';
-import 'package:teammate/features/UserProfileView/view/user_profile_view.dart';
 
 import '../../../../core/constants/provider/cache_provider.dart';
 import '../../../../core/lang/locale_key.g.dart';
+import '../../../../core/widgets/LocaleText/locale_text.dart';
 import '../../../LoginView/view/login_view.dart';
+import '../../../UserProfileView/view/user_profile_view.dart';
+import '../ApplicationsView/view/applications_view.dart';
+import '../CreateProjectView/view/create_project_view.dart';
+import '../MyProjectsView/view/my_projects_view.dart';
 
 class ProfilePageView extends StatelessWidget {
   const ProfilePageView({Key? key}) : super(key: key);

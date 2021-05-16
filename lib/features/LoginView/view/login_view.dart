@@ -2,9 +2,9 @@ import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:kartal/kartal.dart';
-import 'package:teammate/core/constants/widget/TextField/text_field_decoration.dart';
 
 import '../../../core/constants/app.dart';
+import '../../../core/constants/widget/TextField/text_field_decoration.dart';
 import '../../../core/extensions/locale_extensions.dart';
 import '../../../core/lang/locale_key.g.dart';
 import '../../../core/widgets/LocaleText/locale_text.dart';
@@ -59,7 +59,7 @@ class LoginView extends StatelessWidget {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Image.network(AppConstants.LOGO),
+          Image.asset(AppConstants.LOGO),
         ],
       ),
     );

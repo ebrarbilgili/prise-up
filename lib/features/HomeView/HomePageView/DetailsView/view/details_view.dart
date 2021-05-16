@@ -4,16 +4,16 @@ import 'package:flutter/material.dart';
 import 'package:kartal/kartal.dart';
 import 'package:lottie/lottie.dart';
 import 'package:provider/provider.dart';
-import 'package:teammate/core/constants/provider/cache_provider.dart';
-import 'package:teammate/features/HomeView/HomePageView/DetailsView/service/details_service.dart';
 
 import '../../../../../core/constants/app.dart';
+import '../../../../../core/constants/provider/cache_provider.dart';
 import '../../../../../core/constants/widget/ProgressIndicator/circular_progress_indicator.dart';
 import '../../../../../core/extensions/locale_extensions.dart';
 import '../../../../../core/lang/locale_key.g.dart';
 import '../../../../../core/widgets/AlertDialog/alert_dialog_widget.dart';
 import '../../../../../core/widgets/LocaleText/locale_text.dart';
 import '../../model/home_page_model.dart';
+import '../service/details_service.dart';
 import '../viewmodel/details_viewmodel.dart';
 
 class DetailsView extends StatelessWidget {

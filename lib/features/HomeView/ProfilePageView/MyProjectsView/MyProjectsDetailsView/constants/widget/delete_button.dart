@@ -4,15 +4,15 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:kartal/kartal.dart';
 import 'package:lottie/lottie.dart';
 
-import 'package:teammate/core/constants/app.dart';
-import 'package:teammate/core/constants/widget/ProgressIndicator/circular_progress_indicator.dart';
-import 'package:teammate/core/extensions/locale_extensions.dart';
-import 'package:teammate/core/lang/locale_key.g.dart';
-import 'package:teammate/core/widgets/AlertDialog/alert_dialog_widget.dart';
-import 'package:teammate/core/widgets/LocaleText/locale_text.dart';
-import 'package:teammate/features/HomeView/ProfilePageView/MyProjectsView/MyProjectsDetailsView/service/my_projects_details_service.dart';
-import 'package:teammate/features/HomeView/ProfilePageView/MyProjectsView/MyProjectsDetailsView/viewmodel/my_projects_details_viewmodel.dart';
-import 'package:teammate/features/HomeView/ProfilePageView/MyProjectsView/model/my_projects_model.dart';
+import '../../../../../../../core/constants/app.dart';
+import '../../../../../../../core/constants/widget/ProgressIndicator/circular_progress_indicator.dart';
+import '../../../../../../../core/extensions/locale_extensions.dart';
+import '../../../../../../../core/lang/locale_key.g.dart';
+import '../../../../../../../core/widgets/AlertDialog/alert_dialog_widget.dart';
+import '../../../../../../../core/widgets/LocaleText/locale_text.dart';
+import '../../../model/my_projects_model.dart';
+import '../../service/my_projects_details_service.dart';
+import '../../viewmodel/my_projects_details_viewmodel.dart';
 
 class DeleteButtonWidget extends StatefulWidget {
   DeleteButtonWidget({

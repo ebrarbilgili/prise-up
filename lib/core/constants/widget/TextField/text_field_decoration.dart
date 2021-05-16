@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:kartal/kartal.dart';
-import 'package:teammate/core/extensions/locale_extensions.dart';
-import 'package:teammate/core/lang/locale_key.g.dart';
+import '../../../extensions/locale_extensions.dart';
+import '../../../lang/locale_key.g.dart';
 
 class TextFieldWidget extends StatelessWidget {
   TextFieldWidget({

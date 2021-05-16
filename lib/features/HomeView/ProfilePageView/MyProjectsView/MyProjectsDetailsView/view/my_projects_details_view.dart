@@ -2,12 +2,13 @@ import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:kartal/kartal.dart';
-import 'package:teammate/core/lang/locale_key.g.dart';
-import 'package:teammate/core/widgets/LocaleText/locale_text.dart';
-import 'package:teammate/features/HomeView/ProfilePageView/MyProjectsView/MyProjectsDetailsView/EditProjectView/view/edit_project_view.dart';
-import 'package:teammate/features/HomeView/ProfilePageView/MyProjectsView/MyProjectsDetailsView/constants/widget/delete_button.dart';
-import 'package:teammate/features/HomeView/ProfilePageView/MyProjectsView/MyProjectsDetailsView/constants/widget/appliances_list.dart';
-import 'package:teammate/features/HomeView/ProfilePageView/MyProjectsView/model/my_projects_model.dart';
+
+import '../../../../../../core/lang/locale_key.g.dart';
+import '../../../../../../core/widgets/LocaleText/locale_text.dart';
+import '../../model/my_projects_model.dart';
+import '../EditProjectView/view/edit_project_view.dart';
+import '../constants/widget/appliances_list.dart';
+import '../constants/widget/delete_button.dart';
 
 class MyProjectsDetailsView extends StatelessWidget {
   MyProjectsDetailsView({

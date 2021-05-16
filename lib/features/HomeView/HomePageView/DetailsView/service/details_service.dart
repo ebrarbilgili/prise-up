@@ -1,7 +1,8 @@
 import 'dart:io';
 
 import 'package:dio/dio.dart';
-import 'package:teammate/features/HomeView/HomePageView/DetailsView/model/details_model.dart';
+
+import '../model/details_model.dart';
 
 class PostApplyService {
   final Dio service;

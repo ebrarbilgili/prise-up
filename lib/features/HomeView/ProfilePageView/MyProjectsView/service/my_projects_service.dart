@@ -1,8 +1,9 @@
 import 'package:dio/dio.dart';
-import 'package:teammate/core/constants/app.dart';
-import 'package:teammate/core/constants/shared/shared_prefs_constant.dart';
-import 'package:teammate/features/HomeView/ProfilePageView/MyProjectsView/model/my_projects_model.dart';
 import 'package:vexana/vexana.dart';
+
+import '../../../../../core/constants/app.dart';
+import '../../../../../core/constants/shared/shared_prefs_constant.dart';
+import '../model/my_projects_model.dart';
 
 class MyProjectsService {
   INetworkManager manager = NetworkManager(

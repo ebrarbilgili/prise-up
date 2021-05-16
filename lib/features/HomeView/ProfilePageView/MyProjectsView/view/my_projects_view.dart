@@ -2,12 +2,13 @@ import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:kartal/kartal.dart';
-import 'package:teammate/core/lang/locale_key.g.dart';
-import 'package:teammate/core/widgets/LocaleText/locale_text.dart';
-import 'package:teammate/features/HomeView/ProfilePageView/MyProjectsView/MyProjectsDetailsView/view/my_projects_details_view.dart';
-import 'package:teammate/features/HomeView/ProfilePageView/MyProjectsView/model/my_projects_model.dart';
-import 'package:teammate/features/HomeView/ProfilePageView/MyProjectsView/service/my_projects_service.dart';
-import 'package:teammate/features/HomeView/ProfilePageView/MyProjectsView/viewmodel/my_projects_viewmodel.dart';
+
+import '../../../../../core/lang/locale_key.g.dart';
+import '../../../../../core/widgets/LocaleText/locale_text.dart';
+import '../MyProjectsDetailsView/view/my_projects_details_view.dart';
+import '../model/my_projects_model.dart';
+import '../service/my_projects_service.dart';
+import '../viewmodel/my_projects_viewmodel.dart';
 
 class MyProjectsView extends StatelessWidget {
   MyProjectsView({Key? key}) : super(key: key);

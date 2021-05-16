@@ -3,13 +3,14 @@ import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:kartal/kartal.dart';
-import 'package:teammate/core/constants/app.dart';
-import 'package:teammate/core/lang/locale_key.g.dart';
-import 'package:teammate/core/widgets/LocaleText/locale_text.dart';
-import 'package:teammate/features/HomeView/ProfilePageView/ApplicationsView/ApplicationsDetailsView/view/applications_details_view.dart';
-import 'package:teammate/features/HomeView/ProfilePageView/ApplicationsView/model/applications_model.dart';
-import 'package:teammate/features/HomeView/ProfilePageView/ApplicationsView/service/applications_service.dart';
-import 'package:teammate/features/HomeView/ProfilePageView/ApplicationsView/viewmodel/applications_viewmodel.dart';
+
+import '../../../../../core/constants/app.dart';
+import '../../../../../core/lang/locale_key.g.dart';
+import '../../../../../core/widgets/LocaleText/locale_text.dart';
+import '../ApplicationsDetailsView/view/applications_details_view.dart';
+import '../model/applications_model.dart';
+import '../service/applications_service.dart';
+import '../viewmodel/applications_viewmodel.dart';
 
 class ApplicationsView extends StatelessWidget {
   ApplicationsView({Key? key}) : super(key: key);

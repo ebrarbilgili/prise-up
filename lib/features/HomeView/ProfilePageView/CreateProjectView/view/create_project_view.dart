@@ -1,14 +1,15 @@
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:kartal/kartal.dart';
-import 'package:teammate/core/constants/app.dart';
-import 'package:teammate/core/constants/widget/TextField/text_field_decoration.dart';
-import 'package:teammate/core/extensions/locale_extensions.dart';
-import 'package:teammate/core/lang/locale_key.g.dart';
-import 'package:teammate/core/widgets/LocaleText/locale_text.dart';
-import 'package:teammate/features/HomeView/ProfilePageView/CreateProjectView/constants/widget/create_button.dart';
-import 'package:teammate/features/HomeView/ProfilePageView/CreateProjectView/service/create_project_service.dart';
-import 'package:teammate/features/HomeView/ProfilePageView/CreateProjectView/viewmodel/create_project_viewmodel.dart';
+
+import '../../../../../core/constants/app.dart';
+import '../../../../../core/constants/widget/TextField/text_field_decoration.dart';
+import '../../../../../core/extensions/locale_extensions.dart';
+import '../../../../../core/lang/locale_key.g.dart';
+import '../../../../../core/widgets/LocaleText/locale_text.dart';
+import '../constants/widget/create_button.dart';
+import '../service/create_project_service.dart';
+import '../viewmodel/create_project_viewmodel.dart';
 
 class CreateProjectView extends StatelessWidget {
   CreateProjectView({Key? key}) : super(key: key);

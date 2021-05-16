@@ -1,7 +1,8 @@
 import 'dart:io';
 
 import 'package:dio/dio.dart';
-import 'package:teammate/features/HomeView/ProfilePageView/CreateProjectView/model/create_project_model.dart';
+
+import '../model/create_project_model.dart';
 
 class CreateProjectService {
   final Dio service;

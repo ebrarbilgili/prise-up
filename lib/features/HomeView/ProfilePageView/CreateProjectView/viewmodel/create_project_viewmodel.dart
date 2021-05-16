@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:mobx/mobx.dart';
-import 'package:teammate/features/HomeView/ProfilePageView/CreateProjectView/model/create_project_model.dart';
-import 'package:teammate/features/HomeView/ProfilePageView/CreateProjectView/service/create_project_service.dart';
+
+import '../model/create_project_model.dart';
+import '../service/create_project_service.dart';
+
 part 'create_project_viewmodel.g.dart';
 
 class CreateProjectViewModel = _CreateProjectViewModelBase
