@@ -19,6 +19,9 @@ class RegisterUserService {
       'university': model.university,
       'faculty': model.faculty,
       'city': model.city,
+      'twitter': model.twitter,
+      'linkedIn': model.linkedin,
+      'phone': model.phone,
       'password': model.password,
       'password2': model.password2,
     };

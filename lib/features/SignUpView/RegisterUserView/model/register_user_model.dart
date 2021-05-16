@@ -10,6 +10,9 @@ class PostRegisterUserModel {
   String? university;
   String? faculty;
   String? city;
+  String? twitter;
+  String? linkedin;
+  String? phone;
   String? password;
   String? password2;
 
@@ -20,6 +23,9 @@ class PostRegisterUserModel {
     this.university,
     this.faculty,
     this.city,
+    this.twitter,
+    this.linkedin,
+    this.phone,
     this.password,
     this.password2,
   });

@@ -20,6 +20,7 @@
         "university": "Üniversite",
         "faculty": "Bölüm",
         "city": "Şehir",
+        "phone": "Telefon",
         "email": "E-mail",
         "password": "Şifre",
         "password2": "Şifreyi Doğrula",
@@ -63,7 +64,15 @@
         },
         "my_projects": {
             "my_projects": "Projelerim",
-            "project_list_empty": "Maalesef henüz başvuran kimse yok..."
+            "project_list_empty": "Maalesef henüz başvuran kimse yok...",
+            "edit": "Düzenle",
+            "edited": "Düzenlendi",
+            "delete": "Sil",
+            "deleted": "Silindi"
+        },
+        "user_profile": {
+            "my_profile": "Profilim",
+            "user_profile": "Kullanıcı Profili"
         }
     }
 }

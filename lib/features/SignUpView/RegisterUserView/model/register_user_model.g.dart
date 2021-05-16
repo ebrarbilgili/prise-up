@@ -15,6 +15,9 @@ PostRegisterUserModel _$PostRegisterUserModelFromJson(
     university: json['university'] as String?,
     faculty: json['faculty'] as String?,
     city: json['city'] as String?,
+    twitter: json['twitter'] as String?,
+    linkedin: json['linkedin'] as String?,
+    phone: json['phone'] as String?,
     password: json['password'] as String?,
     password2: json['password2'] as String?,
   );
@@ -29,6 +32,9 @@ Map<String, dynamic> _$PostRegisterUserModelToJson(
       'university': instance.university,
       'faculty': instance.faculty,
       'city': instance.city,
+      'twitter': instance.twitter,
+      'linkedin': instance.linkedin,
+      'phone': instance.phone,
       'password': instance.password,
       'password2': instance.password2,
     };

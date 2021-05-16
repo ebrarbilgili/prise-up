@@ -5,6 +5,7 @@ import 'package:teammate/core/widgets/LocaleText/locale_text.dart';
 import 'package:teammate/features/HomeView/ProfilePageView/ApplicationsView/view/applications_view.dart';
 import 'package:teammate/features/HomeView/ProfilePageView/CreateProjectView/view/create_project_view.dart';
 import 'package:teammate/features/HomeView/ProfilePageView/MyProjectsView/view/my_projects_view.dart';
+import 'package:teammate/features/UserProfileView/view/user_profile_view.dart';
 
 import '../../../../core/constants/provider/cache_provider.dart';
 import '../../../../core/lang/locale_key.g.dart';
@@ -18,11 +19,34 @@ class ProfilePageView extends StatelessWidget {
     return ListView(
       physics: NeverScrollableScrollPhysics(),
       children: [
+        buildMyProfileButton(context),
         buildCreateProjectButton(context),
         buildMyProjectsView(context),
         buildApplicationsButton(context),
         buildLogoutButton(context),
       ],
+    );
+  }
+
+  Container buildMyProfileButton(BuildContext context) {
+    return Container(
+      decoration: buildButtonBorderDecoration(context),
+      child: TextButton(
+        onPressed: () {
+          context.navigation.push(
+            MaterialPageRoute(
+              builder: (context) => UserProfileView(),
+            ),
+          );
+        },
+        child: Align(
+          alignment: Alignment.centerLeft,
+          child: LocaleText(
+            text: LocaleKeys.home_user_profile_my_profile,
+            style: context.textTheme.headline6,
+          ),
+        ),
+      ),
     );
   }
 

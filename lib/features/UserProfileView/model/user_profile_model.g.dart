@@ -1,34 +1,36 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'sign_up_model.dart';
+part of 'user_profile_model.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 
-SignUpModel _$SignUpModelFromJson(Map<String, dynamic> json) {
-  return SignUpModel(
+UserProfileModel _$UserProfileModelFromJson(Map<String, dynamic> json) {
+  return UserProfileModel(
+    id: json['id'] as int?,
+    email: json['email'] as String?,
     first_name: json['first_name'] as String?,
     last_name: json['last_name'] as String?,
     university: json['university'] as String?,
     faculty: json['faculty'] as String?,
     city: json['city'] as String?,
-    twitter: json['twitter'] as String?,
     linkedIn: json['linkedIn'] as String?,
+    twitter: json['twitter'] as String?,
     phone: json['phone'] as String?,
-    user: json['user'] as int?,
   );
 }
 
-Map<String, dynamic> _$SignUpModelToJson(SignUpModel instance) =>
+Map<String, dynamic> _$UserProfileModelToJson(UserProfileModel instance) =>
     <String, dynamic>{
+      'id': instance.id,
+      'email': instance.email,
       'first_name': instance.first_name,
       'last_name': instance.last_name,
       'university': instance.university,
       'faculty': instance.faculty,
       'city': instance.city,
-      'twitter': instance.twitter,
       'linkedIn': instance.linkedIn,
+      'twitter': instance.twitter,
       'phone': instance.phone,
-      'user': instance.user,
     };

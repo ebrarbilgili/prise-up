@@ -17,6 +17,10 @@ class SignUpService {
       'last_name': model.last_name,
       'university': model.university,
       'faculty': model.faculty,
+      'city': model.city,
+      'twitter': model.twitter,
+      'linkedIn': model.linkedIn,
+      'phone': model.phone,
       'user': model.user
     };
 

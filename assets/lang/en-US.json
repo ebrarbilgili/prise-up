@@ -20,6 +20,7 @@
         "university": "University",
         "faculty": "Faculty",
         "city": "City",
+        "phone": "Phone",
         "email": "E-mail",
         "password": "Password",
         "password2": "Confirm Password",
@@ -63,7 +64,15 @@
         },
         "my_projects": {
             "my_projects": "My Projects",
-            "project_list_empty": "Unfortunately, There is no applicant yet..."
+            "project_list_empty": "Unfortunately, There is no applicant yet...",
+            "edit": "Edit",
+            "edited": "Edited",
+            "delete": "Delete",
+            "deleted": "Deleted"
+        },
+        "user_profile": {
+            "my_profile": "My Profile",
+            "user_profile": "User Profile"
         }
     }
 }

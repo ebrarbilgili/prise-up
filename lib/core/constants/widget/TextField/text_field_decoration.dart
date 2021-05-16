@@ -9,12 +9,18 @@ class TextFieldWidget extends StatelessWidget {
     Key? key,
     this.iconData,
     this.hintText,
+    this.maxLength,
+    this.maxLines,
+    this.obsecureText,
     required this.controller,
   }) : super(key: key);
 
   final TextEditingController controller;
   final IconData? iconData;
   final String? hintText;
+  final int? maxLength;
+  final int? maxLines;
+  final bool? obsecureText;
 
   @override
   Widget build(BuildContext context) {
@@ -22,11 +28,10 @@ class TextFieldWidget extends StatelessWidget {
       padding: context.paddingLow,
       child: TextFormField(
         controller: controller,
-        decoration: buildTextFieldDecoration(
-          context,
-          hintText,
-          iconData,
-        ),
+        decoration: buildTextFieldDecoration(context, hintText, iconData),
+        maxLines: maxLines,
+        maxLength: maxLength,
+        obscureText: obsecureText ?? false,
         validator: (value) {
           if (value == null || value.isEmpty) {
             return LocaleKeys.sign_up_validation.locale;

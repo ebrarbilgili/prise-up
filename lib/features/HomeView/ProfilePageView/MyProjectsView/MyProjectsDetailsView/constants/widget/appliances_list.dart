@@ -11,6 +11,7 @@ import 'package:teammate/features/HomeView/ProfilePageView/MyProjectsView/MyProj
 import 'package:teammate/features/HomeView/ProfilePageView/MyProjectsView/MyProjectsDetailsView/viewmodel/my_projects_details_viewmodel.dart';
 
 import 'package:teammate/features/HomeView/ProfilePageView/MyProjectsView/model/my_projects_model.dart';
+import 'package:teammate/features/UserProfileView/view/user_profile_view.dart';
 
 class AppliancesList extends StatefulWidget {
   AppliancesList({
@@ -82,6 +83,18 @@ class _AppliancesListState extends State<AppliancesList> {
           child: ListTile(
             title: buildTitle(data, context),
             subtitle: buildCardSubColumn(data, context),
+            trailing: TextButton(
+              onPressed: () {
+                context.navigation.push(
+                  MaterialPageRoute(
+                    builder: (context) => UserProfileView(
+                      model: data,
+                    ),
+                  ),
+                );
+              },
+              child: LocaleText(text: LocaleKeys.home_home_detail),
+            ),
           ),
         );
       },

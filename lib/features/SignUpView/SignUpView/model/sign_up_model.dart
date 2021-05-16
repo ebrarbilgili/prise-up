@@ -8,6 +8,10 @@ class SignUpModel {
   String? last_name;
   String? university;
   String? faculty;
+  String? city;
+  String? twitter;
+  String? linkedIn;
+  String? phone;
   int? user;
 
   SignUpModel({
@@ -15,6 +19,10 @@ class SignUpModel {
     this.last_name,
     this.university,
     this.faculty,
+    this.city,
+    this.twitter,
+    this.linkedIn,
+    this.phone,
     this.user,
   });
 

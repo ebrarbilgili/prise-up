@@ -32,6 +32,9 @@ class ApplyUserProfile {
   String? university;
   String? faculty;
   String? city;
+  String? twitter;
+  String? linkedIn;
+  String? phone;
 
   ApplyUserProfile({
     this.id,
@@ -41,6 +44,9 @@ class ApplyUserProfile {
     this.university,
     this.faculty,
     this.city,
+    this.twitter,
+    this.linkedIn,
+    this.phone,
   });
 
   factory ApplyUserProfile.fromJson(Map<String, dynamic> json) {

@@ -33,6 +33,14 @@ mixin _$MyProjectsDetailsViewModel on _MyProjectsDetailsViewModelBase, Store {
     return _$fetchAppliancesAsyncAction.run(() => super.fetchAppliances());
   }
 
+  final _$deleteProjectAsyncAction =
+      AsyncAction('_MyProjectsDetailsViewModelBase.deleteProject');
+
+  @override
+  Future<dynamic> deleteProject(int projectID) {
+    return _$deleteProjectAsyncAction.run(() => super.deleteProject(projectID));
+  }
+
   final _$onRefreshAsyncAction =
       AsyncAction('_MyProjectsDetailsViewModelBase.onRefresh');
 

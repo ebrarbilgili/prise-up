@@ -44,6 +44,9 @@ class SignUpView extends StatelessWidget {
               buildUniversityField(context),
               buildFacultyField(context),
               buildCityField(context),
+              buildTwitterField(context),
+              buildLinkedinField(context),
+              buildPhoneField(context),
               SignUpButtonWidget(
                 viewModel: viewModel,
                 email: email,
@@ -53,6 +56,66 @@ class SignUpView extends StatelessWidget {
             ],
           ),
         ),
+      ),
+    );
+  }
+
+  Padding buildPhoneField(BuildContext context) {
+    return Padding(
+      padding: context.verticalPaddingLow,
+      child: TextFormField(
+        controller: viewModel.phoneController,
+        decoration: buildTextFieldDecoration(
+          context,
+          LocaleKeys.sign_up_phone.locale,
+          FontAwesomeIcons.phone,
+        ),
+        validator: (value) {
+          if (value == null || value.isEmpty) {
+            return LocaleKeys.sign_up_validation.locale;
+          }
+          return null;
+        },
+      ),
+    );
+  }
+
+  Padding buildLinkedinField(BuildContext context) {
+    return Padding(
+      padding: context.verticalPaddingLow,
+      child: TextFormField(
+        controller: viewModel.linkedinController,
+        decoration: buildTextFieldDecoration(
+          context,
+          'LinkedIn',
+          FontAwesomeIcons.linkedin,
+        ),
+        validator: (value) {
+          if (value == null || value.isEmpty) {
+            return LocaleKeys.sign_up_validation.locale;
+          }
+          return null;
+        },
+      ),
+    );
+  }
+
+  Padding buildTwitterField(BuildContext context) {
+    return Padding(
+      padding: context.verticalPaddingLow,
+      child: TextFormField(
+        controller: viewModel.twitterController,
+        decoration: buildTextFieldDecoration(
+          context,
+          'Twitter',
+          FontAwesomeIcons.twitter,
+        ),
+        validator: (value) {
+          if (value == null || value.isEmpty) {
+            return LocaleKeys.sign_up_validation.locale;
+          }
+          return null;
+        },
       ),
     );
   }

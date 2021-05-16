@@ -2,37 +2,12 @@ import 'dart:io';
 
 import 'package:dio/dio.dart';
 import 'package:teammate/features/HomeView/ProfilePageView/CreateProjectView/model/create_project_model.dart';
-import 'package:teammate/features/HomeView/ProfilePageView/MyProjectsView/MyProjectsDetailsView/model/my_projects_details_model.dart';
+import 'package:teammate/features/HomeView/ProfilePageView/MyProjectsView/MyProjectsDetailsView/EditProjectView/model/edit_project_model.dart';
 import 'package:teammate/features/HomeView/ProfilePageView/MyProjectsView/model/my_projects_model.dart';
 
-class MyProjectsDetailsService {
+class EditProjectService {
   final Dio service;
-  MyProjectsDetailsService({required this.service});
-
-  Future<List<MyProjectsDetailsModel>> fetchMyProjectsDetail(
-      int projectID) async {
-    final response = await service.get('/api/appliance/?project=$projectID');
-
-    if (response.statusCode == HttpStatus.ok) {
-      final data = response.data;
-
-      if (data is List) {
-        return data.map((e) => MyProjectsDetailsModel.fromJson(e)).toList();
-      }
-    }
-    return [];
-  }
-
-  Future deleteProject(int projectID) async {
-    final response = await service.delete('/api/projects/?id=$projectID');
-
-    if (response.statusCode == HttpStatus.noContent) {
-      print(true);
-      return response.data;
-    }
-    print(false);
-    return false;
-  }
+  EditProjectService({required this.service});
 
   Future editProject(MyProjectsModel model, int projectID) async {
     final headers = {'Content-type': 'application/json'};
@@ -57,12 +32,12 @@ class MyProjectsDetailsService {
     );
 
     final response = await service.put(
-      '/api/projects/?id=$projectID',
+      '/api/projects/?id=${model.id}',
       data: data,
       options: options,
     );
 
-    if (response.statusCode == HttpStatus.ok) {
+    if (response.statusCode == HttpStatus.created) {
       print(response.data);
       return response.data;
     } else if (response.statusCode == HttpStatus.unauthorized) {

@@ -20,6 +20,9 @@ abstract class _SignUpViewModelBase with Store {
   final universityController = TextEditingController();
   final facultyController = TextEditingController();
   final cityController = TextEditingController();
+  final twitterController = TextEditingController();
+  final linkedinController = TextEditingController();
+  final phoneController = TextEditingController();
 
   @action
   Future onPressedRegisterUser(
@@ -31,6 +34,9 @@ abstract class _SignUpViewModelBase with Store {
       university: universityController.text,
       faculty: facultyController.text,
       city: cityController.text,
+      twitter: twitterController.text,
+      linkedin: linkedinController.text,
+      phone: phoneController.text,
       password: password,
       password2: password2,
     ));

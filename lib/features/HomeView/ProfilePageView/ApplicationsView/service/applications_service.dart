@@ -1,3 +1,4 @@
+import 'dart:convert';
 import 'dart:io';
 
 import 'package:dio/dio.dart';
@@ -10,7 +11,7 @@ class ApplicationsService {
 
   Future<List<AppliedModel>> getMyApplications() async {
     final response = await service.get(
-        '/api/applied/?userProfile=${SharedPreferencesConstant.instance.getStringValue('id')}');
+        '/api/applied/?applyUserProfile=${SharedPreferencesConstant.instance.getStringValue('id')}');
 
     if (response.statusCode == HttpStatus.ok) {
       final data = response.data;
