@@ -29,14 +29,15 @@ class ApplyUserProfile {
   String? faculty;
   String? city;
 
-  ApplyUserProfile(
-      {this.id,
-      this.email,
-      this.first_name,
-      this.last_name,
-      this.university,
-      this.faculty,
-      this.city});
+  ApplyUserProfile({
+    this.id,
+    this.email,
+    this.first_name,
+    this.last_name,
+    this.university,
+    this.faculty,
+    this.city,
+  });
 
   factory ApplyUserProfile.fromJson(Map<String, dynamic> json) {
     return _$ApplyUserProfileFromJson(json);
@@ -85,15 +86,22 @@ class UserProfile {
   String? university;
   String? faculty;
   String? city;
+  String? twitter;
+  String? linkedIn;
+  String? phone;
 
-  UserProfile(
-      {this.id,
-      this.email,
-      this.first_name,
-      this.last_name,
-      this.university,
-      this.faculty,
-      this.city});
+  UserProfile({
+    this.id,
+    this.email,
+    this.first_name,
+    this.last_name,
+    this.university,
+    this.faculty,
+    this.city,
+    this.twitter,
+    this.linkedIn,
+    this.phone,
+  });
 
   factory UserProfile.fromJson(Map<String, dynamic> json) {
     return _$UserProfileFromJson(json);

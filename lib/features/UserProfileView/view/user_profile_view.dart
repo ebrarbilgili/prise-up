@@ -8,15 +8,24 @@ import 'package:kartal/kartal.dart';
 import '../../../core/constants/app.dart';
 import '../../../core/lang/locale_key.g.dart';
 import '../../../core/widgets/LocaleText/locale_text.dart';
+import '../../HomeView/HomePageView/model/home_page_model.dart';
+import '../../HomeView/ProfilePageView/ApplicationsView/model/applications_model.dart';
 import '../../HomeView/ProfilePageView/MyProjectsView/MyProjectsDetailsView/model/my_projects_details_model.dart';
 import '../model/user_profile_model.dart';
 import '../service/user_profile_service.dart';
 import '../viewmodel/user_profile_viewmodel.dart';
 
 class UserProfileView extends StatelessWidget {
-  UserProfileView({Key? key, this.model}) : super(key: key);
+  UserProfileView({
+    Key? key,
+    this.model,
+    this.getProjectModel,
+    this.appliedModel,
+  }) : super(key: key);
 
   final MyProjectsDetailsModel? model;
+  final GetProjectModel? getProjectModel;
+  final AppliedModel? appliedModel;
 
   final viewModel = UserProfileViewModel(
     service: UserProfileService(
@@ -56,10 +65,46 @@ class UserProfileView extends StatelessWidget {
               buildLinkedin(data, context),
               buildDivider,
               buildPhone(context, data),
+              buildDivider,
+              buildEmail(context, data),
             ],
           );
         },
       ),
+    );
+  }
+
+  Row buildEmail(BuildContext context, UserProfileModel data) {
+    return Row(
+      children: [
+        FaIcon(
+          FontAwesomeIcons.solidEnvelope,
+          color: context.colorScheme.primary,
+        ),
+        model != null
+            ? AutoSizeText(
+                '  ${model!.applyUserProfile!.email ?? '-'}',
+                style: context.textTheme.headline6!
+                    .copyWith(color: context.colorScheme.onBackground),
+              )
+            : getProjectModel != null
+                ? AutoSizeText(
+                    '  ${getProjectModel!.userProfile!.email ?? '-'}',
+                    style: context.textTheme.headline6!
+                        .copyWith(color: context.colorScheme.onBackground),
+                  )
+                : appliedModel != null
+                    ? AutoSizeText(
+                        '  ${appliedModel!.project!.userProfile!.email ?? '-'}',
+                        style: context.textTheme.headline6!
+                            .copyWith(color: context.colorScheme.onBackground),
+                      )
+                    : AutoSizeText(
+                        '  ${data.email ?? '-'}',
+                        style: context.textTheme.headline6!
+                            .copyWith(color: context.colorScheme.onBackground),
+                      ),
+      ],
     );
   }
 
@@ -72,15 +117,27 @@ class UserProfileView extends StatelessWidget {
         ),
         model != null
             ? AutoSizeText(
-                ' /${model!.applyUserProfile!.phone ?? '-'}',
+                '  ${model!.applyUserProfile!.phone ?? '-'}',
                 style: context.textTheme.headline6!
                     .copyWith(color: context.colorScheme.onBackground),
               )
-            : AutoSizeText(
-                ' /${data.phone ?? '-'}',
-                style: context.textTheme.headline6!
-                    .copyWith(color: context.colorScheme.onBackground),
-              ),
+            : getProjectModel != null
+                ? AutoSizeText(
+                    '  ${getProjectModel!.userProfile!.phone ?? '-'}',
+                    style: context.textTheme.headline6!
+                        .copyWith(color: context.colorScheme.onBackground),
+                  )
+                : appliedModel != null
+                    ? AutoSizeText(
+                        '  ${appliedModel!.project!.userProfile!.phone ?? '-'}',
+                        style: context.textTheme.headline6!
+                            .copyWith(color: context.colorScheme.onBackground),
+                      )
+                    : AutoSizeText(
+                        '  ${data.phone ?? '-'}',
+                        style: context.textTheme.headline6!
+                            .copyWith(color: context.colorScheme.onBackground),
+                      ),
       ],
     );
   }
@@ -94,15 +151,27 @@ class UserProfileView extends StatelessWidget {
         ),
         model != null
             ? AutoSizeText(
-                ' /${model!.applyUserProfile!.linkedIn ?? '-'}',
+                '  ${model!.applyUserProfile!.linkedIn ?? '-'}',
                 style: context.textTheme.headline6!
                     .copyWith(color: context.colorScheme.onBackground),
               )
-            : AutoSizeText(
-                ' /${data.linkedIn ?? '-'}',
-                style: context.textTheme.headline6!
-                    .copyWith(color: context.colorScheme.onBackground),
-              ),
+            : getProjectModel != null
+                ? AutoSizeText(
+                    '  ${getProjectModel!.userProfile!.linkedIn ?? '-'}',
+                    style: context.textTheme.headline6!
+                        .copyWith(color: context.colorScheme.onBackground),
+                  )
+                : appliedModel != null
+                    ? AutoSizeText(
+                        '  ${appliedModel!.project!.userProfile!.linkedIn ?? '-'}',
+                        style: context.textTheme.headline6!
+                            .copyWith(color: context.colorScheme.onBackground),
+                      )
+                    : AutoSizeText(
+                        '  ${data.linkedIn ?? '-'}',
+                        style: context.textTheme.headline6!
+                            .copyWith(color: context.colorScheme.onBackground),
+                      ),
       ],
     );
   }
@@ -116,15 +185,27 @@ class UserProfileView extends StatelessWidget {
         ),
         model != null
             ? AutoSizeText(
-                ' /${model!.applyUserProfile!.twitter ?? '-'}',
+                '  ${model!.applyUserProfile!.twitter ?? '-'}',
                 style: context.textTheme.headline6!
                     .copyWith(color: context.colorScheme.onBackground),
               )
-            : AutoSizeText(
-                ' /${data.twitter ?? '-'}',
-                style: context.textTheme.headline6!
-                    .copyWith(color: context.colorScheme.onBackground),
-              ),
+            : getProjectModel != null
+                ? AutoSizeText(
+                    '  ${getProjectModel!.userProfile!.twitter ?? '-'}',
+                    style: context.textTheme.headline6!
+                        .copyWith(color: context.colorScheme.onBackground),
+                  )
+                : appliedModel != null
+                    ? AutoSizeText(
+                        '  ${appliedModel!.project!.userProfile!.twitter ?? '-'}',
+                        style: context.textTheme.headline6!
+                            .copyWith(color: context.colorScheme.onBackground),
+                      )
+                    : AutoSizeText(
+                        '  ${data.twitter ?? '-'}',
+                        style: context.textTheme.headline6!
+                            .copyWith(color: context.colorScheme.onBackground),
+                      ),
       ],
     );
   }
@@ -136,11 +217,23 @@ class UserProfileView extends StatelessWidget {
             style: context.textTheme.headline6!
                 .copyWith(color: context.colorScheme.onBackground),
           )
-        : AutoSizeText(
-            '${data.city}',
-            style: context.textTheme.headline6!
-                .copyWith(color: context.colorScheme.onBackground),
-          );
+        : getProjectModel != null
+            ? AutoSizeText(
+                '${getProjectModel!.city ?? '-'}',
+                style: context.textTheme.headline6!
+                    .copyWith(color: context.colorScheme.onBackground),
+              )
+            : appliedModel != null
+                ? AutoSizeText(
+                    '  ${appliedModel!.applyUserProfile!.city ?? '-'}',
+                    style: context.textTheme.headline6!
+                        .copyWith(color: context.colorScheme.onBackground),
+                  )
+                : AutoSizeText(
+                    '${data.city}',
+                    style: context.textTheme.headline6!
+                        .copyWith(color: context.colorScheme.onBackground),
+                  );
   }
 
   AutoSizeText buildFaculty(UserProfileModel data, BuildContext context) {
@@ -150,11 +243,23 @@ class UserProfileView extends StatelessWidget {
             style: context.textTheme.headline6!
                 .copyWith(color: context.colorScheme.onBackground),
           )
-        : AutoSizeText(
-            '${data.faculty}',
-            style: context.textTheme.headline6!
-                .copyWith(color: context.colorScheme.onBackground),
-          );
+        : getProjectModel != null
+            ? AutoSizeText(
+                '${getProjectModel!.userProfile!.faculty ?? '-'}',
+                style: context.textTheme.headline6!
+                    .copyWith(color: context.colorScheme.onBackground),
+              )
+            : appliedModel != null
+                ? AutoSizeText(
+                    '  ${appliedModel!.applyUserProfile!.faculty ?? '-'}',
+                    style: context.textTheme.headline6!
+                        .copyWith(color: context.colorScheme.onBackground),
+                  )
+                : AutoSizeText(
+                    '${data.faculty}',
+                    style: context.textTheme.headline6!
+                        .copyWith(color: context.colorScheme.onBackground),
+                  );
   }
 
   AutoSizeText buildUniversity(UserProfileModel data, BuildContext context) {
@@ -164,11 +269,23 @@ class UserProfileView extends StatelessWidget {
             style: context.textTheme.headline5!
                 .copyWith(color: context.colorScheme.onBackground),
           )
-        : AutoSizeText(
-            '${data.university}',
-            style: context.textTheme.headline5!
-                .copyWith(color: context.colorScheme.onBackground),
-          );
+        : getProjectModel != null
+            ? AutoSizeText(
+                '${getProjectModel!.university ?? '-'}',
+                style: context.textTheme.headline6!
+                    .copyWith(color: context.colorScheme.onBackground),
+              )
+            : appliedModel != null
+                ? AutoSizeText(
+                    '  ${appliedModel!.applyUserProfile!.university ?? '-'}',
+                    style: context.textTheme.headline6!
+                        .copyWith(color: context.colorScheme.onBackground),
+                  )
+                : AutoSizeText(
+                    '${data.university}',
+                    style: context.textTheme.headline5!
+                        .copyWith(color: context.colorScheme.onBackground),
+                  );
   }
 
   AutoSizeText buildFullname(UserProfileModel data, BuildContext context) {
@@ -179,12 +296,24 @@ class UserProfileView extends StatelessWidget {
                 color: context.colorScheme.onBackground,
                 fontWeight: FontWeight.bold),
           )
-        : AutoSizeText(
-            '${data.first_name} ${data.last_name}',
-            style: context.textTheme.headline4!.copyWith(
-                color: context.colorScheme.onBackground,
-                fontWeight: FontWeight.bold),
-          );
+        : getProjectModel != null
+            ? AutoSizeText(
+                '${getProjectModel!.userProfile!.first_name ?? '-'} ${getProjectModel!.userProfile!.last_name ?? '-'}',
+                style: context.textTheme.headline6!
+                    .copyWith(color: context.colorScheme.onBackground),
+              )
+            : appliedModel != null
+                ? AutoSizeText(
+                    '${appliedModel!.applyUserProfile!.first_name ?? '-'} ${appliedModel!.applyUserProfile!.last_name ?? '-'}',
+                    style: context.textTheme.headline6!
+                        .copyWith(color: context.colorScheme.onBackground),
+                  )
+                : AutoSizeText(
+                    '${data.first_name} ${data.last_name}',
+                    style: context.textTheme.headline4!.copyWith(
+                        color: context.colorScheme.onBackground,
+                        fontWeight: FontWeight.bold),
+                  );
   }
 
   Divider get buildDivider => Divider();

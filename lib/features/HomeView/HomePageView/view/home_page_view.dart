@@ -86,7 +86,7 @@ class HomePageView extends StatelessWidget {
 
   AutoSizeText buildFullname(GetProjectModel data, BuildContext context) {
     return AutoSizeText(
-      '${data.userProfile!.firstName} ${data.userProfile!.lastName}',
+      '${data.userProfile!.first_name} ${data.userProfile!.last_name}',
       style: context.textTheme.bodyText1!.copyWith(fontWeight: FontWeight.w500),
     );
   }

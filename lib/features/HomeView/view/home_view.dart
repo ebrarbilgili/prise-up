@@ -4,7 +4,6 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:kartal/kartal.dart';
 
 import '../../../core/constants/app.dart';
-import '../../../core/extensions/locale_extensions.dart';
 import '../../../core/lang/locale_key.g.dart';
 import '../../../core/widgets/LocaleText/locale_text.dart';
 import '../viewmodel/home_viewmodel.dart';
@@ -42,7 +41,7 @@ class HomeView extends StatelessWidget {
         child: buildBottomBarItemIcons(
           context,
           FontAwesomeIcons.solidUser,
-          LocaleKeys.home_profile_profile.locale,
+          LocaleKeys.home_profile_profile,
         ),
       ),
     );
@@ -58,7 +57,7 @@ class HomeView extends StatelessWidget {
         child: buildBottomBarItemIcons(
           context,
           FontAwesomeIcons.home,
-          LocaleKeys.home_home_home.locale,
+          LocaleKeys.home_home_home,
         ),
       ),
     );

@@ -42,20 +42,26 @@ class GetProjectModel extends INetworkModel {
 class UserProfile extends INetworkModel {
   int? id;
   String? email;
-  String? firstName;
-  String? lastName;
+  String? first_name;
+  String? last_name;
   String? university;
   String? faculty;
   String? city;
+  String? twitter;
+  String? linkedIn;
+  String? phone;
 
   UserProfile({
     this.id,
     this.email,
-    this.firstName,
-    this.lastName,
+    this.first_name,
+    this.last_name,
     this.university,
     this.faculty,
     this.city,
+    this.twitter,
+    this.linkedIn,
+    this.phone,
   });
 
   factory UserProfile.fromJson(Map<String, dynamic> json) {

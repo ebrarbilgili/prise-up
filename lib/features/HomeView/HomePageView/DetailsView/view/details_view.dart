@@ -12,6 +12,7 @@ import '../../../../../core/extensions/locale_extensions.dart';
 import '../../../../../core/lang/locale_key.g.dart';
 import '../../../../../core/widgets/AlertDialog/alert_dialog_widget.dart';
 import '../../../../../core/widgets/LocaleText/locale_text.dart';
+import '../../../../UserProfileView/view/user_profile_view.dart';
 import '../../model/home_page_model.dart';
 import '../service/details_service.dart';
 import '../viewmodel/details_viewmodel.dart';
@@ -71,7 +72,7 @@ class DetailsView extends StatelessWidget {
         padding: context.paddingLow,
         child: ListTile(
           title: AutoSizeText(
-              '${model.userProfile!.firstName} ${model.userProfile!.lastName}'),
+              '${model.userProfile!.first_name} ${model.userProfile!.last_name}'),
           subtitle: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -80,6 +81,14 @@ class DetailsView extends StatelessWidget {
               AutoSizeText('${model.userProfile!.email}'),
               AutoSizeText('${model.userProfile!.university} - ${model.city}'),
             ],
+          ),
+          trailing: TextButton(
+            onPressed: () {
+              context.navigation.push(MaterialPageRoute(
+                builder: (context) => UserProfileView(getProjectModel: model),
+              ));
+            },
+            child: LocaleText(text: LocaleKeys.home_home_detail),
           ),
         ),
       ),

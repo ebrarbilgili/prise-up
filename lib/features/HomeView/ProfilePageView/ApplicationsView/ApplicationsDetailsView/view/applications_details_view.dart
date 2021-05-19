@@ -4,6 +4,8 @@ import 'package:kartal/kartal.dart';
 
 import '../../../../../../core/extensions/locale_extensions.dart';
 import '../../../../../../core/lang/locale_key.g.dart';
+import '../../../../../../core/widgets/LocaleText/locale_text.dart';
+import '../../../../../UserProfileView/view/user_profile_view.dart';
 import '../../model/applications_model.dart';
 
 class ApplicationsDetailsView extends StatelessWidget {
@@ -65,6 +67,14 @@ class ApplicationsDetailsView extends StatelessWidget {
               AutoSizeText(
                   '${model.project!.userProfile!.university} - ${model.project!.city}'),
             ],
+          ),
+          trailing: TextButton(
+            onPressed: () {
+              context.navigation.push(MaterialPageRoute(
+                builder: (context) => UserProfileView(appliedModel: model),
+              ));
+            },
+            child: LocaleText(text: LocaleKeys.home_home_detail),
           ),
         ),
       ),

@@ -82,6 +82,9 @@ UserProfile _$UserProfileFromJson(Map<String, dynamic> json) {
     university: json['university'] as String?,
     faculty: json['faculty'] as String?,
     city: json['city'] as String?,
+    twitter: json['twitter'] as String?,
+    linkedIn: json['linkedIn'] as String?,
+    phone: json['phone'] as String?,
   );
 }
 
@@ -94,4 +97,7 @@ Map<String, dynamic> _$UserProfileToJson(UserProfile instance) =>
       'university': instance.university,
       'faculty': instance.faculty,
       'city': instance.city,
+      'twitter': instance.twitter,
+      'linkedIn': instance.linkedIn,
+      'phone': instance.phone,
     };
