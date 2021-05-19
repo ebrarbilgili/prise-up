@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:mobx/mobx.dart';
+
 import '../../../../../../../core/constants/shared/shared_prefs_constant.dart';
-import '../../service/my_projects_details_service.dart';
 import '../../../model/my_projects_model.dart';
+import '../../service/my_projects_details_service.dart';
+
 part 'edit_project_viewmodel.g.dart';
 
 class EditProjectViewModel = _EditProjectViewModelBase

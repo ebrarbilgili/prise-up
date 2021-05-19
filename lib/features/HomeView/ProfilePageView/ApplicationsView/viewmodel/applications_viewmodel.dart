@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:mobx/mobx.dart';
+
 import '../model/applications_model.dart';
 import '../service/applications_service.dart';
+
 part 'applications_viewmodel.g.dart';
 
 class ApplicationsViewModel = _ApplicationsViewModelBase

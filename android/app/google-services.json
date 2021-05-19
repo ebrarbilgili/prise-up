@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "315695796420",
+    "project_id": "priseup-8414e",
+    "storage_bucket": "priseup-8414e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:315695796420:android:6564dd99f08ca1a9477991",
+        "android_client_info": {
+          "package_name": "com.priseup.priseup"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "315695796420-n80fjfniq6bjpccs4hlmuto23ion532e.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDv3iQU8N5UvqxPiCDm2WKNjBYZJS3M08E"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "315695796420-n80fjfniq6bjpccs4hlmuto23ion532e.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "315695796420-6imi4l4ln5q2pvta8jqqqinp8n8lhfkk.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.priseup.priseup"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

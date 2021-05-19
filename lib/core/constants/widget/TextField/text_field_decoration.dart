@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:kartal/kartal.dart';
+
 import '../../../extensions/locale_extensions.dart';
 import '../../../lang/locale_key.g.dart';
 
