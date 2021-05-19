@@ -36,6 +36,8 @@
             "home": "Home",
             "project_list_empty": "Unfortunately There is no active project posting yet...",
             "detail": "Details",
+            "search": "Search",
+            "id": "Project ID",
             "detail_page": {
                 "project_detail": "Project Details",
                 "apply": "Apply",

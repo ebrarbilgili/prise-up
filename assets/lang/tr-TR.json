@@ -36,6 +36,8 @@
             "home": "Ana Sayfa",
             "project_list_empty": "Maalesef henüz aktif proje ilanı yok...",
             "detail": "Detaylar",
+            "search": "Arama",
+            "id": "İlan No",
             "detail_page": {
                 "project_detail": "Proje Detayları",
                 "apply": "Başvur",

@@ -30,7 +30,7 @@ class HomePageProjectService {
   Future<List<GetProjectModel>> fetcProjects() async {
     final response = await manager.send(
       '/api/projects/',
-      expiration: Duration(seconds: 10),
+      expiration: Duration(minutes: 10),
       parseModel: GetProjectModel(),
       method: RequestType.GET,
     );

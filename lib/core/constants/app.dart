@@ -11,7 +11,7 @@ class AppConstants {
 
   static const TR_LOCALE = Locale('tr', 'TR');
   static const EN_LOCALE = Locale('en', 'US');
-  static const LANG_PATH = 'assets/lang/';
+  static const LANG_PATH = 'assets/lang';
 
   static const LOGO = 'assets/images/logo/PRISEUP_PRIMARY_EXC_SPLASH.png';
 

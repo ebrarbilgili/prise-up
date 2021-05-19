@@ -1,4 +1,5 @@
 import 'package:easy_localization/easy_localization.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -8,10 +9,16 @@ import 'core/constants/shared/shared_prefs_constant.dart';
 import 'core/constants/theme/theme_constant.dart';
 import 'features/Splash/splash.dart';
 
-Future<void> main() async {
+Future<void> init() async {
   WidgetsFlutterBinding.ensureInitialized();
   await EasyLocalization.ensureInitialized();
   await SharedPreferencesConstant.prefrencesInit();
+  await Firebase.initializeApp();
+}
+
+Future<void> main() async {
+  await init();
+
   runApp(
     EasyLocalization(
       supportedLocales: AppConstants.SUPPORTED_LOCALE,
@@ -19,9 +26,7 @@ Future<void> main() async {
       path: AppConstants.LANG_PATH,
       child: MultiProvider(
         providers: [
-          Provider<CacheProvider>(
-            create: (context) => CacheProvider(),
-          )
+          Provider<CacheProvider>(create: (context) => CacheProvider())
         ],
         child: MyApp(),
       ),
