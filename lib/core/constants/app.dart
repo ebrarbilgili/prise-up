@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 
 class AppConstants {
   // static const BASE_URL = 'http://localhost:8000';
-  static const BASE_URL = 'https://teammateapp.herokuapp.com/';
+  // static const BASE_URL = 'https://teammateapp.herokuapp.com/';
+  static const BASE_URL =
+      'http://prise-up-last-version-env.eba-hxnf57mi.us-west-2.elasticbeanstalk.com/';
 
   static const SUPPORTED_LOCALE = [
     AppConstants.EN_LOCALE,
@@ -13,7 +15,7 @@ class AppConstants {
   static const EN_LOCALE = Locale('en', 'US');
   static const LANG_PATH = 'assets/lang';
 
-  static const LOGO = 'assets/images/logo/PRISEUP_PRIMARY_EXC_SPLASH.png';
+  static const LOGO = 'assets/images/logo/PRISEUP_PRIMARY_EXC.png';
 
   static const APPBAR_LOGO = 'assets/images/logo/PRISEUP_PRIMARY_EXC.png';
   // static const LOGO =

@@ -115,7 +115,10 @@ class HomeView extends StatelessWidget {
 
   AppBar get buildAppBar {
     return AppBar(
-      title: Image.asset(AppConstants.APPBAR_LOGO),
+      title: Image.asset(
+        AppConstants.APPBAR_LOGO,
+        scale: 1.5,
+      ),
       automaticallyImplyLeading: false,
     );
   }
