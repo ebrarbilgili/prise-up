@@ -1,0 +1,202 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.priseup.priseup"
+4    android:versionCode="3"
+5    android:versionName="1.0.0" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="16"
+8-->/Users/ebrarbilgili/Desktop/MAIN/Flutter/teammate/android/app/src/main/AndroidManifest.xml
+9        android:targetSdkVersion="30" />
+9-->/Users/ebrarbilgili/Desktop/MAIN/Flutter/teammate/android/app/src/main/AndroidManifest.xml
+10
+11    <uses-permission android:name="android.permission.INTERNET" />
+11-->/Users/ebrarbilgili/Desktop/MAIN/Flutter/teammate/android/app/src/main/AndroidManifest.xml:2:3-65
+11-->/Users/ebrarbilgili/Desktop/MAIN/Flutter/teammate/android/app/src/main/AndroidManifest.xml:2:20-62
+12    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+12-->[com.google.android.gms:play-services-measurement-api:19.0.0] /Users/ebrarbilgili/.gradle/caches/transforms-2/files-2.1/4a8a329fca92c8807a625b4058f28630/jetified-play-services-measurement-api-19.0.0/AndroidManifest.xml:23:5-79
+12-->[com.google.android.gms:play-services-measurement-api:19.0.0] /Users/ebrarbilgili/.gradle/caches/transforms-2/files-2.1/4a8a329fca92c8807a625b4058f28630/jetified-play-services-measurement-api-19.0.0/AndroidManifest.xml:23:22-76
+13    <uses-permission android:name="android.permission.WAKE_LOCK" />
+13-->[com.google.android.gms:play-services-measurement-api:19.0.0] /Users/ebrarbilgili/.gradle/caches/transforms-2/files-2.1/4a8a329fca92c8807a625b4058f28630/jetified-play-services-measurement-api-19.0.0/AndroidManifest.xml:24:5-68
+13-->[com.google.android.gms:play-services-measurement-api:19.0.0] /Users/ebrarbilgili/.gradle/caches/transforms-2/files-2.1/4a8a329fca92c8807a625b4058f28630/jetified-play-services-measurement-api-19.0.0/AndroidManifest.xml:24:22-65
+14    <uses-permission android:name="com.google.android.finsky.permission.BIND_GET_INSTALL_REFERRER_SERVICE" />
+14-->[com.google.android.gms:play-services-measurement:19.0.0] /Users/ebrarbilgili/.gradle/caches/transforms-2/files-2.1/b8dcfd1b552f7109144a8abf8e3c9b86/jetified-play-services-measurement-19.0.0/AndroidManifest.xml:26:5-110
+14-->[com.google.android.gms:play-services-measurement:19.0.0] /Users/ebrarbilgili/.gradle/caches/transforms-2/files-2.1/b8dcfd1b552f7109144a8abf8e3c9b86/jetified-play-services-measurement-19.0.0/AndroidManifest.xml:26:22-107
+15
+16    <application
+16-->/Users/ebrarbilgili/Desktop/MAIN/Flutter/teammate/android/app/src/main/AndroidManifest.xml:3:3-24:17
+17        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+17-->[androidx.core:core:1.3.1] /Users/ebrarbilgili/.gradle/caches/transforms-2/files-2.1/c6cbb546329fcf86fc50a69717ed35fe/core-1.3.1/AndroidManifest.xml:24:18-86
+18        android:icon="@mipmap/ic_launcher"
+18-->/Users/ebrarbilgili/Desktop/MAIN/Flutter/teammate/android/app/src/main/AndroidManifest.xml:3:41-75
+19        android:label="teammate" >
+19-->/Users/ebrarbilgili/Desktop/MAIN/Flutter/teammate/android/app/src/main/AndroidManifest.xml:3:16-40
+20        <activity
+20-->/Users/ebrarbilgili/Desktop/MAIN/Flutter/teammate/android/app/src/main/AndroidManifest.xml:4:5-20:16
+21            android:name="com.priseup.priseup.MainActivity"
+21-->/Users/ebrarbilgili/Desktop/MAIN/Flutter/teammate/android/app/src/main/AndroidManifest.xml:4:15-43
+22            android:configChanges="orientation|keyboardHidden|keyboard|screenSize|smallestScreenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"
+22-->/Users/ebrarbilgili/Desktop/MAIN/Flutter/teammate/android/app/src/main/AndroidManifest.xml:4:110-260
+23            android:hardwareAccelerated="true"
+23-->/Users/ebrarbilgili/Desktop/MAIN/Flutter/teammate/android/app/src/main/AndroidManifest.xml:4:261-295
+24            android:launchMode="singleTop"
+24-->/Users/ebrarbilgili/Desktop/MAIN/Flutter/teammate/android/app/src/main/AndroidManifest.xml:4:44-74
+25            android:theme="@style/LaunchTheme"
+25-->/Users/ebrarbilgili/Desktop/MAIN/Flutter/teammate/android/app/src/main/AndroidManifest.xml:4:75-109
+26            android:windowSoftInputMode="adjustResize" >
+26-->/Users/ebrarbilgili/Desktop/MAIN/Flutter/teammate/android/app/src/main/AndroidManifest.xml:4:296-338
+27
+28            <!--
+29           Specifies an Android theme to apply to this Activity as soon as
+30                 the Android process has started. This theme is visible to the user
+31                 while the Flutter UI initializes. After that, this theme continues
+32                 to determine the Window background behind the Flutter UI.
+33            -->
+34            <meta-data
+34-->/Users/ebrarbilgili/Desktop/MAIN/Flutter/teammate/android/app/src/main/AndroidManifest.xml:9:7-114
+35                android:name="io.flutter.embedding.android.NormalTheme"
+35-->/Users/ebrarbilgili/Desktop/MAIN/Flutter/teammate/android/app/src/main/AndroidManifest.xml:9:18-73
+36                android:resource="@style/NormalTheme" />
+36-->/Users/ebrarbilgili/Desktop/MAIN/Flutter/teammate/android/app/src/main/AndroidManifest.xml:9:74-111
+37            <!--
+38           Displays an Android View that continues showing the launch screen
+39                 Drawable until Flutter paints its first frame, then this splash
+40                 screen fades out. A splash screen is useful to avoid any visual
+41                 gap between the end of Android's launch screen and the painting of
+42                 Flutter's first frame.
+43            -->
+44            <meta-data
+44-->/Users/ebrarbilgili/Desktop/MAIN/Flutter/teammate/android/app/src/main/AndroidManifest.xml:15:7-132
+45                android:name="io.flutter.embedding.android.SplashScreenDrawable"
+45-->/Users/ebrarbilgili/Desktop/MAIN/Flutter/teammate/android/app/src/main/AndroidManifest.xml:15:18-82
+46                android:resource="@drawable/launch_background" />
+46-->/Users/ebrarbilgili/Desktop/MAIN/Flutter/teammate/android/app/src/main/AndroidManifest.xml:15:83-129
+47
+48            <intent-filter>
+48-->/Users/ebrarbilgili/Desktop/MAIN/Flutter/teammate/android/app/src/main/AndroidManifest.xml:16:7-19:23
+49                <action android:name="android.intent.action.MAIN" />
+49-->/Users/ebrarbilgili/Desktop/MAIN/Flutter/teammate/android/app/src/main/AndroidManifest.xml:17:9-61
+49-->/Users/ebrarbilgili/Desktop/MAIN/Flutter/teammate/android/app/src/main/AndroidManifest.xml:17:17-58
+50
+51                <category android:name="android.intent.category.LAUNCHER" />
+51-->/Users/ebrarbilgili/Desktop/MAIN/Flutter/teammate/android/app/src/main/AndroidManifest.xml:18:9-69
+51-->/Users/ebrarbilgili/Desktop/MAIN/Flutter/teammate/android/app/src/main/AndroidManifest.xml:18:19-66
+52            </intent-filter>
+53        </activity>
+54        <!--
+55         Don't delete the meta-data below.
+56             This is used by the Flutter tool to generate GeneratedPluginRegistrant.java
+57        -->
+58        <meta-data
+58-->/Users/ebrarbilgili/Desktop/MAIN/Flutter/teammate/android/app/src/main/AndroidManifest.xml:23:5-68
+59            android:name="flutterEmbedding"
+59-->/Users/ebrarbilgili/Desktop/MAIN/Flutter/teammate/android/app/src/main/AndroidManifest.xml:23:16-47
+60            android:value="2" />
+60-->/Users/ebrarbilgili/Desktop/MAIN/Flutter/teammate/android/app/src/main/AndroidManifest.xml:23:48-65
+61
+62        <activity
+62-->[:url_launcher] /Users/ebrarbilgili/Desktop/MAIN/Flutter/teammate/build/url_launcher/intermediates/library_manifest/release/AndroidManifest.xml:8:9-11:74
+63            android:name="io.flutter.plugins.urllauncher.WebViewActivity"
+63-->[:url_launcher] /Users/ebrarbilgili/Desktop/MAIN/Flutter/teammate/build/url_launcher/intermediates/library_manifest/release/AndroidManifest.xml:9:13-74
+64            android:exported="false"
+64-->[:url_launcher] /Users/ebrarbilgili/Desktop/MAIN/Flutter/teammate/build/url_launcher/intermediates/library_manifest/release/AndroidManifest.xml:10:13-37
+65            android:theme="@android:style/Theme.NoTitleBar.Fullscreen" />
+65-->[:url_launcher] /Users/ebrarbilgili/Desktop/MAIN/Flutter/teammate/build/url_launcher/intermediates/library_manifest/release/AndroidManifest.xml:11:13-71
+66
+67        <provider
+67-->[:share] /Users/ebrarbilgili/Desktop/MAIN/Flutter/teammate/build/share/intermediates/library_manifest/release/AndroidManifest.xml:8:9-16:20
+68            android:name="io.flutter.plugins.share.ShareFileProvider"
+68-->[:share] /Users/ebrarbilgili/Desktop/MAIN/Flutter/teammate/build/share/intermediates/library_manifest/release/AndroidManifest.xml:9:13-70
+69            android:authorities="com.priseup.priseup.flutter.share_provider"
+69-->[:share] /Users/ebrarbilgili/Desktop/MAIN/Flutter/teammate/build/share/intermediates/library_manifest/release/AndroidManifest.xml:10:13-74
+70            android:exported="false"
+70-->[:share] /Users/ebrarbilgili/Desktop/MAIN/Flutter/teammate/build/share/intermediates/library_manifest/release/AndroidManifest.xml:11:13-37
+71            android:grantUriPermissions="true" >
+71-->[:share] /Users/ebrarbilgili/Desktop/MAIN/Flutter/teammate/build/share/intermediates/library_manifest/release/AndroidManifest.xml:12:13-47
+72            <meta-data
+72-->[:share] /Users/ebrarbilgili/Desktop/MAIN/Flutter/teammate/build/share/intermediates/library_manifest/release/AndroidManifest.xml:13:13-15:68
+73                android:name="android.support.FILE_PROVIDER_PATHS"
+73-->[:share] /Users/ebrarbilgili/Desktop/MAIN/Flutter/teammate/build/share/intermediates/library_manifest/release/AndroidManifest.xml:14:17-67
+74                android:resource="@xml/flutter_share_file_paths" />
+74-->[:share] /Users/ebrarbilgili/Desktop/MAIN/Flutter/teammate/build/share/intermediates/library_manifest/release/AndroidManifest.xml:15:17-65
+75        </provider>
+76
+77        <service
+77-->[:firebase_core] /Users/ebrarbilgili/Desktop/MAIN/Flutter/teammate/build/firebase_core/intermediates/library_manifest/release/AndroidManifest.xml:8:9-12:19
+78            android:name="com.google.firebase.components.ComponentDiscoveryService"
+78-->[:firebase_core] /Users/ebrarbilgili/Desktop/MAIN/Flutter/teammate/build/firebase_core/intermediates/library_manifest/release/AndroidManifest.xml:8:18-89
+79            android:directBootAware="true"
+79-->[com.google.firebase:firebase-common:20.0.0] /Users/ebrarbilgili/.gradle/caches/transforms-2/files-2.1/3302300f084732ea1b649fcba8a3ed24/jetified-firebase-common-20.0.0/AndroidManifest.xml:35:13-43
+80            android:exported="false" >
+80-->[com.google.android.gms:play-services-measurement-api:19.0.0] /Users/ebrarbilgili/.gradle/caches/transforms-2/files-2.1/4a8a329fca92c8807a625b4058f28630/jetified-play-services-measurement-api-19.0.0/AndroidManifest.xml:29:13-37
+81            <meta-data
+81-->[:firebase_core] /Users/ebrarbilgili/Desktop/MAIN/Flutter/teammate/build/firebase_core/intermediates/library_manifest/release/AndroidManifest.xml:9:13-11:85
+82                android:name="com.google.firebase.components:io.flutter.plugins.firebase.core.FlutterFirebaseCoreRegistrar"
+82-->[:firebase_core] /Users/ebrarbilgili/Desktop/MAIN/Flutter/teammate/build/firebase_core/intermediates/library_manifest/release/AndroidManifest.xml:10:17-124
+83                android:value="com.google.firebase.components.ComponentRegistrar" />
+83-->[:firebase_core] /Users/ebrarbilgili/Desktop/MAIN/Flutter/teammate/build/firebase_core/intermediates/library_manifest/release/AndroidManifest.xml:11:17-82
+84            <meta-data
+84-->[com.google.android.gms:play-services-measurement-api:19.0.0] /Users/ebrarbilgili/.gradle/caches/transforms-2/files-2.1/4a8a329fca92c8807a625b4058f28630/jetified-play-services-measurement-api-19.0.0/AndroidManifest.xml:30:13-32:85
+85                android:name="com.google.firebase.components:com.google.firebase.analytics.connector.internal.AnalyticsConnectorRegistrar"
+85-->[com.google.android.gms:play-services-measurement-api:19.0.0] /Users/ebrarbilgili/.gradle/caches/transforms-2/files-2.1/4a8a329fca92c8807a625b4058f28630/jetified-play-services-measurement-api-19.0.0/AndroidManifest.xml:31:17-139
+86                android:value="com.google.firebase.components.ComponentRegistrar" />
+86-->[com.google.android.gms:play-services-measurement-api:19.0.0] /Users/ebrarbilgili/.gradle/caches/transforms-2/files-2.1/4a8a329fca92c8807a625b4058f28630/jetified-play-services-measurement-api-19.0.0/AndroidManifest.xml:32:17-82
+87            <meta-data
+87-->[com.google.firebase:firebase-installations:17.0.0] /Users/ebrarbilgili/.gradle/caches/transforms-2/files-2.1/2733ee416a9a3a7703f654641d3c99ee/jetified-firebase-installations-17.0.0/AndroidManifest.xml:18:13-20:85
+88                android:name="com.google.firebase.components:com.google.firebase.installations.FirebaseInstallationsRegistrar"
+88-->[com.google.firebase:firebase-installations:17.0.0] /Users/ebrarbilgili/.gradle/caches/transforms-2/files-2.1/2733ee416a9a3a7703f654641d3c99ee/jetified-firebase-installations-17.0.0/AndroidManifest.xml:19:17-127
+89                android:value="com.google.firebase.components.ComponentRegistrar" />
+89-->[com.google.firebase:firebase-installations:17.0.0] /Users/ebrarbilgili/.gradle/caches/transforms-2/files-2.1/2733ee416a9a3a7703f654641d3c99ee/jetified-firebase-installations-17.0.0/AndroidManifest.xml:20:17-82
+90        </service>
+91
+92        <provider
+92-->[com.google.firebase:firebase-common:20.0.0] /Users/ebrarbilgili/.gradle/caches/transforms-2/files-2.1/3302300f084732ea1b649fcba8a3ed24/jetified-firebase-common-20.0.0/AndroidManifest.xml:26:9-31:39
+93            android:name="com.google.firebase.provider.FirebaseInitProvider"
+93-->[com.google.firebase:firebase-common:20.0.0] /Users/ebrarbilgili/.gradle/caches/transforms-2/files-2.1/3302300f084732ea1b649fcba8a3ed24/jetified-firebase-common-20.0.0/AndroidManifest.xml:27:13-77
+94            android:authorities="com.priseup.priseup.firebaseinitprovider"
+94-->[com.google.firebase:firebase-common:20.0.0] /Users/ebrarbilgili/.gradle/caches/transforms-2/files-2.1/3302300f084732ea1b649fcba8a3ed24/jetified-firebase-common-20.0.0/AndroidManifest.xml:28:13-72
+95            android:directBootAware="true"
+95-->[com.google.firebase:firebase-common:20.0.0] /Users/ebrarbilgili/.gradle/caches/transforms-2/files-2.1/3302300f084732ea1b649fcba8a3ed24/jetified-firebase-common-20.0.0/AndroidManifest.xml:29:13-43
+96            android:exported="false"
+96-->[com.google.firebase:firebase-common:20.0.0] /Users/ebrarbilgili/.gradle/caches/transforms-2/files-2.1/3302300f084732ea1b649fcba8a3ed24/jetified-firebase-common-20.0.0/AndroidManifest.xml:30:13-37
+97            android:initOrder="100" />
+97-->[com.google.firebase:firebase-common:20.0.0] /Users/ebrarbilgili/.gradle/caches/transforms-2/files-2.1/3302300f084732ea1b649fcba8a3ed24/jetified-firebase-common-20.0.0/AndroidManifest.xml:31:13-36
+98
+99        <receiver
+99-->[com.google.android.gms:play-services-measurement:19.0.0] /Users/ebrarbilgili/.gradle/caches/transforms-2/files-2.1/b8dcfd1b552f7109144a8abf8e3c9b86/jetified-play-services-measurement-19.0.0/AndroidManifest.xml:29:9-33:20
+100            android:name="com.google.android.gms.measurement.AppMeasurementReceiver"
+100-->[com.google.android.gms:play-services-measurement:19.0.0] /Users/ebrarbilgili/.gradle/caches/transforms-2/files-2.1/b8dcfd1b552f7109144a8abf8e3c9b86/jetified-play-services-measurement-19.0.0/AndroidManifest.xml:30:13-85
+101            android:enabled="true"
+101-->[com.google.android.gms:play-services-measurement:19.0.0] /Users/ebrarbilgili/.gradle/caches/transforms-2/files-2.1/b8dcfd1b552f7109144a8abf8e3c9b86/jetified-play-services-measurement-19.0.0/AndroidManifest.xml:31:13-35
+102            android:exported="false" >
+102-->[com.google.android.gms:play-services-measurement:19.0.0] /Users/ebrarbilgili/.gradle/caches/transforms-2/files-2.1/b8dcfd1b552f7109144a8abf8e3c9b86/jetified-play-services-measurement-19.0.0/AndroidManifest.xml:32:13-37
+103        </receiver>
+104
+105        <service
+105-->[com.google.android.gms:play-services-measurement:19.0.0] /Users/ebrarbilgili/.gradle/caches/transforms-2/files-2.1/b8dcfd1b552f7109144a8abf8e3c9b86/jetified-play-services-measurement-19.0.0/AndroidManifest.xml:35:9-38:40
+106            android:name="com.google.android.gms.measurement.AppMeasurementService"
+106-->[com.google.android.gms:play-services-measurement:19.0.0] /Users/ebrarbilgili/.gradle/caches/transforms-2/files-2.1/b8dcfd1b552f7109144a8abf8e3c9b86/jetified-play-services-measurement-19.0.0/AndroidManifest.xml:36:13-84
+107            android:enabled="true"
+107-->[com.google.android.gms:play-services-measurement:19.0.0] /Users/ebrarbilgili/.gradle/caches/transforms-2/files-2.1/b8dcfd1b552f7109144a8abf8e3c9b86/jetified-play-services-measurement-19.0.0/AndroidManifest.xml:37:13-35
+108            android:exported="false" />
+108-->[com.google.android.gms:play-services-measurement:19.0.0] /Users/ebrarbilgili/.gradle/caches/transforms-2/files-2.1/b8dcfd1b552f7109144a8abf8e3c9b86/jetified-play-services-measurement-19.0.0/AndroidManifest.xml:38:13-37
+109        <service
+109-->[com.google.android.gms:play-services-measurement:19.0.0] /Users/ebrarbilgili/.gradle/caches/transforms-2/files-2.1/b8dcfd1b552f7109144a8abf8e3c9b86/jetified-play-services-measurement-19.0.0/AndroidManifest.xml:39:9-43:72
+110            android:name="com.google.android.gms.measurement.AppMeasurementJobService"
+110-->[com.google.android.gms:play-services-measurement:19.0.0] /Users/ebrarbilgili/.gradle/caches/transforms-2/files-2.1/b8dcfd1b552f7109144a8abf8e3c9b86/jetified-play-services-measurement-19.0.0/AndroidManifest.xml:40:13-87
+111            android:enabled="true"
+111-->[com.google.android.gms:play-services-measurement:19.0.0] /Users/ebrarbilgili/.gradle/caches/transforms-2/files-2.1/b8dcfd1b552f7109144a8abf8e3c9b86/jetified-play-services-measurement-19.0.0/AndroidManifest.xml:41:13-35
+112            android:exported="false"
+112-->[com.google.android.gms:play-services-measurement:19.0.0] /Users/ebrarbilgili/.gradle/caches/transforms-2/files-2.1/b8dcfd1b552f7109144a8abf8e3c9b86/jetified-play-services-measurement-19.0.0/AndroidManifest.xml:42:13-37
+113            android:permission="android.permission.BIND_JOB_SERVICE" />
+113-->[com.google.android.gms:play-services-measurement:19.0.0] /Users/ebrarbilgili/.gradle/caches/transforms-2/files-2.1/b8dcfd1b552f7109144a8abf8e3c9b86/jetified-play-services-measurement-19.0.0/AndroidManifest.xml:43:13-69
+114
+115        <meta-data
+115-->[com.google.android.gms:play-services-basement:17.0.0] /Users/ebrarbilgili/.gradle/caches/transforms-2/files-2.1/9d3ebf861ced2bc6fde51a467c749fe4/jetified-play-services-basement-17.0.0/AndroidManifest.xml:23:9-25:69
+116            android:name="com.google.android.gms.version"
+116-->[com.google.android.gms:play-services-basement:17.0.0] /Users/ebrarbilgili/.gradle/caches/transforms-2/files-2.1/9d3ebf861ced2bc6fde51a467c749fe4/jetified-play-services-basement-17.0.0/AndroidManifest.xml:24:13-58
+117            android:value="@integer/google_play_services_version" />
+117-->[com.google.android.gms:play-services-basement:17.0.0] /Users/ebrarbilgili/.gradle/caches/transforms-2/files-2.1/9d3ebf861ced2bc6fde51a467c749fe4/jetified-play-services-basement-17.0.0/AndroidManifest.xml:25:13-66
+118    </application>
+119
+120</manifest>

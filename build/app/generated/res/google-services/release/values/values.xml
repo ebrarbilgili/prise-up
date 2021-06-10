@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="default_web_client_id" translatable="false">315695796420-n80fjfniq6bjpccs4hlmuto23ion532e.apps.googleusercontent.com</string>
+    <string name="gcm_defaultSenderId" translatable="false">315695796420</string>
+    <string name="google_api_key" translatable="false">AIzaSyDv3iQU8N5UvqxPiCDm2WKNjBYZJS3M08E</string>
+    <string name="google_app_id" translatable="false">1:315695796420:android:6564dd99f08ca1a9477991</string>
+    <string name="google_crash_reporting_api_key" translatable="false">AIzaSyDv3iQU8N5UvqxPiCDm2WKNjBYZJS3M08E</string>
+    <string name="google_storage_bucket" translatable="false">priseup-8414e.appspot.com</string>
+    <string name="project_id" translatable="false">priseup-8414e</string>
+</resources>
