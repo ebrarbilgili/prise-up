@@ -2432,6 +2432,7 @@ io.flutter.embedding.engine.loader.FlutterLoader:
     static final java.lang.String VM_SNAPSHOT_DATA_KEY
     static final java.lang.String ISOLATE_SNAPSHOT_DATA_KEY
     static final java.lang.String FLUTTER_ASSETS_DIR_KEY
+    static final java.lang.String AUTOMATICALLY_REGISTER_PLUGINS_KEY
     private static final java.lang.String DEFAULT_LIBRARY
     private static final java.lang.String DEFAULT_KERNEL_BLOB
     private static io.flutter.embedding.engine.loader.FlutterLoader instance
@@ -8846,6 +8847,7 @@ com.google.android.material.floatingactionbutton.FloatingActionButtonImplLollipo
     com.google.android.material.shape.MaterialShapeDrawable createShapeDrawable()
 com.google.common.collect.HashBiMap$View$1
 com.google.common.collect.TreeRangeMap$1
+com.priseup.teammate.MainActivity
 kotlin.text.SystemProperties
 com.google.common.collect.Multisets$EntrySet
 androidx.core.app.NotificationCompat$Builder
@@ -9288,6 +9290,7 @@ androidx.core.view.GestureDetectorCompat$GestureDetectorCompatImplJellybeanMr2
 io.flutter.embedding.engine.loader.ApplicationInfoLoader:
     public void <init>()
     public static final java.lang.String NETWORK_POLICY_METADATA_KEY
+    public static final java.lang.String PUBLIC_AUTOMATICALLY_REGISTER_PLUGINS_METADATA_KEY
 kotlin.UShortArrayKt
 com.google.common.collect.CompactHashMap$KeySetView
 androidx.customview.R$color
@@ -11462,9 +11465,9 @@ androidx.customview.widget.ExploreByTouchHelper:
     public static final int HOST_ID
     private static final java.lang.String DEFAULT_CLASS_NAME
 com.google.android.material.datepicker.CompositeDateValidator
-io.flutter.embedding.engine.systemchannels.PlatformViewsChannel:
-    private static final java.lang.String TAG
 io.flutter.embedding.engine.systemchannels.PlatformChannel:
+    private static final java.lang.String TAG
+io.flutter.embedding.engine.systemchannels.PlatformViewsChannel:
     private static final java.lang.String TAG
 com.google.common.collect.Multisets$FilteredMultiset$1
 com.google.android.gms.internal.measurement.zzgp:
@@ -12555,7 +12558,6 @@ io.flutter.Log:
     public static void setLogLevel(int)
     public static void println(int,java.lang.String,java.lang.String)
     public static void v(java.lang.String,java.lang.String,java.lang.Throwable)
-    public static void i(java.lang.String,java.lang.String)
     public static void i(java.lang.String,java.lang.String,java.lang.Throwable)
     public static void d(java.lang.String,java.lang.String,java.lang.Throwable)
     public static void wtf(java.lang.String,java.lang.String)
@@ -13247,6 +13249,7 @@ kotlin.coroutines.experimental.migration.CoroutinesMigrationKt
 kotlin.ParameterName
 io.flutter.embedding.engine.FlutterEngineCache:
     public boolean contains(java.lang.String)
+    public void clear()
 com.google.android.material.datepicker.MaterialPickerOnPositiveButtonClickListener
 kotlin.collections.CollectionsKt__IteratorsJVMKt$iterator$1
 androidx.core.view.ViewParentCompat:
@@ -17615,7 +17618,6 @@ kotlin.coroutines.jvm.internal.ModuleNameRetriever
 com.google.android.gms.dynamic.SupportFragmentWrapper
 com.google.common.util.concurrent.ForwardingListeningExecutorService
 io.flutter.plugin.editing.InputConnectionAdaptor:
-    private boolean isSamsung()
     private static int clampIndexToEditable(int,android.text.Editable)
     private static final java.lang.String TAG
 androidx.viewpager2.adapter.FragmentStateAdapter$5:
@@ -18310,8 +18312,6 @@ androidx.constraintlayout.widget.ConstraintLayoutStates:
     private androidx.constraintlayout.widget.ConstraintsChangedListener mConstraintsChangedListener
 androidx.recyclerview.widget.SnapHelper:
     private android.widget.Scroller mGravityScroller
-io.flutter.embedding.android.FlutterImageView:
-    private int pendingImages
 com.google.android.material.R$style:
     public static final int Widget_Design_AppBarLayout
     public static final int Widget_Design_FloatingActionButton
@@ -18795,6 +18795,7 @@ com.google.android.gms.internal.measurement.zzep:
 io.flutter.embedding.engine.loader.FlutterApplicationInfo:
     public final java.lang.String vmSnapshotData
     public final java.lang.String isolateSnapshotData
+    public final boolean clearTextPermitted
 androidx.appcompat.resources.R$styleable:
     public static final int[] ColorStateListItem
     public static final int[] FontFamily
