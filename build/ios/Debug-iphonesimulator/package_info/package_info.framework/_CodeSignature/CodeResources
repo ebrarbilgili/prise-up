@@ -14,7 +14,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		zNnpczJawzvOtELTaSRanjEPSYw=
+		6p9ysfKZdGMEsZOlsvmK7P10W4E=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -25,6 +25,10 @@
 	<dict>
 		<key>Headers/FLTPackageInfoPlugin.h</key>
 		<dict>
+			<key>hash</key>
+			<data>
+			Sxcu6iX0Usb/jCGBFFKeRLl5zXw=
+			</data>
 			<key>hash2</key>
 			<data>
 			CxL+yh+0VhmCViKebck14L+zu3d75ggC+PzC6pCCaP8=
@@ -32,6 +36,10 @@
 		</dict>
 		<key>Headers/package_info-umbrella.h</key>
 		<dict>
+			<key>hash</key>
+			<data>
+			zVJbJ4nCXsx8+CveUkIWrPfbSwo=
+			</data>
 			<key>hash2</key>
 			<data>
 			Nrqf/+REfg+sK7dkBuBHB1KGzfwdxnce9QfrWGgOIbg=
@@ -39,6 +47,10 @@
 		</dict>
 		<key>Modules/module.modulemap</key>
 		<dict>
+			<key>hash</key>
+			<data>
+			mCqyia8E5PqmFjkl3ZN4MIu0QAY=
+			</data>
 			<key>hash2</key>
 			<data>
 			n2pX+cvDgguHETK5ax70uB06ySJgTEmw3wy1g5EHnn0=
