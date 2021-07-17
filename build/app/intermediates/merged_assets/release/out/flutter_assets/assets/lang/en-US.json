@@ -29,7 +29,8 @@
         "valid_password": "Please enter a valid password.",
         "exists_user": "User already exists.",
         "exists_user_login": "Please Login.",
-        "please_wait": "Please Wait..."
+        "please_wait": "Please Wait...",
+        "warning": "Please Sign Up University Email"
     },
     "home": {
         "home": {

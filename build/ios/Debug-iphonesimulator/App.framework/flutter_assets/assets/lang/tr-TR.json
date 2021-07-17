@@ -29,7 +29,8 @@
         "valid_password": "Lütfen geçerli bir şifre girin.",
         "exists_user": "Kullanıcı zaten kayıtlı.",
         "exists_user_login": "Lütfen Giriş Yapın.",
-        "please_wait": "Lütfen Bekleyin..."
+        "please_wait": "Lütfen Bekleyin...",
+        "warning": "Lütfen Sadece Okul Email'i ile Kayıt Olun"
     },
     "home": {
         "home": {
