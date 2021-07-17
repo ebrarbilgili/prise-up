@@ -94,8 +94,9 @@ class RegisterUserView extends StatelessWidget {
         decoration: buildTextFieldDecoration(context,
             LocaleKeys.sign_up_email.locale, FontAwesomeIcons.solidEnvelope),
         validator: (value) {
-          var regex = RegExp(r'^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.+-]+\.edu\.tr$');
-          if (regex.hasMatch(value.toString()) ||
+          var regex = RegExp(
+              r'^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.+-]+\.edu\.[a-zA-Z0-9._%+-]+$');
+          if (!regex.hasMatch(value.toString()) ||
               value == null ||
               value.isEmpty ||
               value == '') {

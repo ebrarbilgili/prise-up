@@ -29,6 +29,7 @@ abstract class  LocaleKeys {
   static const sign_up_exists_user = 'sign_up.exists_user';
   static const sign_up_exists_user_login = 'sign_up.exists_user_login';
   static const sign_up_please_wait = 'sign_up.please_wait';
+  static const sign_up_warning = 'sign_up.warning';
   static const sign_up = 'sign_up';
   static const home_home_home = 'home.home.home';
   static const home_home_project_list_empty = 'home.home.project_list_empty';
