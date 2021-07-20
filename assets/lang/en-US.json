@@ -75,7 +75,8 @@
         },
         "user_profile": {
             "my_profile": "My Profile",
-            "user_profile": "User Profile"
+            "user_profile": "User Profile",
+            "contact_info": "Contact"
         }
     }
 }

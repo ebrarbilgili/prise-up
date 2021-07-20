@@ -3,6 +3,7 @@ import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:kartal/kartal.dart';
+import 'package:teammate/core/constants/widget/ProgressIndicator/circular_progress_indicator.dart';
 
 import '../../../../../core/constants/app.dart';
 import '../../../../../core/lang/locale_key.g.dart';
@@ -25,23 +26,30 @@ class ApplicationsView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: buildAppBar(context),
-      body: Observer(
-        builder: (context) {
-          return RefreshIndicator(
-            key: viewModel.refreshIndicatorKey,
-            color: context.colorScheme.primary,
-            onRefresh: viewModel.onRefresh,
-            child: buildBody(context),
-          );
-        },
+      body: RefreshIndicator(
+        key: viewModel.refreshIndicatorKey,
+        color: context.colorScheme.primary,
+        onRefresh: viewModel.onRefresh,
+        child: buildBody(context),
       ),
     );
   }
 
   Widget buildBody(BuildContext context) {
-    return viewModel.applicationsList.isNullOrEmpty
-        ? buildNoProjectText(context)
-        : buildListView(context);
+    return FutureBuilder<List<AppliedModel>>(
+      future: viewModel.fetchMyApplications(),
+      builder: (context, snapshot) {
+        if (snapshot.hasData) {
+          return buildListView(context);
+        } else if (snapshot.connectionState == ConnectionState.waiting) {
+          return Center(child: CircularProgressIndicatorWidget());
+        } else if (!snapshot.hasData) {
+          return buildNoProjectText(context);
+        } else {
+          throw Exception();
+        }
+      },
+    );
   }
 
   ListView buildListView(BuildContext context) {

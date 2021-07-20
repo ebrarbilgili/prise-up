@@ -10,7 +10,7 @@ MyProjectsModel _$MyProjectsModelFromJson(Map<String, dynamic> json) {
     desc: json['desc'] as String?,
     university: json['university'] as String?,
     city: json['city'] as String?,
-    userProfile: json['userProfile'] as int?,
+    userProfile: json['userProfile'],
   );
 }
 

@@ -11,7 +11,7 @@ class MyProjectsModel extends INetworkModel {
   String? desc;
   String? university;
   String? city;
-  int? userProfile;
+  dynamic userProfile;
 
   MyProjectsModel({
     this.id,

@@ -67,6 +67,7 @@ abstract class  LocaleKeys {
   static const home_my_projects = 'home.my_projects';
   static const home_user_profile_my_profile = 'home.user_profile.my_profile';
   static const home_user_profile_user_profile = 'home.user_profile.user_profile';
+  static const home_user_profile_contact_info = 'home.user_profile.contact_info';
   static const home_user_profile = 'home.user_profile';
   static const home = 'home';
 
