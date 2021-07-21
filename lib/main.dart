@@ -13,6 +13,7 @@ Future<void> init() async {
   WidgetsFlutterBinding.ensureInitialized();
   await EasyLocalization.ensureInitialized();
   await SharedPreferencesConstant.prefrencesInit();
+
   // await Firebase.initializeApp();
 }
 

@@ -8,7 +8,7 @@ import '../../../core/constants/widget/TextField/text_field_decoration.dart';
 import '../../../core/extensions/locale_extensions.dart';
 import '../../../core/lang/locale_key.g.dart';
 import '../../../core/widgets/LocaleText/locale_text.dart';
-import '../../SignUpView/RegisterUserView/view/register_user_view.dart';
+import '../../RegisterView/constants/OptionView/register_option_view.dart';
 import '../constant/widget/login_button.dart';
 import '../service/login_service.dart';
 import '../viewmodel/login_viewmodel.dart';
@@ -24,8 +24,12 @@ class LoginView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: buildForm(context),
+    return SafeArea(
+      top: false,
+      bottom: false,
+      child: Scaffold(
+        body: buildForm(context),
+      ),
     );
   }
 
@@ -69,7 +73,7 @@ class LoginView extends StatelessWidget {
     return TextButton(
       onPressed: () {
         context.navigation.push(MaterialPageRoute(
-          builder: (context) => RegisterUserView(),
+          builder: (context) => RegisterOptionView(),
         ));
       },
       child: LocaleText(
@@ -83,24 +87,17 @@ class LoginView extends StatelessWidget {
       controller: viewModel.emailController,
       hintText: LocaleKeys.login_email.locale,
       iconData: FontAwesomeIcons.solidEnvelope,
+      maxLines: 1,
     );
   }
 
-  Padding buildPasswordField(BuildContext context) {
-    return Padding(
-      padding: context.paddingLow,
-      child: TextFormField(
-        controller: viewModel.passwordController,
-        obscureText: true,
-        decoration: buildTextFieldDecoration(
-            context, LocaleKeys.login_password.locale, FontAwesomeIcons.lock),
-        validator: (value) {
-          if (value == null || value.isEmpty) {
-            return LocaleKeys.login_button_valid_pass.locale;
-          }
-          return null;
-        },
-      ),
+  TextFieldWidget buildPasswordField(BuildContext context) {
+    return TextFieldWidget(
+      controller: viewModel.passwordController,
+      obsecureText: true,
+      hintText: LocaleKeys.login_password.locale,
+      iconData: FontAwesomeIcons.lock,
+      maxLines: 1,
     );
   }
 

@@ -12,11 +12,16 @@ abstract class  LocaleKeys {
   static const login_button_valid_pass = 'login_button.valid_pass';
   static const login_button_valid_email = 'login_button.valid_email';
   static const login_button = 'login_button';
+  static const sign_up_option_option = 'sign_up.option.option';
+  static const sign_up_option_business = 'sign_up.option.business';
+  static const sign_up_option_student = 'sign_up.option.student';
+  static const sign_up_option = 'sign_up.option';
   static const sign_up_sign_up = 'sign_up.sign_up';
   static const sign_up_username = 'sign_up.username';
   static const sign_up_first_name = 'sign_up.first_name';
   static const sign_up_last_name = 'sign_up.last_name';
   static const sign_up_university = 'sign_up.university';
+  static const sign_up_business = 'sign_up.business';
   static const sign_up_faculty = 'sign_up.faculty';
   static const sign_up_city = 'sign_up.city';
   static const sign_up_phone = 'sign_up.phone';

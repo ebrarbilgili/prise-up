@@ -61,9 +61,11 @@ class _LoginButtonState extends State<LoginButton> {
       prefs.setStringValue('id', value['id'].toString());
       prefs.setStringValue('email', value['email']);
       prefs.setStringValue('token', value['token']);
+      prefs.setStringValue('account_type', value['account_type']);
     });
     print(prefs.getStringValue('email'));
     print(prefs.getStringValue('token'));
+    print(prefs.getStringValue('account_type'));
   }
 
   void buildShowDialog(dynamic value, BuildContext context) {

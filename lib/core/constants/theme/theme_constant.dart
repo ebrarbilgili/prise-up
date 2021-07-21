@@ -20,9 +20,10 @@ class ThemeConstant {
 
   TextButtonThemeData get textButtonThemeData {
     return TextButtonThemeData(
-        style: ButtonStyle(
-      overlayColor: MaterialStateProperty.all(colorScheme.onSurface),
-    ));
+      style: ButtonStyle(
+        overlayColor: MaterialStateProperty.all(colorScheme.onSurface),
+      ),
+    );
   }
 
   AppBarTheme get appBarTheme {

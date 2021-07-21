@@ -75,7 +75,8 @@
         },
         "user_profile": {
             "my_profile": "Profilim",
-            "user_profile": "Kullanıcı Profili"
+            "user_profile": "Kullanıcı Profili",
+            "contact_info": "İletişim Bilgileri"
         }
     }
 }
