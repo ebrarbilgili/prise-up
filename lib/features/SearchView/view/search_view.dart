@@ -4,7 +4,7 @@ import 'package:kartal/kartal.dart';
 
 import '../../../core/extensions/locale_extensions.dart';
 import '../../../core/lang/locale_key.g.dart';
-import '../../HomeView/HomePageView/model/home_page_model.dart';
+import '../../HomeView/Student/HomePageView/model/home_page_model.dart';
 import '../model/search_model.dart';
 
 class SearchView extends StatelessWidget {
@@ -17,9 +17,21 @@ class SearchView extends StatelessWidget {
     return buildBody(context);
   }
 
-  Padding buildBody(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.all(8.0),
+  Widget buildBody(BuildContext context) {
+    return Container(
+      padding: EdgeInsets.only(
+        left: context.dynamicHeight(0.02),
+        right: context.dynamicHeight(0.02),
+        bottom: context.dynamicHeight(0.02),
+        top: context.dynamicHeight(0.01),
+      ),
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.only(
+          bottomLeft: context.normalRadius * 1.6,
+          bottomRight: context.normalRadius * 1.6,
+        ),
+        color: context.colorScheme.primary,
+      ),
       child: buildTextField(context),
     );
   }
@@ -51,19 +63,22 @@ class SearchView extends StatelessWidget {
       enabledBorder: OutlineInputBorder(
         borderRadius: context.normalBorderRadius,
         borderSide: BorderSide(
-          color: context.colorScheme.secondary,
+          color: context.colorScheme.background,
         ),
       ),
       focusedBorder: OutlineInputBorder(
         borderRadius: context.normalBorderRadius,
         borderSide: BorderSide(
-          color: context.colorScheme.secondary,
+          color: context.colorScheme.background,
         ),
       ),
+      fillColor: context.colorScheme.background,
       hintText: LocaleKeys.home_home_search.locale,
+      filled: true,
+      hintStyle: context.textTheme.bodyText1!.copyWith(color: Colors.grey),
       icon: FaIcon(
         FontAwesomeIcons.search,
-        color: context.colorScheme.primary,
+        color: context.colorScheme.background,
       ),
     );
   }

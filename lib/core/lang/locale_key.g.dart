@@ -36,6 +36,7 @@ abstract class  LocaleKeys {
   static const sign_up_please_wait = 'sign_up.please_wait';
   static const sign_up_warning = 'sign_up.warning';
   static const sign_up = 'sign_up';
+  static const home_home_welcome = 'home.home.welcome';
   static const home_home_home = 'home.home.home';
   static const home_home_project_list_empty = 'home.home.project_list_empty';
   static const home_home_detail = 'home.home.detail';

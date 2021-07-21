@@ -17,6 +17,7 @@ class AppConstants {
   static const LOGO = 'assets/images/logo/PRISEUP_PRIMARY_EXC.png';
 
   static const APPBAR_LOGO = 'assets/images/logo/PRISEUP_PRIMARY_EXC.png';
+  static const APPBAR_LOGO_WHITE = 'assets/images/logo/PRISEUP_WHITE_EXC.png';
   // static const LOGO =
   //     'https://www.qbrobotics.com/wp-content/uploads/2018/03/sample-logo-490x200.png';
 

@@ -1,13 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:kartal/kartal.dart';
+import 'package:provider/provider.dart';
 
+import '../../../../core/constants/provider/cache_provider.dart';
 import '../../../../core/constants/shared/shared_prefs_constant.dart';
 import '../../../../core/constants/widget/ProgressIndicator/circular_progress_indicator.dart';
 import '../../../../core/extensions/locale_extensions.dart';
 import '../../../../core/lang/locale_key.g.dart';
 import '../../../../core/widgets/AlertDialog/alert_dialog_widget.dart';
 import '../../../../core/widgets/LocaleText/locale_text.dart';
-import '../../../HomeView/view/home_view.dart';
+import '../../../HomeView/Business/MainView/view/home_view.dart';
+import '../../../HomeView/Student/MainView/view/home_view.dart';
 import '../../viewmodel/login_viewmodel.dart';
 
 class LoginButton extends StatefulWidget {
@@ -24,6 +27,7 @@ class LoginButton extends StatefulWidget {
 
 class _LoginButtonState extends State<LoginButton> {
   final prefs = SharedPreferencesConstant.instance;
+  CacheProvider get readCacheProvider => context.read<CacheProvider>();
 
   @override
   Widget build(BuildContext context) {
@@ -36,12 +40,29 @@ class _LoginButtonState extends State<LoginButton> {
                 (value) => value == false
                     ? buildShowDialog(value, context)
                     : saveLoginInfo(value).whenComplete(
-                        () => context.navigation.pushAndRemoveUntil(
-                          MaterialPageRoute(
-                            builder: (context) => HomeView(),
-                          ),
-                          (route) => false,
-                        ),
+                        () {
+                          if (readCacheProvider
+                                  .getStringCache('account_type') ==
+                              '0') {
+                            return context.navigation.pushAndRemoveUntil(
+                                MaterialPageRoute(
+                                    builder: (context) => HomeView()),
+                                (route) => false);
+                          } else if (readCacheProvider
+                                  .getStringCache('account_type') ==
+                              '1') {
+                            return context.navigation.pushAndRemoveUntil(
+                                MaterialPageRoute(
+                                    builder: (context) => BusinessHomeView()),
+                                (route) => false);
+                          }
+                          //   return context.navigation.pushAndRemoveUntil(
+                          //   MaterialPageRoute(
+                          //     builder: (context) => HomeView(),
+                          //   ),
+                          //   (route) => false,
+                          // );
+                        },
                       ),
               );
 
@@ -61,7 +82,12 @@ class _LoginButtonState extends State<LoginButton> {
       prefs.setStringValue('id', value['id'].toString());
       prefs.setStringValue('email', value['email']);
       prefs.setStringValue('token', value['token']);
-      prefs.setStringValue('account_type', value['account_type']);
+      prefs.setStringValue('account_type', value['account_type'].toString());
+      prefs.setStringValue('first_name', value['first_name']);
+      prefs.setStringValue('last_name', value['last_name']);
+      prefs.setStringValue('university', value['university']);
+      prefs.setStringValue('faculty', value['faculty']);
+      prefs.setStringValue('city', value['city']);
     });
     print(prefs.getStringValue('email'));
     print(prefs.getStringValue('token'));

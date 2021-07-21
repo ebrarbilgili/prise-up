@@ -40,6 +40,7 @@
     },
     "home": {
         "home": {
+            "welcome": "Hoş geldin",
             "home": "Ana Sayfa",
             "project_list_empty": "Maalesef henüz aktif proje ilanı yok...",
             "detail": "Detaylar",

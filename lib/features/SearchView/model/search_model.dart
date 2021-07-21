@@ -6,8 +6,8 @@ import 'package:kartal/kartal.dart';
 import '../../../core/extensions/locale_extensions.dart';
 import '../../../core/lang/locale_key.g.dart';
 import '../../../core/widgets/LocaleText/locale_text.dart';
-import '../../HomeView/HomePageView/DetailsView/view/details_view.dart';
-import '../../HomeView/HomePageView/model/home_page_model.dart';
+import '../../HomeView/Student/HomePageView/DetailsView/view/details_view.dart';
+import '../../HomeView/Student/HomePageView/model/home_page_model.dart';
 
 class SearchModel extends SearchDelegate<GetProjectModel> {
   final List<GetProjectModel> allProjects;

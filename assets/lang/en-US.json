@@ -41,6 +41,7 @@
     "home": {
         "home": {
             "home": "Home",
+            "welcome": "Welcome",
             "project_list_empty": "Unfortunately There is no active project posting yet...",
             "detail": "Details",
             "search": "Search",

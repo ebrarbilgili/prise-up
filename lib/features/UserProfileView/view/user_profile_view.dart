@@ -10,9 +10,9 @@ import '../../../core/constants/widget/ProgressIndicator/circular_progress_indic
 import '../../../core/extensions/locale_extensions.dart';
 import '../../../core/lang/locale_key.g.dart';
 import '../../../core/widgets/LocaleText/locale_text.dart';
-import '../../HomeView/HomePageView/model/home_page_model.dart';
-import '../../HomeView/ProfilePageView/ApplicationsView/model/applications_model.dart';
-import '../../HomeView/ProfilePageView/MyProjectsView/MyProjectsDetailsView/model/my_projects_details_model.dart';
+import '../../HomeView/Student/HomePageView/model/home_page_model.dart';
+import '../../HomeView/Student/ProfilePageView/ApplicationsView/model/applications_model.dart';
+import '../../HomeView/Student/ProfilePageView/MyProjectsView/MyProjectsDetailsView/model/my_projects_details_model.dart';
 import '../model/user_profile_model.dart';
 import '../service/user_profile_service.dart';
 import '../viewmodel/user_profile_viewmodel.dart';
