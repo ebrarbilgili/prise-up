@@ -13,11 +13,17 @@
         "valid_email": "Lütfen geçerli bir mail adresi girin."
     },
     "sign_up": {
+        "option": {
+            "option": "Lütfen Hesap Türü Seçin",
+            "business": "Kurumsal",
+            "student": "Öğrenci"
+        },
         "sign_up": "Kayıt Ol",
         "username": "Kullanıcı Adı",
         "first_name": "Adı",
         "last_name": "Soyadı",
         "university": "Üniversite",
+        "business": "Şirket Adı",
         "faculty": "Bölüm",
         "city": "Şehir",
         "phone": "Telefon",
@@ -34,6 +40,7 @@
     },
     "home": {
         "home": {
+            "welcome": "Hoş geldin",
             "home": "Ana Sayfa",
             "project_list_empty": "Maalesef henüz aktif proje ilanı yok...",
             "detail": "Detaylar",

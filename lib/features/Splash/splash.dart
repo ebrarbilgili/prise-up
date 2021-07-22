@@ -39,6 +39,7 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
     super.initState();
+    // SharedPreferencesConstant.instance.clearCache();
     Future.delayed(Duration(seconds: 1), () {
       controlToApp();
       print('account type: ' +

@@ -13,6 +13,9 @@ abstract class _HomePageViewModelBase with Store {
 
   @observable
   List<GetProjectModel> projectList = [];
+  @observable
+  bool isLoading = true;
+
   _HomePageViewModelBase({required this.homePageProjectService}) {
     getProjects();
   }
@@ -20,12 +23,14 @@ abstract class _HomePageViewModelBase with Store {
   final refreshIndicatorKey = GlobalKey<RefreshIndicatorState>();
 
   @action
-  Future<void> getProjects() async {
-    projectList = await homePageProjectService.fetcProjects();
+  Future<void> isLoaded() async {
+    isLoading = !isLoading;
   }
 
   @action
-  Future<void> onRefresh() async {
-    await getProjects();
+  Future<void> getProjects() async {
+    await isLoaded();
+    projectList = await homePageProjectService.fetcProjects();
+    await isLoaded();
   }
 }

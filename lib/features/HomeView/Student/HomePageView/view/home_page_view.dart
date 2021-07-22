@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:kartal/kartal.dart';
 
+import '../../../../../core/constants/widget/ProgressIndicator/circular_progress_indicator.dart';
 import '../../../../../core/extensions/locale_extensions.dart';
 import '../../../../../core/lang/locale_key.g.dart';
 import '../../../../../core/widgets/LocaleText/locale_text.dart';
@@ -23,26 +24,36 @@ class HomePageView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Observer(builder: (_) {
       return RefreshIndicator(
-        key: viewModel.refreshIndicatorKey,
-        color: context.colorScheme.primary,
-        onRefresh: viewModel.onRefresh,
-        child: buildBody(context),
-      );
+          key: viewModel.refreshIndicatorKey,
+          color: context.colorScheme.primary,
+          onRefresh: viewModel.getProjects,
+          child: Column(
+            children: [buildSearchView, buildBody],
+          )
+          // buildBody(context),
+          );
     });
   }
 
-  Widget buildBody(BuildContext context) {
-    return viewModel.projectList.isNullOrEmpty
-        ? buildNoProjectText(context)
-        : buildBodyBlockListViewAndSearch(context);
+  Expanded get buildBody {
+    return Expanded(child: Observer(
+      builder: (context) {
+        return viewModel.isLoading == false
+            ? buildCircularProgressIndicator
+            : viewModel.projectList.isNotNullOrEmpty
+                ? buildListView(context)
+                : buildNoProjectText(context);
+      },
+    ));
   }
 
-  ListView buildBodyBlockListViewAndSearch(BuildContext context) {
-    return ListView(
-      shrinkWrap: false,
+  Column get buildCircularProgressIndicator {
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        buildSearchView,
-        buildListView(context),
+        Center(
+          child: CircularProgressIndicatorWidget(),
+        )
       ],
     );
   }
@@ -52,8 +63,7 @@ class HomePageView extends StatelessWidget {
 
   ListView buildListView(BuildContext context) {
     return ListView.builder(
-      shrinkWrap: true,
-      physics: NeverScrollableScrollPhysics(),
+      physics: AlwaysScrollableScrollPhysics(),
       itemCount: viewModel.projectList.length,
       itemBuilder: (BuildContext context, int index) {
         final data = viewModel.projectList[index];

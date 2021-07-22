@@ -13,11 +13,17 @@
         "valid_email": "Please enter a valid email."
     },
     "sign_up": {
+        "option": {
+            "option": "Please Choose Account Type",
+            "business": "Business",
+            "student": "Student"
+        },
         "sign_up": "Sign Up",
         "username": "Username",
         "first_name": "First Name",
         "last_name": "Last Name",
         "university": "University",
+        "business": "Company Name",
         "faculty": "Faculty",
         "city": "City",
         "phone": "Phone",
@@ -35,6 +41,7 @@
     "home": {
         "home": {
             "home": "Home",
+            "welcome": "Welcome",
             "project_list_empty": "Unfortunately There is no active project posting yet...",
             "detail": "Details",
             "search": "Search",

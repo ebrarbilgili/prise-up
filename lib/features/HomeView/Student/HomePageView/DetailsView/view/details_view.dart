@@ -7,13 +7,13 @@ import 'package:provider/provider.dart';
 
 import '../../../../../../core/constants/app.dart';
 import '../../../../../../core/constants/provider/cache_provider.dart';
+import '../../../../../../core/constants/shared/shared_prefs_constant.dart';
 import '../../../../../../core/constants/widget/ProgressIndicator/circular_progress_indicator.dart';
 import '../../../../../../core/extensions/locale_extensions.dart';
 import '../../../../../../core/lang/locale_key.g.dart';
 import '../../../../../../core/widgets/AlertDialog/alert_dialog_widget.dart';
 import '../../../../../../core/widgets/LocaleText/locale_text.dart';
 import '../../../../../UserProfileView/view/user_profile_view.dart';
-import '../../model/home_page_model.dart';
 import '../service/details_service.dart';
 import '../viewmodel/details_viewmodel.dart';
 
@@ -23,7 +23,7 @@ class DetailsView extends StatelessWidget {
     required this.model,
   }) : super(key: key);
 
-  final GetProjectModel model;
+  final model;
 
   final viewModel = DetailsViewModel(
     service: PostApplyService(
@@ -85,7 +85,11 @@ class DetailsView extends StatelessWidget {
           trailing: TextButton(
             onPressed: () {
               context.navigation.push(MaterialPageRoute(
-                builder: (context) => UserProfileView(getProjectModel: model),
+                builder: (context) => SharedPreferencesConstant.instance
+                            .getStringValue('account_type') ==
+                        '1'
+                    ? UserProfileView(businessGetProjectModel: model)
+                    : UserProfileView(getProjectModel: model),
               ));
             },
             child: LocaleText(text: LocaleKeys.home_home_detail),
@@ -116,6 +120,8 @@ class DetailsView extends StatelessWidget {
   Divider get buildDivider => Divider();
 
   AppBar buildAppBar(BuildContext context) {
+    final accountType =
+        context.read<CacheProvider>().getStringCache('account_type');
     return AppBar(
       title: AutoSizeText(
         '${model.title} ${LocaleKeys.home_home_detail_page_project_detail.locale}',
@@ -124,20 +130,22 @@ class DetailsView extends StatelessWidget {
       ),
       centerTitle: false,
       actions: [
-        TextButton(
-          onPressed: () {
-            buildShowDialog(
-              context,
-              LocaleKeys.home_home_detail_page_apply.locale,
-              LocaleKeys.home_home_detail_page_sure_to_apply.locale,
-              [
-                buildCancelButton(context),
-                buildApplyButton(context),
-              ],
-            );
-          },
-          child: LocaleText(text: LocaleKeys.home_home_detail_page_apply),
-        )
+        accountType == '1'
+            ? SizedBox()
+            : TextButton(
+                onPressed: () {
+                  buildShowDialog(
+                    context,
+                    LocaleKeys.home_home_detail_page_apply.locale,
+                    LocaleKeys.home_home_detail_page_sure_to_apply.locale,
+                    [
+                      buildCancelButton(context),
+                      buildApplyButton(context),
+                    ],
+                  );
+                },
+                child: LocaleText(text: LocaleKeys.home_home_detail_page_apply),
+              )
       ],
     );
   }
@@ -153,8 +161,9 @@ class DetailsView extends StatelessWidget {
     );
   }
 
-  TextButton buildApplyButton(BuildContext context) {
+  Widget buildApplyButton(BuildContext context) {
     final userID = context.read<CacheProvider>().getStringCache('id');
+
     return TextButton(
       onPressed: () async {
         buildShowDialog(

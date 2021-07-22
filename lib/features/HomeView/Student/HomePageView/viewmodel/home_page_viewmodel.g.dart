@@ -24,6 +24,28 @@ mixin _$HomePageViewModel on _HomePageViewModelBase, Store {
     });
   }
 
+  final _$isLoadingAtom = Atom(name: '_HomePageViewModelBase.isLoading');
+
+  @override
+  bool get isLoading {
+    _$isLoadingAtom.reportRead();
+    return super.isLoading;
+  }
+
+  @override
+  set isLoading(bool value) {
+    _$isLoadingAtom.reportWrite(value, super.isLoading, () {
+      super.isLoading = value;
+    });
+  }
+
+  final _$isLoadedAsyncAction = AsyncAction('_HomePageViewModelBase.isLoaded');
+
+  @override
+  Future<void> isLoaded() {
+    return _$isLoadedAsyncAction.run(() => super.isLoaded());
+  }
+
   final _$getProjectsAsyncAction =
       AsyncAction('_HomePageViewModelBase.getProjects');
 
@@ -32,18 +54,11 @@ mixin _$HomePageViewModel on _HomePageViewModelBase, Store {
     return _$getProjectsAsyncAction.run(() => super.getProjects());
   }
 
-  final _$onRefreshAsyncAction =
-      AsyncAction('_HomePageViewModelBase.onRefresh');
-
-  @override
-  Future<void> onRefresh() {
-    return _$onRefreshAsyncAction.run(() => super.onRefresh());
-  }
-
   @override
   String toString() {
     return '''
-projectList: ${projectList}
+projectList: ${projectList},
+isLoading: ${isLoading}
     ''';
   }
 }

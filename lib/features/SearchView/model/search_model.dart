@@ -7,11 +7,10 @@ import '../../../core/extensions/locale_extensions.dart';
 import '../../../core/lang/locale_key.g.dart';
 import '../../../core/widgets/LocaleText/locale_text.dart';
 import '../../HomeView/Student/HomePageView/DetailsView/view/details_view.dart';
-import '../../HomeView/Student/HomePageView/model/home_page_model.dart';
 
-class SearchModel extends SearchDelegate<GetProjectModel> {
-  final List<GetProjectModel> allProjects;
-  final List<GetProjectModel> allProjectsSuggestion;
+class SearchModel extends SearchDelegate {
+  final List allProjects;
+  final List allProjectsSuggestion;
 
   SearchModel({required this.allProjects, required this.allProjectsSuggestion});
 
@@ -94,30 +93,30 @@ class SearchModel extends SearchDelegate<GetProjectModel> {
   Widget buildSuggestions(BuildContext context) {
     final allProject = allProjectsSuggestion.where(
       (element) {
-        if (!element.desc!.toLowerCase().contains(query.toLowerCase())) {
-          if (!element.id!
+        if (!element.desc.toLowerCase().contains(query.toLowerCase())) {
+          if (!element.id
               .toString()
               .toLowerCase()
               .contains(query.toLowerCase())) {
-            if (!element.desc!.toLowerCase().contains(query.toLowerCase())) {
-              if (!element.title!.toLowerCase().contains(query.toLowerCase())) {
-                return element.university!
+            if (!element.desc.toLowerCase().contains(query.toLowerCase())) {
+              if (!element.title.toLowerCase().contains(query.toLowerCase())) {
+                return element.university
                     .toLowerCase()
                     .contains(query.toLowerCase());
               }
 
-              return element.title!.toLowerCase().contains(query.toLowerCase());
+              return element.title.toLowerCase().contains(query.toLowerCase());
             }
 
-            return element.desc!.toLowerCase().contains(query.toLowerCase());
+            return element.desc.toLowerCase().contains(query.toLowerCase());
           }
 
-          return element.id!
+          return element.id
               .toString()
               .toLowerCase()
               .contains(query.toLowerCase());
         } else {
-          return element.desc!.toLowerCase().contains(query.toLowerCase());
+          return element.desc.toLowerCase().contains(query.toLowerCase());
         }
       },
     ).toList();
@@ -137,7 +136,7 @@ class SearchModel extends SearchDelegate<GetProjectModel> {
     );
   }
 
-  Column buildCardSubColumn(GetProjectModel data, BuildContext context) {
+  Column buildCardSubColumn(dynamic data, BuildContext context) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -149,28 +148,28 @@ class SearchModel extends SearchDelegate<GetProjectModel> {
     );
   }
 
-  AutoSizeText buildFullname(GetProjectModel data, BuildContext context) {
+  AutoSizeText buildFullname(dynamic data, BuildContext context) {
     return AutoSizeText(
       '${data.userProfile!.first_name} ${data.userProfile!.last_name}',
       style: context.textTheme.bodyText1!.copyWith(fontWeight: FontWeight.w500),
     );
   }
 
-  AutoSizeText buildUniversity(GetProjectModel data, BuildContext context) {
+  AutoSizeText buildUniversity(dynamic data, BuildContext context) {
     return AutoSizeText(
       '${data.university}',
       style: context.textTheme.bodyText1!.copyWith(fontWeight: FontWeight.w500),
     );
   }
 
-  AutoSizeText buildSubtitle(GetProjectModel data, BuildContext context) {
+  AutoSizeText buildSubtitle(dynamic data, BuildContext context) {
     return AutoSizeText(
       '${data.subtitle}',
       style: context.textTheme.bodyText1!.copyWith(fontWeight: FontWeight.w500),
     );
   }
 
-  TextButton buildDetailsButton(GetProjectModel data, BuildContext context) {
+  TextButton buildDetailsButton(dynamic data, BuildContext context) {
     return TextButton(
       onPressed: () {
         context.navigation.push(MaterialPageRoute(
@@ -183,7 +182,7 @@ class SearchModel extends SearchDelegate<GetProjectModel> {
 
   Divider get buildDivider => Divider();
 
-  Row buildProjectTitle(GetProjectModel data, BuildContext context) {
+  Row buildProjectTitle(dynamic data, BuildContext context) {
     return Row(
       children: [
         AutoSizeText(

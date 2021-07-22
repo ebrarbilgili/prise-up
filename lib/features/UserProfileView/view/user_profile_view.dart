@@ -10,6 +10,7 @@ import '../../../core/constants/widget/ProgressIndicator/circular_progress_indic
 import '../../../core/extensions/locale_extensions.dart';
 import '../../../core/lang/locale_key.g.dart';
 import '../../../core/widgets/LocaleText/locale_text.dart';
+import '../../HomeView/Business/HomePageView/model/home_page_model.dart';
 import '../../HomeView/Student/HomePageView/model/home_page_model.dart';
 import '../../HomeView/Student/ProfilePageView/ApplicationsView/model/applications_model.dart';
 import '../../HomeView/Student/ProfilePageView/MyProjectsView/MyProjectsDetailsView/model/my_projects_details_model.dart';
@@ -22,11 +23,13 @@ class UserProfileView extends StatelessWidget {
     Key? key,
     this.model,
     this.getProjectModel,
+    this.businessGetProjectModel,
     this.appliedModel,
   }) : super(key: key);
 
   final MyProjectsDetailsModel? model;
   final GetProjectModel? getProjectModel;
+  final BusinessGetProjectModel? businessGetProjectModel;
   final AppliedModel? appliedModel;
 
   final viewModel = UserProfileViewModel(
@@ -129,11 +132,17 @@ class UserProfileView extends StatelessWidget {
                         style: context.textTheme.headline6!
                             .copyWith(color: context.colorScheme.onBackground),
                       )
-                    : AutoSizeText(
-                        '  ${data.email ?? '-'}',
-                        style: context.textTheme.headline6!
-                            .copyWith(color: context.colorScheme.onBackground),
-                      ),
+                    : businessGetProjectModel != null
+                        ? AutoSizeText(
+                            '  ${businessGetProjectModel!.userProfile!.email ?? '-'}',
+                            style: context.textTheme.headline6!.copyWith(
+                                color: context.colorScheme.onBackground),
+                          )
+                        : AutoSizeText(
+                            '  ${data.email ?? '-'}',
+                            style: context.textTheme.headline6!.copyWith(
+                                color: context.colorScheme.onBackground),
+                          ),
         FaIcon(
           FontAwesomeIcons.solidEnvelope,
           color: context.colorScheme.primary,
@@ -164,11 +173,17 @@ class UserProfileView extends StatelessWidget {
                         style: context.textTheme.headline6!
                             .copyWith(color: context.colorScheme.onBackground),
                       )
-                    : AutoSizeText(
-                        '  ${data.phone ?? '-'}',
-                        style: context.textTheme.headline6!
-                            .copyWith(color: context.colorScheme.onBackground),
-                      ),
+                    : businessGetProjectModel != null
+                        ? AutoSizeText(
+                            '  ${businessGetProjectModel!.userProfile!.phone ?? '-'}',
+                            style: context.textTheme.headline6!.copyWith(
+                                color: context.colorScheme.onBackground),
+                          )
+                        : AutoSizeText(
+                            '  ${data.phone ?? '-'}',
+                            style: context.textTheme.headline6!.copyWith(
+                                color: context.colorScheme.onBackground),
+                          ),
         FaIcon(
           FontAwesomeIcons.phone,
           color: context.colorScheme.primary,
@@ -199,11 +214,17 @@ class UserProfileView extends StatelessWidget {
                         style: context.textTheme.headline6!
                             .copyWith(color: context.colorScheme.onBackground),
                       )
-                    : AutoSizeText(
-                        '  ${data.linkedIn ?? '-'}',
-                        style: context.textTheme.headline6!
-                            .copyWith(color: context.colorScheme.onBackground),
-                      ),
+                    : businessGetProjectModel != null
+                        ? AutoSizeText(
+                            '  ${businessGetProjectModel!.userProfile!.linkedIn ?? '-'}',
+                            style: context.textTheme.headline6!.copyWith(
+                                color: context.colorScheme.onBackground),
+                          )
+                        : AutoSizeText(
+                            '  ${data.linkedIn ?? '-'}',
+                            style: context.textTheme.headline6!.copyWith(
+                                color: context.colorScheme.onBackground),
+                          ),
         FaIcon(
           FontAwesomeIcons.linkedin,
           color: Colors.blue.shade900,
@@ -234,11 +255,17 @@ class UserProfileView extends StatelessWidget {
                         style: context.textTheme.headline6!
                             .copyWith(color: context.colorScheme.onBackground),
                       )
-                    : AutoSizeText(
-                        '  ${data.twitter ?? '-'}',
-                        style: context.textTheme.headline6!
-                            .copyWith(color: context.colorScheme.onBackground),
-                      ),
+                    : businessGetProjectModel != null
+                        ? AutoSizeText(
+                            '  ${businessGetProjectModel!.userProfile!.twitter ?? '-'}',
+                            style: context.textTheme.headline6!.copyWith(
+                                color: context.colorScheme.onBackground),
+                          )
+                        : AutoSizeText(
+                            '  ${data.twitter ?? '-'}',
+                            style: context.textTheme.headline6!.copyWith(
+                                color: context.colorScheme.onBackground),
+                          ),
         FaIcon(
           FontAwesomeIcons.twitter,
           color: Colors.blue,
@@ -269,12 +296,19 @@ class UserProfileView extends StatelessWidget {
                     '  ${appliedModel!.applyUserProfile!.city ?? '-'}',
                     FontAwesomeIcons.city,
                   )
-                : buildProfileRow(
-                    context,
-                    LocaleKeys.home_profile_project_city,
-                    '${data.city}',
-                    FontAwesomeIcons.city,
-                  );
+                : businessGetProjectModel != null
+                    ? buildProfileRow(
+                        context,
+                        LocaleKeys.home_profile_project_city,
+                        '${businessGetProjectModel!.city ?? '-'}',
+                        FontAwesomeIcons.city,
+                      )
+                    : buildProfileRow(
+                        context,
+                        LocaleKeys.home_profile_project_city,
+                        '${data.city}',
+                        FontAwesomeIcons.city,
+                      );
   }
 
   Widget buildFaculty(UserProfileModel data, BuildContext context) {
@@ -299,12 +333,19 @@ class UserProfileView extends StatelessWidget {
                     '  ${appliedModel!.applyUserProfile!.faculty ?? '-'}',
                     FontAwesomeIcons.school,
                   )
-                : buildProfileRow(
-                    context,
-                    LocaleKeys.sign_up_faculty,
-                    '${data.faculty}',
-                    FontAwesomeIcons.school,
-                  );
+                : businessGetProjectModel != null
+                    ? buildProfileRow(
+                        context,
+                        LocaleKeys.sign_up_faculty,
+                        '${businessGetProjectModel!.userProfile!.faculty ?? '-'}',
+                        FontAwesomeIcons.school,
+                      )
+                    : buildProfileRow(
+                        context,
+                        LocaleKeys.sign_up_faculty,
+                        '${data.faculty}',
+                        FontAwesomeIcons.school,
+                      );
   }
 
   Widget buildUniversity(UserProfileModel data, BuildContext context) {
@@ -329,12 +370,19 @@ class UserProfileView extends StatelessWidget {
                     '${appliedModel!.applyUserProfile!.university ?? '-'}',
                     FontAwesomeIcons.university,
                   )
-                : buildProfileRow(
-                    context,
-                    LocaleKeys.home_profile_project_university,
-                    '${data.university}',
-                    FontAwesomeIcons.university,
-                  );
+                : businessGetProjectModel != null
+                    ? buildProfileRow(
+                        context,
+                        LocaleKeys.home_profile_project_university,
+                        '${businessGetProjectModel!.university ?? '-'}',
+                        FontAwesomeIcons.university,
+                      )
+                    : buildProfileRow(
+                        context,
+                        LocaleKeys.home_profile_project_university,
+                        '${data.university}',
+                        FontAwesomeIcons.university,
+                      );
   }
 
   Widget buildProfileRow(
@@ -378,8 +426,11 @@ class UserProfileView extends StatelessWidget {
             : appliedModel != null
                 ? buildProfileImageAndName(context,
                     '${appliedModel!.applyUserProfile!.first_name ?? '-'} ${appliedModel!.applyUserProfile!.last_name ?? '-'}')
-                : buildProfileImageAndName(
-                    context, '${data.first_name} ${data.last_name}');
+                : businessGetProjectModel != null
+                    ? buildProfileImageAndName(context,
+                        '${businessGetProjectModel!.userProfile!.first_name ?? '-'} ${businessGetProjectModel!.userProfile!.last_name ?? '-'}')
+                    : buildProfileImageAndName(
+                        context, '${data.first_name} ${data.last_name}');
   }
 
   Widget buildProfileImageAndName(BuildContext context, String name) {
@@ -415,19 +466,20 @@ class UserProfileView extends StatelessWidget {
   AppBar buildAppBar(BuildContext context) {
     return AppBar(
       title: LocaleText(
-        text: LocaleKeys.home_user_profile_my_profile,
+        // ignore: unnecessary_null_comparison
+        text: LocaleKeys.home_profile_profile,
         style: context.textTheme.headline6!
             .copyWith(color: context.colorScheme.background),
       ),
       centerTitle: false,
       backgroundColor: context.colorScheme.primary,
       iconTheme: IconThemeData(color: context.colorScheme.background),
-      actions: [
-        IconButton(
-          onPressed: () {},
-          icon: FaIcon(FontAwesomeIcons.edit),
-        )
-      ],
+      // actions: [
+      //   IconButton(
+      //     onPressed: () {},
+      //     icon: FaIcon(FontAwesomeIcons.edit),
+      //   )
+      // ],
     );
   }
 }

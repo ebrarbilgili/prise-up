@@ -4,11 +4,10 @@ import 'package:kartal/kartal.dart';
 
 import '../../../core/extensions/locale_extensions.dart';
 import '../../../core/lang/locale_key.g.dart';
-import '../../HomeView/Student/HomePageView/model/home_page_model.dart';
 import '../model/search_model.dart';
 
 class SearchView extends StatelessWidget {
-  final List<GetProjectModel> projectList;
+  final List projectList;
 
   SearchView({required this.projectList});
 
