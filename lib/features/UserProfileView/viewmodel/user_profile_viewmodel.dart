@@ -1,5 +1,6 @@
 import 'package:mobx/mobx.dart';
 
+import '../../../core/constants/shared/shared_prefs_constant.dart';
 import '../model/user_profile_model.dart';
 import '../service/user_profile_service.dart';
 
@@ -21,5 +22,10 @@ abstract class _UserProfileViewModelBase with Store {
   @action
   Future<List<UserProfileModel>> fetchUserProfile() async {
     return userProfileList = await service.fetchUserProfile();
+  }
+
+  @action
+  String readCache(String key) {
+    return SharedPreferencesConstant.instance.getStringValue(key) ?? 'Error';
   }
 }

@@ -33,9 +33,10 @@ class ProfilePageView extends StatelessWidget {
       decoration: buildButtonBorderDecoration(context),
       child: TextButton(
         onPressed: () {
+          // print(SharedPreferencesConstant.instance.getStringValue('twitter'));
           context.navigation.push(
             MaterialPageRoute(
-              builder: (context) => UserProfileView(),
+              builder: (context) => UserProfileView(isMyProfile: true),
             ),
           );
         },

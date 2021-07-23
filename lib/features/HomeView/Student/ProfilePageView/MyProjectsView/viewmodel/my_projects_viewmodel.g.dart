@@ -25,27 +25,43 @@ mixin _$MyProjectsViewModel on _MyProjectsViewModelBase, Store {
     });
   }
 
+  final _$isLoadingAtom = Atom(name: '_MyProjectsViewModelBase.isLoading');
+
+  @override
+  bool get isLoading {
+    _$isLoadingAtom.reportRead();
+    return super.isLoading;
+  }
+
+  @override
+  set isLoading(bool value) {
+    _$isLoadingAtom.reportWrite(value, super.isLoading, () {
+      super.isLoading = value;
+    });
+  }
+
+  final _$isLoadedAsyncAction =
+      AsyncAction('_MyProjectsViewModelBase.isLoaded');
+
+  @override
+  Future<void> isLoaded() {
+    return _$isLoadedAsyncAction.run(() => super.isLoaded());
+  }
+
   final _$onPressedFetchMyPojectAsyncAction =
       AsyncAction('_MyProjectsViewModelBase.onPressedFetchMyPoject');
 
   @override
-  Future<List<MyProjectsModel>> onPressedFetchMyPoject() {
+  Future<void> onPressedFetchMyPoject() {
     return _$onPressedFetchMyPojectAsyncAction
         .run(() => super.onPressedFetchMyPoject());
-  }
-
-  final _$onRefreshAsyncAction =
-      AsyncAction('_MyProjectsViewModelBase.onRefresh');
-
-  @override
-  Future<void> onRefresh() {
-    return _$onRefreshAsyncAction.run(() => super.onRefresh());
   }
 
   @override
   String toString() {
     return '''
-myProjectsModel: ${myProjectsModel}
+myProjectsModel: ${myProjectsModel},
+isLoading: ${isLoading}
     ''';
   }
 }

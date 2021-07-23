@@ -1,8 +1,10 @@
 import 'package:auto_size_text/auto_size_text.dart';
+import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:kartal/kartal.dart';
 
+import '../../../../../core/constants/app.dart';
 import '../../../../../core/constants/widget/ProgressIndicator/circular_progress_indicator.dart';
 import '../../../../../core/extensions/locale_extensions.dart';
 import '../../../../../core/lang/locale_key.g.dart';
@@ -17,7 +19,9 @@ class HomePageView extends StatelessWidget {
   HomePageView({Key? key}) : super(key: key);
 
   final viewModel = HomePageViewModel(
-    homePageProjectService: HomePageProjectService(),
+    homePageProjectService: HomePageProjectService(
+      service: Dio(BaseOptions(baseUrl: AppConstants.BASE_URL)),
+    ),
   );
 
   @override

@@ -71,7 +71,8 @@ class ApplicationsDetailsView extends StatelessWidget {
           trailing: TextButton(
             onPressed: () {
               context.navigation.push(MaterialPageRoute(
-                builder: (context) => UserProfileView(appliedModel: model),
+                builder: (context) =>
+                    UserProfileView(model: model.project!.userProfile),
               ));
             },
             child: LocaleText(text: LocaleKeys.home_home_detail),

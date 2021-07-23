@@ -29,6 +29,20 @@ mixin _$UserProfileViewModel on _UserProfileViewModelBase, Store {
     return _$fetchUserProfileAsyncAction.run(() => super.fetchUserProfile());
   }
 
+  final _$_UserProfileViewModelBaseActionController =
+      ActionController(name: '_UserProfileViewModelBase');
+
+  @override
+  String readCache(String key) {
+    final _$actionInfo = _$_UserProfileViewModelBaseActionController
+        .startAction(name: '_UserProfileViewModelBase.readCache');
+    try {
+      return super.readCache(key);
+    } finally {
+      _$_UserProfileViewModelBaseActionController.endAction(_$actionInfo);
+    }
+  }
+
   @override
   String toString() {
     return '''

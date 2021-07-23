@@ -1,10 +1,9 @@
 import 'package:json_annotation/json_annotation.dart';
-import 'package:vexana/vexana.dart';
 
 part 'my_projects_model.g.dart';
 
 @JsonSerializable()
-class MyProjectsModel extends INetworkModel {
+class MyProjectsModel {
   int? id;
   String? title;
   String? subtitle;
@@ -26,13 +25,8 @@ class MyProjectsModel extends INetworkModel {
   factory MyProjectsModel.fromJson(Map<String, dynamic> json) {
     return _$MyProjectsModelFromJson(json);
   }
-  @override
+
   Map<String, dynamic> toJson() {
     return _$MyProjectsModelToJson(this);
-  }
-
-  @override
-  MyProjectsModel fromJson(Map<String, dynamic> json) {
-    return MyProjectsModel.fromJson(json);
   }
 }

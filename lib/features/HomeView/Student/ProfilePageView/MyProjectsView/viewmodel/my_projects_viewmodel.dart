@@ -19,13 +19,18 @@ abstract class _MyProjectsViewModelBase with Store {
 
   @observable
   List<MyProjectsModel> myProjectsModel = [];
+  @observable
+  bool isLoading = true;
+
   @action
-  Future<List<MyProjectsModel>> onPressedFetchMyPoject() async {
-    return myProjectsModel = await service.fetchMyProjects();
+  Future<void> isLoaded() async {
+    isLoading = !isLoading;
   }
 
   @action
-  Future<void> onRefresh() async {
-    await onPressedFetchMyPoject();
+  Future<void> onPressedFetchMyPoject() async {
+    await isLoaded();
+    myProjectsModel = await service.fetchMyProjects();
+    await isLoaded();
   }
 }

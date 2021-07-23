@@ -1,20 +1,13 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:kartal/kartal.dart';
 
 import '../../../core/constants/app.dart';
-import '../../../core/constants/widget/ProgressIndicator/circular_progress_indicator.dart';
 import '../../../core/extensions/locale_extensions.dart';
 import '../../../core/lang/locale_key.g.dart';
 import '../../../core/widgets/LocaleText/locale_text.dart';
-import '../../HomeView/Business/HomePageView/model/home_page_model.dart';
-import '../../HomeView/Student/HomePageView/model/home_page_model.dart';
-import '../../HomeView/Student/ProfilePageView/ApplicationsView/model/applications_model.dart';
-import '../../HomeView/Student/ProfilePageView/MyProjectsView/MyProjectsDetailsView/model/my_projects_details_model.dart';
-import '../model/user_profile_model.dart';
 import '../service/user_profile_service.dart';
 import '../viewmodel/user_profile_viewmodel.dart';
 
@@ -22,15 +15,11 @@ class UserProfileView extends StatelessWidget {
   UserProfileView({
     Key? key,
     this.model,
-    this.getProjectModel,
-    this.businessGetProjectModel,
-    this.appliedModel,
+    this.isMyProfile,
   }) : super(key: key);
 
-  final MyProjectsDetailsModel? model;
-  final GetProjectModel? getProjectModel;
-  final BusinessGetProjectModel? businessGetProjectModel;
-  final AppliedModel? appliedModel;
+  final dynamic model;
+  final bool? isMyProfile;
 
   final viewModel = UserProfileViewModel(
     service: UserProfileService(
@@ -42,55 +31,30 @@ class UserProfileView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: buildAppBar(context),
-      body: Observer(
-        builder: (_) {
-          return buildListView(context);
-        },
-      ),
+      body: buildListView(context),
     );
   }
 
   Padding buildListView(BuildContext context) {
     return Padding(
       padding: context.paddingLow,
-      child: ListView.builder(
-        itemCount: viewModel.userProfileList.length,
-        itemBuilder: (context, index) {
-          return FutureBuilder<List<UserProfileModel>>(
-              future: viewModel.fetchUserProfile(),
-              builder: (context, snapshot) {
-                final data = viewModel.userProfileList[index];
-                if (snapshot.hasData) {
-                  return Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      buildFullname(data, context),
-                      buildUniversity(data, context),
-                      buildFaculty(data, context),
-                      buildCity(data, context),
-                      buildContactRow(context),
-                      buildDivider,
-                      buildTwitter(data, context),
-                      buildDivider,
-                      buildLinkedin(data, context),
-                      buildDivider,
-                      buildPhone(context, data),
-                      buildDivider,
-                      buildEmail(context, data),
-                    ],
-                  );
-                } else if (snapshot.connectionState ==
-                    ConnectionState.waiting) {
-                  return Center(
-                    child: CircularProgressIndicatorWidget(),
-                  );
-                } else if (!snapshot.hasData) {
-                  return AutoSizeText('Error occured');
-                } else {
-                  throw Exception();
-                }
-              });
-        },
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          buildFullname(model, context),
+          buildUniversity(model, context),
+          buildFaculty(model, context),
+          buildCity(model, context),
+          buildContactRow(context),
+          buildDivider,
+          buildTwitter(model, context),
+          buildDivider,
+          buildLinkedin(model, context),
+          buildDivider,
+          buildPhone(context, model),
+          buildDivider,
+          buildEmail(context, model),
+        ],
       ),
     );
   }
@@ -110,39 +74,15 @@ class UserProfileView extends StatelessWidget {
     );
   }
 
-  Row buildEmail(BuildContext context, UserProfileModel data) {
+  Row buildEmail(BuildContext context, dynamic data) {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        model != null
-            ? AutoSizeText(
-                '  ${model!.applyUserProfile!.email ?? '-'}',
-                style: context.textTheme.headline6!
-                    .copyWith(color: context.colorScheme.onBackground),
-              )
-            : getProjectModel != null
-                ? AutoSizeText(
-                    '  ${getProjectModel!.userProfile!.email ?? '-'}',
-                    style: context.textTheme.headline6!
-                        .copyWith(color: context.colorScheme.onBackground),
-                  )
-                : appliedModel != null
-                    ? AutoSizeText(
-                        '  ${appliedModel!.project!.userProfile!.email ?? '-'}',
-                        style: context.textTheme.headline6!
-                            .copyWith(color: context.colorScheme.onBackground),
-                      )
-                    : businessGetProjectModel != null
-                        ? AutoSizeText(
-                            '  ${businessGetProjectModel!.userProfile!.email ?? '-'}',
-                            style: context.textTheme.headline6!.copyWith(
-                                color: context.colorScheme.onBackground),
-                          )
-                        : AutoSizeText(
-                            '  ${data.email ?? '-'}',
-                            style: context.textTheme.headline6!.copyWith(
-                                color: context.colorScheme.onBackground),
-                          ),
+        AutoSizeText(
+          '  ${isMyProfile == true ? viewModel.readCache('email') : data.email ?? '-'}',
+          style: context.textTheme.headline6!
+              .copyWith(color: context.colorScheme.onBackground),
+        ),
         FaIcon(
           FontAwesomeIcons.solidEnvelope,
           color: context.colorScheme.primary,
@@ -151,39 +91,15 @@ class UserProfileView extends StatelessWidget {
     );
   }
 
-  Row buildPhone(BuildContext context, UserProfileModel data) {
+  Row buildPhone(BuildContext context, dynamic data) {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        model != null
-            ? AutoSizeText(
-                '  ${model!.applyUserProfile!.phone ?? '-'}',
-                style: context.textTheme.headline6!
-                    .copyWith(color: context.colorScheme.onBackground),
-              )
-            : getProjectModel != null
-                ? AutoSizeText(
-                    '  ${getProjectModel!.userProfile!.phone ?? '-'}',
-                    style: context.textTheme.headline6!
-                        .copyWith(color: context.colorScheme.onBackground),
-                  )
-                : appliedModel != null
-                    ? AutoSizeText(
-                        '  ${appliedModel!.project!.userProfile!.phone ?? '-'}',
-                        style: context.textTheme.headline6!
-                            .copyWith(color: context.colorScheme.onBackground),
-                      )
-                    : businessGetProjectModel != null
-                        ? AutoSizeText(
-                            '  ${businessGetProjectModel!.userProfile!.phone ?? '-'}',
-                            style: context.textTheme.headline6!.copyWith(
-                                color: context.colorScheme.onBackground),
-                          )
-                        : AutoSizeText(
-                            '  ${data.phone ?? '-'}',
-                            style: context.textTheme.headline6!.copyWith(
-                                color: context.colorScheme.onBackground),
-                          ),
+        AutoSizeText(
+          '  ${isMyProfile == true ? viewModel.readCache('phone') : data.phone ?? '-'}',
+          style: context.textTheme.headline6!
+              .copyWith(color: context.colorScheme.onBackground),
+        ),
         FaIcon(
           FontAwesomeIcons.phone,
           color: context.colorScheme.primary,
@@ -192,39 +108,15 @@ class UserProfileView extends StatelessWidget {
     );
   }
 
-  Row buildLinkedin(UserProfileModel data, BuildContext context) {
+  Row buildLinkedin(dynamic data, BuildContext context) {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        model != null
-            ? AutoSizeText(
-                '  ${model!.applyUserProfile!.linkedIn ?? '-'}',
-                style: context.textTheme.headline6!
-                    .copyWith(color: context.colorScheme.onBackground),
-              )
-            : getProjectModel != null
-                ? AutoSizeText(
-                    '  ${getProjectModel!.userProfile!.linkedIn ?? '-'}',
-                    style: context.textTheme.headline6!
-                        .copyWith(color: context.colorScheme.onBackground),
-                  )
-                : appliedModel != null
-                    ? AutoSizeText(
-                        '  ${appliedModel!.project!.userProfile!.linkedIn ?? '-'}',
-                        style: context.textTheme.headline6!
-                            .copyWith(color: context.colorScheme.onBackground),
-                      )
-                    : businessGetProjectModel != null
-                        ? AutoSizeText(
-                            '  ${businessGetProjectModel!.userProfile!.linkedIn ?? '-'}',
-                            style: context.textTheme.headline6!.copyWith(
-                                color: context.colorScheme.onBackground),
-                          )
-                        : AutoSizeText(
-                            '  ${data.linkedIn ?? '-'}',
-                            style: context.textTheme.headline6!.copyWith(
-                                color: context.colorScheme.onBackground),
-                          ),
+        AutoSizeText(
+          '  ${isMyProfile == true ? viewModel.readCache('linkedIn') : data.linkedIn ?? '-'}',
+          style: context.textTheme.headline6!
+              .copyWith(color: context.colorScheme.onBackground),
+        ),
         FaIcon(
           FontAwesomeIcons.linkedin,
           color: Colors.blue.shade900,
@@ -233,39 +125,15 @@ class UserProfileView extends StatelessWidget {
     );
   }
 
-  Row buildTwitter(UserProfileModel data, BuildContext context) {
+  Row buildTwitter(dynamic data, BuildContext context) {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        model != null
-            ? AutoSizeText(
-                '  ${model!.applyUserProfile!.twitter ?? '-'}',
-                style: context.textTheme.headline6!
-                    .copyWith(color: context.colorScheme.onBackground),
-              )
-            : getProjectModel != null
-                ? AutoSizeText(
-                    '  ${getProjectModel!.userProfile!.twitter ?? '-'}',
-                    style: context.textTheme.headline6!
-                        .copyWith(color: context.colorScheme.onBackground),
-                  )
-                : appliedModel != null
-                    ? AutoSizeText(
-                        '  ${appliedModel!.project!.userProfile!.twitter ?? '-'}',
-                        style: context.textTheme.headline6!
-                            .copyWith(color: context.colorScheme.onBackground),
-                      )
-                    : businessGetProjectModel != null
-                        ? AutoSizeText(
-                            '  ${businessGetProjectModel!.userProfile!.twitter ?? '-'}',
-                            style: context.textTheme.headline6!.copyWith(
-                                color: context.colorScheme.onBackground),
-                          )
-                        : AutoSizeText(
-                            '  ${data.twitter ?? '-'}',
-                            style: context.textTheme.headline6!.copyWith(
-                                color: context.colorScheme.onBackground),
-                          ),
+        AutoSizeText(
+          '  ${isMyProfile == true ? viewModel.readCache('twitter') : data.twitter ?? '-'}',
+          style: context.textTheme.headline6!
+              .copyWith(color: context.colorScheme.onBackground),
+        ),
         FaIcon(
           FontAwesomeIcons.twitter,
           color: Colors.blue,
@@ -274,115 +142,31 @@ class UserProfileView extends StatelessWidget {
     );
   }
 
-  Widget buildCity(UserProfileModel data, BuildContext context) {
-    return model != null
-        ? buildProfileRow(
-            context,
-            LocaleKeys.home_profile_project_city,
-            '${model!.applyUserProfile!.city}',
-            FontAwesomeIcons.city,
-          )
-        : getProjectModel != null
-            ? buildProfileRow(
-                context,
-                LocaleKeys.home_profile_project_city,
-                '${getProjectModel!.city ?? '-'}',
-                FontAwesomeIcons.city,
-              )
-            : appliedModel != null
-                ? buildProfileRow(
-                    context,
-                    LocaleKeys.home_profile_project_city,
-                    '  ${appliedModel!.applyUserProfile!.city ?? '-'}',
-                    FontAwesomeIcons.city,
-                  )
-                : businessGetProjectModel != null
-                    ? buildProfileRow(
-                        context,
-                        LocaleKeys.home_profile_project_city,
-                        '${businessGetProjectModel!.city ?? '-'}',
-                        FontAwesomeIcons.city,
-                      )
-                    : buildProfileRow(
-                        context,
-                        LocaleKeys.home_profile_project_city,
-                        '${data.city}',
-                        FontAwesomeIcons.city,
-                      );
+  Widget buildCity(dynamic data, BuildContext context) {
+    return buildProfileRow(
+      context,
+      LocaleKeys.home_profile_project_city,
+      '${isMyProfile == true ? viewModel.readCache('city') : data.city}',
+      FontAwesomeIcons.city,
+    );
   }
 
-  Widget buildFaculty(UserProfileModel data, BuildContext context) {
-    return model != null
-        ? buildProfileRow(
-            context,
-            LocaleKeys.sign_up_faculty,
-            '${model!.applyUserProfile!.faculty}',
-            FontAwesomeIcons.school,
-          )
-        : getProjectModel != null
-            ? buildProfileRow(
-                context,
-                LocaleKeys.sign_up_faculty,
-                '${getProjectModel!.userProfile!.faculty ?? '-'}',
-                FontAwesomeIcons.school,
-              )
-            : appliedModel != null
-                ? buildProfileRow(
-                    context,
-                    LocaleKeys.sign_up_faculty,
-                    '  ${appliedModel!.applyUserProfile!.faculty ?? '-'}',
-                    FontAwesomeIcons.school,
-                  )
-                : businessGetProjectModel != null
-                    ? buildProfileRow(
-                        context,
-                        LocaleKeys.sign_up_faculty,
-                        '${businessGetProjectModel!.userProfile!.faculty ?? '-'}',
-                        FontAwesomeIcons.school,
-                      )
-                    : buildProfileRow(
-                        context,
-                        LocaleKeys.sign_up_faculty,
-                        '${data.faculty}',
-                        FontAwesomeIcons.school,
-                      );
+  Widget buildFaculty(dynamic data, BuildContext context) {
+    return buildProfileRow(
+      context,
+      LocaleKeys.sign_up_faculty,
+      '${isMyProfile == true ? viewModel.readCache('faculty') : data.faculty}',
+      FontAwesomeIcons.school,
+    );
   }
 
-  Widget buildUniversity(UserProfileModel data, BuildContext context) {
-    return model != null
-        ? buildProfileRow(
-            context,
-            LocaleKeys.home_profile_project_university,
-            '${model!.applyUserProfile!.university}',
-            FontAwesomeIcons.university,
-          )
-        : getProjectModel != null
-            ? buildProfileRow(
-                context,
-                LocaleKeys.home_profile_project_university,
-                '${getProjectModel!.university ?? '-'}',
-                FontAwesomeIcons.university,
-              )
-            : appliedModel != null
-                ? buildProfileRow(
-                    context,
-                    LocaleKeys.home_profile_project_university,
-                    '${appliedModel!.applyUserProfile!.university ?? '-'}',
-                    FontAwesomeIcons.university,
-                  )
-                : businessGetProjectModel != null
-                    ? buildProfileRow(
-                        context,
-                        LocaleKeys.home_profile_project_university,
-                        '${businessGetProjectModel!.university ?? '-'}',
-                        FontAwesomeIcons.university,
-                      )
-                    : buildProfileRow(
-                        context,
-                        LocaleKeys.home_profile_project_university,
-                        '${data.university}',
-                        FontAwesomeIcons.university,
-                      );
+  Widget buildUniversity(dynamic data, BuildContext context) {
+    return buildProfileRow(
+      context,
+      LocaleKeys.home_profile_project_university,
+      '${isMyProfile == true ? viewModel.readCache('university') : data.university}',
+      FontAwesomeIcons.university,
+    );
   }
 
   Widget buildProfileRow(
@@ -416,21 +200,12 @@ class UserProfileView extends StatelessWidget {
     );
   }
 
-  Widget buildFullname(UserProfileModel data, BuildContext context) {
-    return model != null
-        ? buildProfileImageAndName(context,
-            '${model!.applyUserProfile!.first_name} ${model!.applyUserProfile!.last_name}')
-        : getProjectModel != null
-            ? buildProfileImageAndName(context,
-                '${getProjectModel!.userProfile!.first_name ?? '-'} ${getProjectModel!.userProfile!.last_name ?? '-'}')
-            : appliedModel != null
-                ? buildProfileImageAndName(context,
-                    '${appliedModel!.applyUserProfile!.first_name ?? '-'} ${appliedModel!.applyUserProfile!.last_name ?? '-'}')
-                : businessGetProjectModel != null
-                    ? buildProfileImageAndName(context,
-                        '${businessGetProjectModel!.userProfile!.first_name ?? '-'} ${businessGetProjectModel!.userProfile!.last_name ?? '-'}')
-                    : buildProfileImageAndName(
-                        context, '${data.first_name} ${data.last_name}');
+  Widget buildFullname(dynamic data, BuildContext context) {
+    return buildProfileImageAndName(
+        context,
+        isMyProfile == true
+            ? '${viewModel.readCache('first_name')} ${viewModel.readCache('last_name')}'
+            : '${data.first_name} ${data.last_name}');
   }
 
   Widget buildProfileImageAndName(BuildContext context, String name) {

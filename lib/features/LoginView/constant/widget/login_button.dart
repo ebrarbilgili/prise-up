@@ -88,6 +88,9 @@ class _LoginButtonState extends State<LoginButton> {
       prefs.setStringValue('university', value['university']);
       prefs.setStringValue('faculty', value['faculty']);
       prefs.setStringValue('city', value['city']);
+      prefs.setStringValue('linkedIn', value['linkedIn']);
+      prefs.setStringValue('twitter', value['twitter']);
+      prefs.setStringValue('phone', value['phone'].toString());
     });
     print(prefs.getStringValue('email'));
     print(prefs.getStringValue('token'));

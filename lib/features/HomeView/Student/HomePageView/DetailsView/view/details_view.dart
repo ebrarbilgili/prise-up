@@ -23,7 +23,7 @@ class DetailsView extends StatelessWidget {
     required this.model,
   }) : super(key: key);
 
-  final model;
+  final dynamic model;
 
   final viewModel = DetailsViewModel(
     service: PostApplyService(
@@ -79,17 +79,15 @@ class DetailsView extends StatelessWidget {
               buildDivider,
               // AutoSizeText('@${model.userProfile!.user!.username}'),
               AutoSizeText('${model.userProfile!.email}'),
-              AutoSizeText('${model.userProfile!.university} - ${model.city}'),
+              AutoSizeText(
+                  '${model.userProfile!.university} - ${model.userProfile!.city}'),
             ],
           ),
           trailing: TextButton(
             onPressed: () {
               context.navigation.push(MaterialPageRoute(
-                builder: (context) => SharedPreferencesConstant.instance
-                            .getStringValue('account_type') ==
-                        '1'
-                    ? UserProfileView(businessGetProjectModel: model)
-                    : UserProfileView(getProjectModel: model),
+                builder: (context) => UserProfileView(
+                    model: model.userProfile, isMyProfile: true),
               ));
             },
             child: LocaleText(text: LocaleKeys.home_home_detail),

@@ -1,8 +1,11 @@
 import 'package:auto_size_text/auto_size_text.dart';
+import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:kartal/kartal.dart';
 
+import '../../../../../../core/constants/app.dart';
+import '../../../../../../core/constants/widget/ProgressIndicator/circular_progress_indicator.dart';
 import '../../../../../../core/lang/locale_key.g.dart';
 import '../../../../../../core/widgets/LocaleText/locale_text.dart';
 import '../MyProjectsDetailsView/view/my_projects_details_view.dart';
@@ -13,7 +16,11 @@ import '../viewmodel/my_projects_viewmodel.dart';
 class MyProjectsView extends StatelessWidget {
   MyProjectsView({Key? key}) : super(key: key);
 
-  final viewModel = MyProjectsViewModel(service: MyProjectsService());
+  final viewModel = MyProjectsViewModel(
+    service: MyProjectsService(
+      service: Dio(BaseOptions(baseUrl: AppConstants.BASE_URL)),
+    ),
+  );
 
   @override
   Widget build(BuildContext context) {
@@ -24,7 +31,7 @@ class MyProjectsView extends StatelessWidget {
           return RefreshIndicator(
             key: viewModel.refreshIndicatorKey,
             color: context.colorScheme.primary,
-            onRefresh: viewModel.onRefresh,
+            onRefresh: viewModel.onPressedFetchMyPoject,
             child: buildBody(context),
           );
         },
@@ -32,10 +39,15 @@ class MyProjectsView extends StatelessWidget {
     );
   }
 
-  ListView buildBody(BuildContext context) {
-    return viewModel.myProjectsModel.isNullOrEmpty
-        ? buildNoProjectText(context)
-        : buildListView(context);
+  Widget buildBody(BuildContext context) {
+    return viewModel.isLoading == false
+        ? Container(
+            height: context.dynamicHeight(0.8),
+            child: Center(child: CircularProgressIndicatorWidget()),
+          )
+        : viewModel.myProjectsModel.isNullOrEmpty
+            ? buildNoProjectText(context)
+            : buildListView(context);
   }
 
   ListView buildListView(BuildContext context) {

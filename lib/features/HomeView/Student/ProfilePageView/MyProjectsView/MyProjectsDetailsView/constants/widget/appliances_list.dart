@@ -88,7 +88,7 @@ class _AppliancesListState extends State<AppliancesList> {
                 context.navigation.push(
                   MaterialPageRoute(
                     builder: (context) => UserProfileView(
-                      model: data,
+                      model: data.applyUserProfile,
                     ),
                   ),
                 );
