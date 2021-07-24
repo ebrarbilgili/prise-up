@@ -13,11 +13,17 @@
         "valid_email": "Please enter a valid email."
     },
     "sign_up": {
+        "option": {
+            "option": "Please Choose Account Type",
+            "business": "Business",
+            "student": "Student"
+        },
         "sign_up": "Sign Up",
         "username": "Username",
         "first_name": "First Name",
         "last_name": "Last Name",
         "university": "University",
+        "business": "Company Name",
         "faculty": "Faculty",
         "city": "City",
         "phone": "Phone",
@@ -35,6 +41,7 @@
     "home": {
         "home": {
             "home": "Home",
+            "welcome": "Welcome",
             "project_list_empty": "Unfortunately There is no active project posting yet...",
             "detail": "Details",
             "search": "Search",
@@ -55,7 +62,7 @@
                 "created": "Project Created",
                 "title": "Title",
                 "subtitle": "Subtitle",
-                "desc": "Description ",
+                "desc": "Description",
                 "university": "University",
                 "city": "City"
             },
@@ -75,7 +82,27 @@
         },
         "user_profile": {
             "my_profile": "My Profile",
-            "user_profile": "User Profile"
+            "user_profile": "User Profile",
+            "contact_info": "Contact"
         }
+    },
+    "find_investor": {
+        "find_investor": "Find Investor",
+        "create_project": {
+            "create_project": "Create Project",
+            "created": "Project Created",
+            "title": "Title",
+            "subtitle": "Subtitle",
+            "desc": "Description",
+            "university": "University",
+            "city": "City"
+        },
+        "choose_project": {
+            "choose_project": "Choose Project",
+            "choose": "Choose"
+        },
+        "create_present_investor": "Create and Present Your Project to Investors Now!",
+        "choose_present_investor": "Choose and Present Your Project to Investors Now!",
+        "description_for_investors": "If you choose or create your project to provide Investors, Investors will see your projects and contact you!"
     }
 }
