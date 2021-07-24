@@ -16,4 +16,8 @@ class CacheProvider {
   Future<void> clearCache() {
     return SharedPreferencesConstant.instance.clearCache();
   }
+
+  Future<void> removeCache(String key) {
+    return SharedPreferencesConstant.instance.removeCache(key);
+  }
 }

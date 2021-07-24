@@ -132,8 +132,8 @@ class HomePageView extends StatelessWidget {
 
   Divider get buildDivider => Divider();
 
-  Row buildProjectTitle(GetProjectModel data, BuildContext context) {
-    return Row(
+  Widget buildProjectTitle(GetProjectModel data, BuildContext context) {
+    return Wrap(
       children: [
         AutoSizeText(
           '${data.title} ',

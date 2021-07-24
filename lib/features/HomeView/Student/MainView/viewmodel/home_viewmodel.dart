@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:mobx/mobx.dart';
 
+import '../../FindInvestorView/PageView/view/find_investor_view.dart';
 import '../../HomePageView/view/home_page_view.dart';
 import '../../ProfilePageView/view/profile_page_view.dart';
 
@@ -21,5 +22,6 @@ abstract class _HomeViewModelBase with Store {
   var widgetOptions = <Widget>[
     HomePageView(),
     ProfilePageView(),
+    FindInvestorView(),
   ];
 }

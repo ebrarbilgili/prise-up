@@ -85,5 +85,24 @@
             "user_profile": "Kullanıcı Profili",
             "contact_info": "İletişim Bilgileri"
         }
+    },
+    "find_investor": {
+        "find_investor": "Yatırımcı Bul",
+        "create_project": {
+            "create_project": "Proje Oluştur",
+            "created": "Proje Oluşturuldu",
+            "title": "Başlık",
+            "subtitle": "Alt Başlık",
+            "desc": "Açıklama",
+            "university": "Üniversite",
+            "city": "Şehir"
+        },
+        "choose_project": {
+            "choose_project": "Proje Seç",
+            "choose": "Seç"
+        },
+        "create_present_investor": "Projenizi Oluşturun ve Hemen Yatırımcılara Sunun!",
+        "choose_present_investor": "Projenizi Seçin ve Hemen Yatırımcılara Sunun!",
+        "description_for_investors": "Yatırımcılara sunmak için projenizi seçerseniz veya oluşturursanız, Yatırımcılar projelerinizi görecek ve sizinle iletişime geçebilecek!"
     }
 }

@@ -76,5 +76,21 @@ abstract class  LocaleKeys {
   static const home_user_profile_contact_info = 'home.user_profile.contact_info';
   static const home_user_profile = 'home.user_profile';
   static const home = 'home';
+  static const find_investor_find_investor = 'find_investor.find_investor';
+  static const find_investor_create_project_create_project = 'find_investor.create_project.create_project';
+  static const find_investor_create_project_created = 'find_investor.create_project.created';
+  static const find_investor_create_project_title = 'find_investor.create_project.title';
+  static const find_investor_create_project_subtitle = 'find_investor.create_project.subtitle';
+  static const find_investor_create_project_desc = 'find_investor.create_project.desc';
+  static const find_investor_create_project_university = 'find_investor.create_project.university';
+  static const find_investor_create_project_city = 'find_investor.create_project.city';
+  static const find_investor_create_project = 'find_investor.create_project';
+  static const find_investor_choose_project_choose_project = 'find_investor.choose_project.choose_project';
+  static const find_investor_choose_project_choose = 'find_investor.choose_project.choose';
+  static const find_investor_choose_project = 'find_investor.choose_project';
+  static const find_investor_create_present_investor = 'find_investor.create_present_investor';
+  static const find_investor_choose_present_investor = 'find_investor.choose_present_investor';
+  static const find_investor_description_for_investors = 'find_investor.description_for_investors';
+  static const find_investor = 'find_investor';
 
 }

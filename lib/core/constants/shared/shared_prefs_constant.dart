@@ -23,6 +23,10 @@ class SharedPreferencesConstant {
     await _prefs!.clear();
   }
 
+  Future<void> removeCache(String key) async {
+    await _prefs!.remove(key);
+  }
+
   Future<void> setStringValue(String key, String value) async {
     await _prefs!.setString(key, value);
   }

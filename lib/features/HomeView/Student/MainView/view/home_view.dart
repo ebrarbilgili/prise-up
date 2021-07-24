@@ -34,10 +34,27 @@ class HomeView extends StatelessWidget {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
+            buildBottomNavigationBarItemFindInvestor(context),
             buildBottomNavigationBarItemHome(context),
-            buildBottomNavigationBarItemProfile(context)
+            buildBottomNavigationBarItemProfile(context),
           ],
         ));
+  }
+
+  Expanded buildBottomNavigationBarItemFindInvestor(BuildContext context) {
+    return Expanded(
+      child: ElevatedButton(
+        onPressed: () {
+          viewModel.selectedIndex = 2;
+        },
+        style: buildButtonStyle(context),
+        child: buildBottomBarItemIcons(
+          context,
+          FontAwesomeIcons.handHoldingUsd,
+          LocaleKeys.find_investor_find_investor,
+        ),
+      ),
+    );
   }
 
   Expanded buildBottomNavigationBarItemProfile(BuildContext context) {
@@ -78,16 +95,15 @@ class HomeView extends StatelessWidget {
         topLeft: context.normalRadius,
         topRight: context.normalRadius,
       ),
-      color: context.colorScheme.background,
+      border: Border.all(color: context.colorScheme.secondary),
+      color: context.colorScheme.surface,
     );
   }
 
-  Center get buildBody {
-    return Center(
-      child: Observer(builder: (_) {
-        return viewModel.widgetOptions.elementAt(viewModel.selectedIndex);
-      }),
-    );
+  Widget get buildBody {
+    return Observer(builder: (_) {
+      return viewModel.widgetOptions.elementAt(viewModel.selectedIndex);
+    });
   }
 
   Column buildBottomBarItemIcons(

@@ -85,5 +85,13 @@
             "user_profile": "User Profile",
             "contact_info": "Contact"
         }
+    },
+    "find_investor": {
+        "find_investor": "Find Investor",
+        "create_project": "Create Project",
+        "choose_project": "Choose Project",
+        "create_present_investor": "Create and Present Your Project to Investors Now!",
+        "choose_present_investor": "Choose and Present Your Project to Investors Now!",
+        "description_for_investors": "If you choose or create your project to provide Investors, Investors will see your projects and contact you!"
     }
 }

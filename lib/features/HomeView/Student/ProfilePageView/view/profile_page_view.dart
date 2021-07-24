@@ -122,7 +122,8 @@ class ProfilePageView extends StatelessWidget {
       decoration: buildButtonBorderDecoration(context),
       child: TextButton(
         onPressed: () async {
-          await context.read<CacheProvider>().clearCache();
+          await context.read<CacheProvider>().removeCache('id');
+          await context.read<CacheProvider>().removeCache('token');
           await context.navigation.pushAndRemoveUntil(
             MaterialPageRoute(
               builder: (context) => LoginView(),

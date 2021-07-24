@@ -85,5 +85,13 @@
             "user_profile": "Kullanıcı Profili",
             "contact_info": "İletişim Bilgileri"
         }
+    },
+    "find_investor": {
+        "find_investor": "Yatırımcı Bul",
+        "create_project": "Proje oluştur",
+        "choose_project": "Proje Seç",
+        "create_present_investor": "Projenizi Oluşturun ve Hemen Yatırımcılara Sunun!",
+        "choose_present_investor": "Projenizi Seçin ve Hemen Yatırımcılara Sunun!",
+        "description_for_investors": "Yatırımcılara sunmak için projenizi seçerseniz veya oluşturursanız, Yatırımcılar projelerinizi görecek ve sizinle iletişime geçebilecek!"
     }
 }

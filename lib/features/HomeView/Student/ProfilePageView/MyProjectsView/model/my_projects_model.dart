@@ -10,6 +10,7 @@ class MyProjectsModel {
   String? desc;
   String? university;
   String? city;
+  bool? is_looking_for_investor;
   dynamic userProfile;
 
   MyProjectsModel({
@@ -19,6 +20,7 @@ class MyProjectsModel {
     this.desc,
     this.university,
     this.city,
+    this.is_looking_for_investor,
     this.userProfile,
   });
 
