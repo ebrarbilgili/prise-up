@@ -106,11 +106,12 @@ class RegisterView extends StatelessWidget {
         decoration: buildTextFieldDecoration(context,
             LocaleKeys.sign_up_email.locale, FontAwesomeIcons.solidEnvelope),
         validator: (value) {
-          var regex = accountType == 0
-              ? RegExp(
-                  r'^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.+-]+\.edu\.[a-zA-Z0-9._%+-]+$')
-              : RegExp(
-                  r'^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.+-]+\.[a-zA-Z0-9._%+-]+\.[a-zA-Z0-9._%+-]+$');
+          // var regex = accountType == 0
+          //     ?
+          var regex = RegExp(
+              r'^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.+-]+\.edu\.[a-zA-Z0-9._%+-]+$');
+          // : RegExp(
+          //     r'^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.+-]+\.[a-zA-Z0-9._%+-]+\.[a-zA-Z0-9._%+-]+$');
           if (!regex.hasMatch(value.toString()) ||
               value == null ||
               value.isEmpty ||

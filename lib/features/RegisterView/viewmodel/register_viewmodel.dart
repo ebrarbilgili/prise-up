@@ -39,7 +39,7 @@ abstract class _RegisterViewModelBase with Store {
         faculty: account_type == 0 ? facultyController.text : 'business acount',
         city: cityController.text,
         twitter: twitterController.text,
-        linkedin: linkedinController.text,
+        linkedIn: linkedinController.text,
         phone: phoneController.text,
         password: passwordController.text,
         password2: password2Controller.text,

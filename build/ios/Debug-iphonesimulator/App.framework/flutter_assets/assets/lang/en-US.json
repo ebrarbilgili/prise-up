@@ -62,7 +62,7 @@
                 "created": "Project Created",
                 "title": "Title",
                 "subtitle": "Subtitle",
-                "desc": "Description ",
+                "desc": "Description",
                 "university": "University",
                 "city": "City"
             },
@@ -88,8 +88,19 @@
     },
     "find_investor": {
         "find_investor": "Find Investor",
-        "create_project": "Create Project",
-        "choose_project": "Choose Project",
+        "create_project": {
+            "create_project": "Create Project",
+            "created": "Project Created",
+            "title": "Title",
+            "subtitle": "Subtitle",
+            "desc": "Description",
+            "university": "University",
+            "city": "City"
+        },
+        "choose_project": {
+            "choose_project": "Choose Project",
+            "choose": "Choose"
+        },
         "create_present_investor": "Create and Present Your Project to Investors Now!",
         "choose_present_investor": "Choose and Present Your Project to Investors Now!",
         "description_for_investors": "If you choose or create your project to provide Investors, Investors will see your projects and contact you!"

@@ -38,8 +38,7 @@ class UserProfileView extends StatelessWidget {
   Padding buildListView(BuildContext context) {
     return Padding(
       padding: context.paddingLow,
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
+      child: ListView(
         children: [
           buildFullname(model, context),
           buildUniversity(model, context),
@@ -74,14 +73,16 @@ class UserProfileView extends StatelessWidget {
     );
   }
 
-  Row buildEmail(BuildContext context, dynamic data) {
+  Widget buildEmail(BuildContext context, dynamic data) {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        AutoSizeText(
-          '  ${isMyProfile == true ? viewModel.readCache('email') : data.email ?? '-'}',
-          style: context.textTheme.headline6!
-              .copyWith(color: context.colorScheme.onBackground),
+        Expanded(
+          child: AutoSizeText(
+            '  ${isMyProfile == true ? viewModel.readCache('email') : data.email ?? '-'}',
+            style: context.textTheme.headline6!
+                .copyWith(color: context.colorScheme.onBackground),
+          ),
         ),
         FaIcon(
           FontAwesomeIcons.solidEnvelope,
@@ -91,14 +92,16 @@ class UserProfileView extends StatelessWidget {
     );
   }
 
-  Row buildPhone(BuildContext context, dynamic data) {
+  Widget buildPhone(BuildContext context, dynamic data) {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        AutoSizeText(
-          '  ${isMyProfile == true ? viewModel.readCache('phone') : data.phone ?? '-'}',
-          style: context.textTheme.headline6!
-              .copyWith(color: context.colorScheme.onBackground),
+        Expanded(
+          child: AutoSizeText(
+            '  ${isMyProfile == true ? viewModel.readCache('phone') : data.phone ?? '-'}',
+            style: context.textTheme.headline6!
+                .copyWith(color: context.colorScheme.onBackground),
+          ),
         ),
         FaIcon(
           FontAwesomeIcons.phone,
@@ -108,14 +111,16 @@ class UserProfileView extends StatelessWidget {
     );
   }
 
-  Row buildLinkedin(dynamic data, BuildContext context) {
+  Widget buildLinkedin(dynamic data, BuildContext context) {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        AutoSizeText(
-          '  ${isMyProfile == true ? viewModel.readCache('linkedIn') : data.linkedIn ?? '-'}',
-          style: context.textTheme.headline6!
-              .copyWith(color: context.colorScheme.onBackground),
+        Expanded(
+          child: AutoSizeText(
+            '  ${isMyProfile == true ? viewModel.readCache('linkedIn') : data.linkedIn ?? '-'}',
+            style: context.textTheme.headline6!
+                .copyWith(color: context.colorScheme.onBackground),
+          ),
         ),
         FaIcon(
           FontAwesomeIcons.linkedin,
@@ -125,14 +130,16 @@ class UserProfileView extends StatelessWidget {
     );
   }
 
-  Row buildTwitter(dynamic data, BuildContext context) {
+  Widget buildTwitter(dynamic data, BuildContext context) {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        AutoSizeText(
-          '  ${isMyProfile == true ? viewModel.readCache('twitter') : data.twitter ?? '-'}',
-          style: context.textTheme.headline6!
-              .copyWith(color: context.colorScheme.onBackground),
+        Expanded(
+          child: AutoSizeText(
+            '  ${isMyProfile == true ? viewModel.readCache('twitter') : data.twitter ?? '-'}',
+            style: context.textTheme.headline6!
+                .copyWith(color: context.colorScheme.onBackground),
+          ),
         ),
         FaIcon(
           FontAwesomeIcons.twitter,
@@ -176,20 +183,24 @@ class UserProfileView extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          Row(
-            children: [
-              AutoSizeText(
-                title.locale + ': ',
-                style: context.textTheme.headline6!.copyWith(
-                    color: context.colorScheme.onBackground,
-                    fontWeight: FontWeight.w500),
-              ),
-              AutoSizeText(
-                titleText,
-                style: context.textTheme.subtitle1!
-                    .copyWith(color: context.colorScheme.onBackground),
-              ),
-            ],
+          Expanded(
+            child: Row(
+              children: [
+                AutoSizeText(
+                  title.locale + ': ',
+                  style: context.textTheme.headline6!.copyWith(
+                      color: context.colorScheme.onBackground,
+                      fontWeight: FontWeight.w500),
+                ),
+                Expanded(
+                  child: AutoSizeText(
+                    titleText,
+                    style: context.textTheme.subtitle1!
+                        .copyWith(color: context.colorScheme.onBackground),
+                  ),
+                ),
+              ],
+            ),
           ),
           FaIcon(
             icon,

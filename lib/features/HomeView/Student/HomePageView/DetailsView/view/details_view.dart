@@ -7,7 +7,6 @@ import 'package:provider/provider.dart';
 
 import '../../../../../../core/constants/app.dart';
 import '../../../../../../core/constants/provider/cache_provider.dart';
-import '../../../../../../core/constants/shared/shared_prefs_constant.dart';
 import '../../../../../../core/constants/widget/ProgressIndicator/circular_progress_indicator.dart';
 import '../../../../../../core/extensions/locale_extensions.dart';
 import '../../../../../../core/lang/locale_key.g.dart';
@@ -86,8 +85,7 @@ class DetailsView extends StatelessWidget {
           trailing: TextButton(
             onPressed: () {
               context.navigation.push(MaterialPageRoute(
-                builder: (context) => UserProfileView(
-                    model: model.userProfile, isMyProfile: true),
+                builder: (context) => UserProfileView(model: model.userProfile),
               ));
             },
             child: LocaleText(text: LocaleKeys.home_home_detail),
