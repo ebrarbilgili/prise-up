@@ -135,12 +135,12 @@ class RegisterView extends StatelessWidget {
           LocaleKeys.sign_up_phone.locale,
           FontAwesomeIcons.phone,
         ),
-        validator: (value) {
-          if (value == null || value.isEmpty) {
-            return LocaleKeys.sign_up_validation.locale;
-          }
-          return null;
-        },
+        // validator: (value) {
+        //   if (value == null || value.isEmpty) {
+        //     return LocaleKeys.sign_up_validation.locale;
+        //   }
+        //   return null;
+        // },
       ),
     );
   }
@@ -155,12 +155,12 @@ class RegisterView extends StatelessWidget {
           'LinkedIn',
           FontAwesomeIcons.linkedin,
         ),
-        validator: (value) {
-          if (value == null || value.isEmpty) {
-            return LocaleKeys.sign_up_validation.locale;
-          }
-          return null;
-        },
+        // validator: (value) {
+        //   if (value == null || value.isEmpty) {
+        //     return LocaleKeys.sign_up_validation.locale;
+        //   }
+        //   return null;
+        // },
       ),
     );
   }
@@ -175,12 +175,12 @@ class RegisterView extends StatelessWidget {
           'Twitter',
           FontAwesomeIcons.twitter,
         ),
-        validator: (value) {
-          if (value == null || value.isEmpty) {
-            return LocaleKeys.sign_up_validation.locale;
-          }
-          return null;
-        },
+        // validator: (value) {
+        //   if (value == null || value.isEmpty) {
+        //     return LocaleKeys.sign_up_validation.locale;
+        //   }
+        //   return null;
+        // },
       ),
     );
   }
